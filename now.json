@@ -1,1 +1,17 @@
-{}
+{
+  "version": 2,
+  "name": "Podcasts I Listen To",
+  "alias": "podcasts-i-listen-to",
+  "builds": [
+    {
+      "src": "public/*",
+      "use": "@now/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    }
+  ]
+}
