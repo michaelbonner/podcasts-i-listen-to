@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import podcasts from "../data/podcasts";
 import "../styles/index.css";
 
-function Home() {
+function Home({podcasts}) {
   return (
     <>
       <Helmet>
@@ -68,5 +68,9 @@ function Home() {
     </>
   );
 }
+
+Home.getInitialProps = async () => {
+  return { podcasts };
+};
 
 export default Home;
