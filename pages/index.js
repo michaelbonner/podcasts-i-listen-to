@@ -49,7 +49,7 @@ function Home() {
             />
           </a>
           <h2 className="text-xl">
-            Overcast<sup className="tmreg">®</sup>
+            Overcast<sup>®</sup>
           </h2>
           <p>
             A powerful yet simple podcast player for iPhone, iPad, and Apple
