@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import podcasts from "../data/podcasts";
+import "../styles/index.css";
 
 function Home() {
   return (
@@ -8,17 +9,8 @@ function Home() {
         <meta charSet="utf-8" />
         <title>Podcasts I Listen To</title>
         <link rel="canonical" href="https://podcasts.michaelbonner.dev" />
-        <link
-          href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-          rel="stylesheet"
-        />
         <link rel="icon" href="/static/favicon.ico" />
         <meta name="viewport" content="width=device-width" />
-        <style type="text/css">{`
-              body {
-                  color: #333;
-              }
-            `}</style>
       </Helmet>
       <div className="bg-orange-400 text-white py-8 mb-8">
         <div className="container mx-auto">
@@ -39,7 +31,7 @@ function Home() {
                 alt={`${podcast.title} Poster`}
                 src={podcast.image}
               />
-              <div dangerouslySetInnerHTML={{__html: podcast.title}} />
+              <div dangerouslySetInnerHTML={{ __html: podcast.title }} />
             </a>
           );
         })}
