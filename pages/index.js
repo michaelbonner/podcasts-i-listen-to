@@ -12,7 +12,7 @@ function Home({ podcasts }) {
         <link rel="icon" href="/static/favicon.ico" />
         <meta name="viewport" content="width=device-width" />
       </Helmet>
-      <div className="bg-indigo-900 text-indigo-100 py-12">
+      <div className="bg-indigo-800 text-indigo-100 py-12">
         <div className="container mx-auto flex flex-wrap items-center justify-center">
           <h1 className="text-center text-5xl">The Podcasts I Listen To</h1>
           <svg
@@ -31,7 +31,7 @@ function Home({ podcasts }) {
           </svg>
         </div>
       </div>
-      <div className="bg-gray-200 py-16">
+      <div className="bg-indigo-100 py-16">
         <div className="flex flex-wrap container mx-auto items-stretch">
           {podcasts.map(podcast => {
             return (
@@ -57,9 +57,9 @@ function Home({ podcasts }) {
           })}
         </div>
       </div>
-      <div className="bg-gray-800 text-gray-100 pt-16 pb-4">
+      <div className="bg-indigo-900 text-indigo-100 pt-16">
         <div className="text-center container mx-auto">
-          <h2 className="text-2xl font-semibold">
+          <h2 className="text-2xl font-semibold mb-4">
             Check out Overcast, it's free
           </h2>
           <a href="https://overcast.fm/">
@@ -85,7 +85,7 @@ function Home({ podcasts }) {
             />
           </a>
 
-          <p className="pt-16 text-gray-300">
+          <p className="mt-8 py-8 text-gray-300 border-t border-indigo-800">
             &copy; {new Date().getFullYear()}{" "}
             <a href="https://michaelbonner.dev/">Michael Bonner</a>
             <span className="px-4">&ndash;</span>
