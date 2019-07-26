@@ -12,19 +12,16 @@ function Home({ podcasts }) {
         <link rel="icon" href="/static/favicon.ico" />
         <meta name="viewport" content="width=device-width" />
       </Helmet>
-      <div className="bg-indigo-900 shadow-lg text-white py-12">
+      <div className="bg-indigo-900 shadow-lg text-indigo-100 py-12">
         <div className="container mx-auto">
-          <h1 className="text-center text-5xl">The Podcasts I Listens To</h1>
+          <h1 className="text-center text-5xl">The Podcasts I Listen To</h1>
         </div>
       </div>
       <div className="bg-gray-200 py-16">
         <div className="flex flex-wrap container mx-auto items-stretch">
           {podcasts.map(podcast => {
             return (
-              <div
-                key={podcast.title}
-                className="w-full h-full md:w-1/2 p-4"
-              >
+              <div key={podcast.title} className="w-full h-full md:w-1/2 p-4">
                 <div className="flex bg-white items-center rounded-lg shadow-lg w-full">
                   <a href={podcast.url} target="_blank" className="w-1/3">
                     <img
@@ -35,7 +32,9 @@ function Home({ podcasts }) {
                   </a>
                   <p className="w-2/3 pl-4 text-xl font-semibold">
                     <a href={podcast.url} target="_blank">
-                      {podcast.title}
+                      <span
+                        dangerouslySetInnerHTML={{ __html: podcast.title }}
+                      />
                     </a>
                   </p>
                 </div>
@@ -44,7 +43,7 @@ function Home({ podcasts }) {
           })}
         </div>
       </div>
-      <div className="bg-gray-800 text-white pt-16 pb-4">
+      <div className="bg-gray-800 text-gray-100 pt-16 pb-4">
         <div className="text-center container mx-auto">
           <h2 className="text-2xl font-semibold">
             Check out Overcast, it's free
@@ -73,9 +72,12 @@ function Home({ podcasts }) {
           </a>
 
           <p className="pt-16 text-gray-300">
-            &copy; {new Date().getFullYear()} <a href="https://michaelbonner.dev/">Michael Bonner</a>
+            &copy; {new Date().getFullYear()}{" "}
+            <a href="https://michaelbonner.dev/">Michael Bonner</a>
             <span className="px-4">&ndash;</span>
-            <a className="pr-4" href="https://github.com/michaelbonner">GitHub</a>
+            <a className="pr-4" href="https://github.com/michaelbonner">
+              GitHub
+            </a>
             <a href="https://www.instagram.com/mbonner4/">Instagram</a>
           </p>
         </div>
