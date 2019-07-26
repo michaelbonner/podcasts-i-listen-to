@@ -21,7 +21,7 @@
     "build": "next build",
     "deploy": "npm run build && npm run export",
     "dev": "next",
-    "export": "next export",
+    "export": "npm run build && next export",
     "start": "next start"
   },
   "repository": {
