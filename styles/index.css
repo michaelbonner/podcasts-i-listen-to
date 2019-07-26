@@ -6,4 +6,5 @@
 
 body {
   @apply m-0 font-sans text-gray-800;
+  box-sizing: border-box;
 }
