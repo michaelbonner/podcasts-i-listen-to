@@ -12,9 +12,23 @@ function Home({ podcasts }) {
         <link rel="icon" href="/static/favicon.ico" />
         <meta name="viewport" content="width=device-width" />
       </Helmet>
-      <div className="bg-indigo-900 shadow-lg text-indigo-100 py-12">
-        <div className="container mx-auto">
+      <div className="bg-indigo-900 text-indigo-100 py-12">
+        <div className="container mx-auto flex flex-wrap items-center justify-center">
           <h1 className="text-center text-5xl">The Podcasts I Listen To</h1>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            className="icon-microphone w-12 h-12 ml-4"
+          >
+            <path
+              className="secondary text-indigo-400 fill-current"
+              d="M12 1a4 4 0 0 1 4 4v6a4 4 0 1 1-8 0V5a4 4 0 0 1 4-4z"
+            />
+            <path
+              className="primary text-indigo-600 fill-current"
+              d="M13 18.94V21h3a1 1 0 0 1 0 2H8a1 1 0 0 1 0-2h3v-2.06A8 8 0 0 1 4 11a1 1 0 0 1 2 0 6 6 0 1 0 12 0 1 1 0 0 1 2 0 8 8 0 0 1-7 7.94z"
+            />
+          </svg>
         </div>
       </div>
       <div className="bg-gray-200 py-16">
