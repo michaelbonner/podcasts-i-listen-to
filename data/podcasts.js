@@ -10,7 +10,7 @@ const podcasts = [
     url:
       "https://podcasts.apple.com/us/podcast/build-your-saas-bootstrapping-in-2019/id1357295850",
     image:
-      "https://overcast.fm/art?s=64e052185804f63c73422374d76d7aded86ff4712cdf13b77d54073f0fe1cee6&w=160&u=https%3A%2F%2Fimages.transistor.fm%2Fimages%2Fshow%2F15%2Ffull_1521237846-artwork.jpg",
+      "https://overcast.fm/art?s=5bb7c7f9a853944cac1cc693d135cb53b41886a8a110a94126c36f6fd92900c5&w=160&u=https%3A%2F%2Fimages.transistor.fm%2Ffile%2Ftransistor%2Fimages%2Fshow%2F15%2Ffull_1521237846-artwork.jpg",
     title: "Build Your SaaS &ndash; bootstrapping in 2019"
   },
   {
@@ -134,8 +134,15 @@ const podcasts = [
     url:
       "https://podcasts.apple.com/us/podcast/the-laravel-snippet/id1451072164",
     image:
-      "https://overcast.fm/art?s=8c28755a2ac613f7e03cde772d34b8c6bfc5bd2f5aa3440acfa37e304a4579cc&w=160&u=https%3A%2F%2Fimages.transistor.fm%2Fimages%2Fshow%2F872%2Ffull_1548859226-artwork.jpg",
+      "https://overcast.fm/art?s=4ec3d71dd9ae73fd1e25eeb1ed27c0d59d07e7dfa150c1fb5916070d4e3f247f&w=160&u=https%3A%2F%2Fimages.transistor.fm%2Ffile%2Ftransistor%2Fimages%2Fshow%2F872%2Ffull_1548859226-artwork.jpg",
     title: "The Laravel Snippet"
+  },
+  {
+    url:
+      "https://podcasts.apple.com/us/podcast/no-plans-to-merge/id1455034944",
+    image:
+      "https://overcast.fm/art?s=360a5487f0e8b72d027342c46406578ae2a7bdfe6aa3f3b30928fed138202108&w=160&u=https%3A%2F%2Fcdn.simplecast.com%2Fimages%2F6232da22-dbb9-483e-9208-b2a740767729%2F5c14c978-65b9-4737-ab69-30c4ca672938%2F3000x3000%2F1551799236artwork.jpg%3Faid%3Drss_feed",
+    title: "No Plans to Merge"
   },
   {
     url: "https://podcasts.apple.com/us/podcast/planet-money/id290783428",
