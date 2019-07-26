@@ -44,7 +44,7 @@ function Home({ podcasts }) {
                       src={podcast.image}
                     />
                   </a>
-                  <p className="w-2/3 pl-4 text-xl font-semibold">
+                  <p className="w-2/3 px-4 text-xl font-semibold">
                     <a href={podcast.url} target="_blank">
                       <span
                         dangerouslySetInnerHTML={{ __html: podcast.title }}
