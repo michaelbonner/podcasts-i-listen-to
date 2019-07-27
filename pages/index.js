@@ -36,7 +36,7 @@ function Home({ podcasts }) {
           {podcasts.map(podcast => {
             return (
               <div key={podcast.title} className="w-full h-full md:w-1/2 p-4">
-                <div className="flex bg-white items-center rounded-lg shadow-lg w-full">
+                <div className="flex bg-white items-center rounded-lg border border-indigo-100 shadow-lg w-full">
                   <a href={podcast.url} target="_blank" className="w-1/3">
                     <img
                       className="rounded-lg rounded-r-none"
@@ -60,7 +60,7 @@ function Home({ podcasts }) {
       <div className="bg-indigo-900 text-indigo-100 pt-16">
         <div className="text-center container mx-auto">
           <h2 className="text-2xl font-semibold mb-4">
-            Check out Overcast, it's free
+            Check out Overcast, it's free!
           </h2>
           <a href="https://overcast.fm/">
             <img
