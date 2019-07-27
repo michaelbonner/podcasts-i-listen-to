@@ -138,13 +138,6 @@ const podcasts = [
     title: "The Laravel Snippet"
   },
   {
-    url:
-      "https://podcasts.apple.com/us/podcast/no-plans-to-merge/id1455034944",
-    image:
-      "https://overcast.fm/art?s=360a5487f0e8b72d027342c46406578ae2a7bdfe6aa3f3b30928fed138202108&w=160&u=https%3A%2F%2Fcdn.simplecast.com%2Fimages%2F6232da22-dbb9-483e-9208-b2a740767729%2F5c14c978-65b9-4737-ab69-30c4ca672938%2F3000x3000%2F1551799236artwork.jpg%3Faid%3Drss_feed",
-    title: "No Plans to Merge"
-  },
-  {
     url: "https://podcasts.apple.com/us/podcast/planet-money/id290783428",
     image:
       "https://overcast.fm/art?s=e1ead5eab7ec731b2975b6dfa71b74ed4a02df2e0aa3285ff9c48058185eb79c&w=160&u=https%3A%2F%2Fmedia.npr.org%2Fassets%2Fimg%2F2018%2F08%2F02%2Fnpr_planetmoney_podcasttile_sq-7b7fab0b52fd72826936c3dbe51cff94889797a0.jpg%3Fs%3D1400",
