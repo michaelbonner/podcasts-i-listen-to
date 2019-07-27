@@ -1,6 +1,4 @@
-import { Helmet } from "react-helmet";
 import podcasts from "../data/podcasts";
-import "../styles/index.css";
 import MainLayout from "../layouts/main";
 
 function Home({ podcasts }) {
