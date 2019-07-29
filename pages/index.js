@@ -9,7 +9,7 @@ function Home({ podcasts }) {
           {podcasts.map(podcast => {
             return (
               <div key={podcast.title} className="w-full h-full md:w-1/2 p-4">
-                <div className="flex bg-white items-center rounded-lg border border-indigo-100 shadow-lg w-full">
+                <div className="flex bg-white items-center rounded-lg shadow-lg w-full">
                   <a href={podcast.url} target="_blank" className="w-1/3">
                     <img
                       className="rounded-lg rounded-r-none"
