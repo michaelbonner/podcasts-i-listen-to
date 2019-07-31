@@ -1,16 +1,16 @@
-import { Helmet } from "react-helmet";
+import Head from 'next/head';
 import "../styles/index.css";
 
 function MainLayout({ children }) {
   return (
     <>
-      <Helmet>
+      <Head>
         <meta charSet="utf-8" />
         <title>Podcasts I Listen To</title>
         <link rel="canonical" href="https://podcasts.michaelbonner.dev" />
         <link rel="icon" href="/static/favicon.ico" />
         <meta name="viewport" content="width=device-width" />
-      </Helmet>
+      </Head>
       <div className="bg-indigo-800 text-indigo-100 py-12">
         <div className="container mx-auto flex flex-wrap items-center justify-center">
           <h1 className="text-center text-5xl">The Podcasts I Listen To</h1>
