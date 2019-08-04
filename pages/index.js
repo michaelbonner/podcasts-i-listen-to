@@ -1,5 +1,7 @@
-import podcasts from "../data/podcasts";
+import fetch from 'isomorphic-unfetch';
 import MainLayout from "../layouts/main";
+
+const PORT = process.env.PORT || 3000;
 
 function Home({ podcasts }) {
   return (
@@ -34,8 +36,13 @@ function Home({ podcasts }) {
   );
 }
 
-Home.getInitialProps = async () => {
-  return { podcasts };
+Home.getInitialProps = async function() {
+  const res = await fetch(`http://localhost:${PORT}/api/podcasts`);
+  const data = await res.json();
+
+  return {
+    podcasts: data
+  };
 };
 
 export default Home;
