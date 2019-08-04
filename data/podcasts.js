@@ -234,6 +234,4 @@ const podcasts = [
   }
 ];
 // export default podcasts;
-module.exports = {
-  podcasts
-};
+module.exports = podcasts;
