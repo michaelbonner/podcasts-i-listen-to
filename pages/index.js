@@ -1,6 +1,5 @@
 import fetch from 'isomorphic-unfetch';
 import MainLayout from "../layouts/main";
-import podcasts from "../data/podcasts";
 
 const PORT = process.env.PORT || 3000;
 
@@ -38,8 +37,11 @@ function Home({ podcasts }) {
 }
 
 Home.getInitialProps = async function() {
+  const res = await fetch(`https://podcasts.michaelbonner.dev/.netlify/functions/podcasts`);
+  const data = await res.json();
+
   return {
-    podcasts
+    podcasts: data
   };
 };
 
