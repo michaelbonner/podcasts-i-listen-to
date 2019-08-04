@@ -11,7 +11,6 @@ function MainLayout({ children }) {
         <link rel="icon" href="/static/favicon.ico" />
         <meta name="viewport" content="width=device-width" />
 
-        <Head>
           <script
             dangerouslySetInnerHTML={{
               __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -21,7 +20,7 @@ function MainLayout({ children }) {
       })(window,document,'script','dataLayer','GTM-WKV6C4B');`
             }}
           />
-        </Head>
+          
         <noscript
           dangerouslySetInnerHTML={{
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKV6C4BX" height="0" width="0" style="display:none;visibility:hidden;"></iframe>`
