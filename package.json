@@ -6,6 +6,7 @@
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "body-parser": "^1.19.0",
+    "concurrently": "^4.1.1",
     "express": "^4.17.1",
     "isomorphic-unfetch": "^3.0.0",
     "mongodb": "^3.3.0-beta2",
@@ -18,12 +19,13 @@
     "@fullhuman/postcss-purgecss": "^1.2.0",
     "autoprefixer": "^9.6.1",
     "cssnano": "^4.1.10",
+    "nodemon": "^1.19.1",
     "postcss-easy-import": "^3.0.0",
     "tailwindcss": "^1.0.6"
   },
   "scripts": {
     "build": "next build",
-    "deploy": "npm run build && npm run export",
+    "deploy": "concurrently \"node ./server/index.js\" \"npm run build && npm run export\"",
     "dev": "next",
     "export": "npm run build && next export",
     "start": "next start"

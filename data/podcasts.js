@@ -233,4 +233,7 @@ const podcasts = [
     title: "Today, Explained"
   }
 ];
-export default podcasts;
+// export default podcasts;
+module.exports = {
+  podcasts
+};
