@@ -7,7 +7,7 @@ const db = mongoose.connect(uri, {
   useNewUrlParser: true
 });
 
-const Podcast = require("../server/models/podcastModel");
+const Podcast = require("./podcastModel");
 
 exports.handler = async (event, context) => {
   const podcasts = await Podcast.find({});
