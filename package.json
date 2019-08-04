@@ -26,7 +26,7 @@
   },
   "scripts": {
     "build": "next build",
-    "deploy": "concurrently \"node ./server/index.js\" \"npm run build && npm run export\"",
+    "deploy": "npm run build && npm run export",
     "dev": "next",
     "export": "npm run build && next export",
     "start": "next start"
