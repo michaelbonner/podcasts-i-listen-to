@@ -1,4 +1,5 @@
 const express = require("express");
+const serverless = require('serverless-http');
 const next = require("next");
 const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3000;
@@ -14,9 +15,10 @@ const db = mongoose.connect(uri, {
   useNewUrlParser: true
 });
 
+const app = express();
+
 nextApp.prepare().then(() => {
   // express code here
-  const app = express();
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use("/api/podcasts", require("./routes/index"));
@@ -28,3 +30,5 @@ nextApp.prepare().then(() => {
     console.log(`ready at http://localhost:${PORT}`);
   });
 });
+
+module.exports.handler = serverless(app);
