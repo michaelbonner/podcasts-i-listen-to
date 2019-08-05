@@ -1,9 +1,12 @@
 const mongoose = require("mongoose");
 
-const dotEnvResult = require("dotenv").config({ path: __dirname + '/../.env' });
-
-if (dotEnvResult.error) {
-  throw dotEnvResult.error;
+// load local .env variables when not in production
+if(process.env.NODE_ENV !== 'production'){
+  const dotEnvResult = require("dotenv").config({ path: __dirname + '/../.env' });
+  
+  if (dotEnvResult.error) {
+    throw dotEnvResult.error;
+  }
 }
 
 const password = encodeURIComponent(process.env.MONGO_DB_PASSWORD);
