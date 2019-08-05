@@ -1,3 +1,4 @@
+const fs = require("fs");
 const path = __dirname + '/.env';
 if (fs.existsSync(path)) {
   const dotEnvResult = require("dotenv").config();
