@@ -37,7 +37,7 @@ function Home({ podcasts }) {
 }
 
 Home.getInitialProps = async function() {
-  const res = await fetch(`https://podcasts.michaelbonner.dev/.netlify/functions/podcasts`);
+  const res = await fetch(`${process.env.FUNCTIONS_HOST}/.netlify/functions/podcasts`);
   const data = await res.json();
 
   return {

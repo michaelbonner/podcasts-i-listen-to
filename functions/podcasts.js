@@ -1,7 +1,13 @@
 const mongoose = require("mongoose");
 
-const password = encodeURIComponent("QzU>jw3dq?yLmvqrUrKik*Ny");
-const uri = `mongodb+srv://michael:${password}@cluster0-urfp2.mongodb.net/podcastsilistento?retryWrites=true&w=majority`;
+const dotEnvResult = require("dotenv").config({ path: __dirname + '/../.env' });
+
+if (dotEnvResult.error) {
+  throw dotEnvResult.error;
+}
+
+const password = encodeURIComponent(process.env.MONGO_DB_PASSWORD);
+const uri = `mongodb+srv://${process.env.MONGO_DB_USER}:${password}@cluster0-urfp2.mongodb.net/podcastsilistento?retryWrites=true&w=majority`;
 
 const db = mongoose.connect(uri, {
   useNewUrlParser: true
