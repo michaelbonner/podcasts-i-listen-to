@@ -10,7 +10,7 @@ const db = mongoose.connect(uri, {
 const Podcast = require("./podcastModel");
 
 exports.handler = async (event, context) => {
-  const podcasts = await Podcast.find({});
+  const podcasts = await Podcast.find({}).sort('title');
 
   console.log(podcasts);
 
