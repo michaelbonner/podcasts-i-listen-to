@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-unfetch';
+import fetch from "isomorphic-unfetch";
 import MainLayout from "../layouts/main";
 
 const PORT = process.env.PORT || 3000;
@@ -19,13 +19,57 @@ function Home({ podcasts }) {
                       src={podcast.image}
                     />
                   </a>
-                  <p className="w-2/3 px-4 text-xl font-semibold">
-                    <a href={podcast.url} target="_blank">
-                      <span
-                        dangerouslySetInnerHTML={{ __html: podcast.title }}
-                      />
-                    </a>
-                  </p>
+                  <div className="w-2/3 px-4">
+                    <p className="text-xl font-semibold">
+                      <a href={podcast.url} target="_blank">
+                        <span
+                          dangerouslySetInnerHTML={{ __html: podcast.title }}
+                        />
+                      </a>
+                    </p>
+                    <p className="w-1/2 flex my-2">
+                      <svg
+                        className={`block w-1/5 ${podcast.rating > 0 ? 'text-yellow-400' : 'text-gray-300'}`}
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                      </svg>
+                      <svg
+                        className={`block w-1/5 ${podcast.rating > 1 ? 'text-yellow-400' : 'text-gray-300'}`}
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                      </svg>
+                      <svg
+                        className={`block w-1/5 ${podcast.rating > 2 ? 'text-yellow-400' : 'text-gray-300'}`}
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                      </svg>
+                      <svg
+                        className={`block w-1/5 ${podcast.rating > 3 ? 'text-yellow-400' : 'text-gray-300'}`}
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                      </svg>
+                      <svg
+                        className={`block w-1/5 ${podcast.rating > 4 ? 'text-yellow-400' : 'text-gray-300'}`}
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                      </svg>
+                    </p>
+                  </div>
                 </div>
               </div>
             );
@@ -37,7 +81,9 @@ function Home({ podcasts }) {
 }
 
 Home.getInitialProps = async function() {
-  const res = await fetch(`${process.env.FUNCTIONS_HOST}.netlify/functions/podcasts`);
+  const res = await fetch(
+    `${process.env.FUNCTIONS_HOST}.netlify/functions/podcasts`
+  );
   let data = {};
   try {
     data = await res.json();
