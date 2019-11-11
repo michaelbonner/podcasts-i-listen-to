@@ -29,7 +29,7 @@ function Home({ podcasts }) {
                     </p>
                     <p className="w-1/2 flex my-2">
                       <svg
-                        className={`block w-6 ${
+                        className={`block w-6 h-6 ${
                           podcast.rating > 0
                             ? "text-yellow-400"
                             : "text-gray-300"
@@ -41,7 +41,7 @@ function Home({ podcasts }) {
                         <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                       </svg>
                       <svg
-                        className={`block w-6 ${
+                        className={`block w-6 h-6 ${
                           podcast.rating > 1
                             ? "text-yellow-400"
                             : "text-gray-300"
@@ -53,7 +53,7 @@ function Home({ podcasts }) {
                         <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                       </svg>
                       <svg
-                        className={`block w-6 ${
+                        className={`block w-6 h-6 ${
                           podcast.rating > 2
                             ? "text-yellow-400"
                             : "text-gray-300"
@@ -65,7 +65,7 @@ function Home({ podcasts }) {
                         <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                       </svg>
                       <svg
-                        className={`block w-6 ${
+                        className={`block w-6 h-6 ${
                           podcast.rating > 3
                             ? "text-yellow-400"
                             : "text-gray-300"
@@ -77,7 +77,7 @@ function Home({ podcasts }) {
                         <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                       </svg>
                       <svg
-                        className={`block w-6 ${
+                        className={`block w-6 h-6 ${
                           podcast.rating > 4
                             ? "text-yellow-400"
                             : "text-gray-300"
