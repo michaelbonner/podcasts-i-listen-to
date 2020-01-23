@@ -12,14 +12,14 @@ function Home({ podcasts }) {
             return (
               <div key={podcast.title} className="w-full h-full md:w-1/2 p-4">
                 <div className="flex bg-white items-center rounded-lg shadow-lg w-full">
-                  <a href={podcast.url} target="_blank" className="w-1/3">
+                  <a href={podcast.url} target="_blank" className="w-1/4">
                     <img
-                      className="rounded-lg rounded-r-none"
+                      className="rounded-lg rounded-r-none w-full"
                       alt={`${podcast.title} Poster`}
                       src={podcast.image}
                     />
                   </a>
-                  <div className="w-2/3 px-4">
+                  <div className="w-3/4 px-6">
                     <p className="text-xl font-semibold">
                       <a href={podcast.url} target="_blank">
                         <span
