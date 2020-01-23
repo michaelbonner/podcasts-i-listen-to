@@ -8,19 +8,19 @@ function MainLayout({ children }) {
         <meta charSet="utf-8" />
         <title>Podcasts I Listen To</title>
         <link rel="canonical" href="https://podcasts.michaelbonner.dev" />
-        <link rel="icon" href="/static/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width" />
 
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-WKV6C4B');`
-            }}
-          />
-          
+          }}
+        />
+
         <noscript
           dangerouslySetInnerHTML={{
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKV6C4BX" height="0" width="0" style="display:none;visibility:hidden;"></iframe>`
@@ -47,42 +47,51 @@ function MainLayout({ children }) {
         </div>
       </div>
       {children}
-      <div className="bg-indigo-900 text-indigo-100 pt-16">
-        <div className="text-center container mx-auto">
-          <h2 className="text-2xl font-semibold mb-4">
-            Check out Overcast, it's free!
-          </h2>
-          <a href="https://overcast.fm/">
-            <img
-              className="mx-auto w-2/3 lg:w-1/3 lg:w-1/5"
-              src="https://overcast.fm/img/logo.svg?3"
-              alt="overcast"
-            />
-          </a>
-          <h2 className="text-2xl font-semibold pt-4">
-            Overcast<sup>®</sup>
-          </h2>
-          <p className="text-gray-500 pb-4">
-            A powerful yet simple podcast player for iPhone, iPad, and Apple
-            Watch.
-          </p>
+      <div className="bg-indigo-900 text-indigo-100 pt-16 px-4 lg:px-0 text-center lg:text-left">
+        <div className="container mx-auto">
+          <div className="flex flex-wrap">
+            <a className="w-full lg:w-auto" href="https://overcast.fm/">
+              <img
+                className="w-32 mx-auto lg:mx-0"
+                src="https://overcast.fm/img/logo.svg?3"
+                alt="overcast"
+              />
+            </a>
+            <div className="w-full lg:w-auto pl-0 lg:pl-6">
+              <h2 className="text-2xl font-semibold pt-4">
+                <a
+                  className="w-full lg:w-auto underline"
+                  href="https://overcast.fm/"
+                >
+                  Check out Overcast for free
+                </a>
+              </h2>
+              <p className="text-gray-500 pt-1">
+                A powerful yet simple podcast player for iPhone, iPad, and Apple
+                Watch.
+              </p>
 
-          <a href="https://itunes.apple.com/us/app/overcast-podcast-player/id888422857?ls=1&amp;mt=8">
-            <img
-              className="mx-auto py-4"
-              src="https://overcast.fm/img/appstore.svg"
-              alt="Download"
-            />
-          </a>
+              <a href="https://itunes.apple.com/us/app/overcast-podcast-player/id888422857?ls=1&amp;mt=8">
+                <img
+                  className="pt-6 mx-auto lg:mx-0"
+                  src="https://overcast.fm/img/appstore.svg"
+                  alt="Download"
+                />
+              </a>
+            </div>
+          </div>
 
           <p className="mt-8 py-8 text-gray-300 border-t border-indigo-800">
             &copy; {new Date().getFullYear()}{" "}
             <a href="https://michaelbonner.dev/">Michael Bonner</a>
-            <span className="px-4">&ndash;</span>
-            <a className="pr-4" href="https://github.com/michaelbonner">
+            <span className="px-4 text-purple-800">|</span>
+            <a
+              className="pr-4"
+              href="https://github.com/michaelbonner/podcasts-i-listen-to"
+            >
               GitHub
             </a>
-            <a href="https://www.instagram.com/mbonner4/">Instagram</a>
+            <a href="https://www.instagram.com/michael__bonner/">Instagram</a>
           </p>
         </div>
       </div>
