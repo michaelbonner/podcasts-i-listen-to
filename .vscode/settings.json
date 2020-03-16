@@ -1,10 +1,16 @@
 {
-    "cSpell.words": [
-        "fullhuman",
-        "ndash",
-        "purgecss",
-        "semibold",
-        "tailwind",
-        "zeit"
-    ]
+  "cSpell.words": [
+    "fullhuman",
+    "ndash",
+    "purgecss",
+    "semibold",
+    "tailwind",
+    "zeit"
+  ],
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#ebf4ff",
+    "titleBar.inactiveForeground": "#ebf4ffCC",
+    "titleBar.activeBackground": "#434190",
+    "titleBar.inactiveBackground": "#434190CC"
+  }
 }
