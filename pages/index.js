@@ -1,8 +1,6 @@
-import fetch from "isomorphic-unfetch";
-import MainLayout from "../layouts/main";
 import { useState, useEffect } from "react";
-
-const PORT = process.env.PORT || 3000;
+import MainLayout from "../layouts/main";
+import podcasts from "../data/podcasts";
 
 const Star = ({ filled }) => {
   return (
@@ -19,7 +17,7 @@ const Star = ({ filled }) => {
   );
 };
 
-function Home({ podcasts }) {
+function Home() {
   const [filter, setFilter] = useState(0);
   const [filteredPodcasts, setFilteredPodcasts] = useState(podcasts);
 
@@ -127,21 +125,5 @@ function Home({ podcasts }) {
     </MainLayout>
   );
 }
-
-Home.getInitialProps = async function() {
-  const res = await fetch(
-    `${process.env.FUNCTIONS_HOST}.netlify/functions/podcasts`
-  );
-  let data = {};
-  try {
-    data = await res.json();
-  } catch (error) {
-    data = [];
-  }
-
-  return {
-    podcasts: data
-  };
-};
 
 export default Home;
