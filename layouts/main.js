@@ -1,5 +1,6 @@
 import Head from "next/head";
 import "../styles/index.css";
+import AppStoreLogo from "../components/AppStoreLogo";
 
 function MainLayout({ children }) {
   return (
@@ -71,12 +72,11 @@ function MainLayout({ children }) {
                 Watch.
               </p>
 
-              <a href="https://itunes.apple.com/us/app/overcast-podcast-player/id888422857?ls=1&amp;mt=8">
-                <img
-                  className="pt-6 mx-auto lg:mx-0"
-                  src="https://overcast.fm/img/appstore.svg"
-                  alt="Download"
-                />
+              <a
+                className="block mt-2"
+                href="https://itunes.apple.com/us/app/overcast-podcast-player/id888422857?ls=1&amp;mt=8"
+              >
+                <AppStoreLogo />
               </a>
             </div>
           </div>
