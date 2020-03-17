@@ -20,6 +20,23 @@ const Star = ({ filled }) => {
 
 function Home() {
   const [filter, setFilter] = useState(0);
+  const [sortedPodcasts, setSortedPodcasts] = useState([]);
+
+  useEffect(() => {
+    setSortedPodcasts(
+      podcasts.sort((a, b) => {
+        const titleA = a.title.toUpperCase();
+        const titleB = b.title.toUpperCase();
+
+        if (titleA > titleB) {
+          return 1;
+        } else if (titleA < titleB) {
+          return -1;
+        }
+        return 0;
+      })
+    );
+  });
 
   return (
     <MainLayout>
@@ -85,7 +102,7 @@ function Home() {
           </button>
         </div>
         <div className="flex flex-wrap container mx-auto mt-4 items-stretch">
-          {podcasts.map(podcast => {
+          {sortedPodcasts.map(podcast => {
             return (
               <div
                 key={podcast.title}

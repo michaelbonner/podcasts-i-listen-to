@@ -256,7 +256,7 @@ export default [
   {
     url: "https://overcast.fm/itunes1421573955/dr-death",
     image:
-      "https://overcast.fm/art?s=d695b569fe97e0ccf5b483d96fd150fb145898948584ff8e9bcd7fee42f83499&w=160&u=https%3A%2F%2Fcontent.production.cdn.art19.com%2Fimages%2F1d%2F53%2F8f%2Fa0%2F1d538fa0-4053-481a-bc95-55b0df8d4b6a%2F4378c3832f80118109029d8e6c07f2a7a61c2e9c9555b68fa72f197a08279b499930ec1f881a4f7993ca4c373dfad88a755abadbd8008869f85c930be1036ca0.jpeg",
+      "https://wondery.com/wp-content/uploads/2019/04/DrDeath-300x300.jpeg",
     title: "Dr. Death",
     rating: 4
   },
