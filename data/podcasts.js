@@ -51,8 +51,7 @@ export default [
   },
   {
     url: "https://overcast.fm/itunes1441595858/cold",
-    image:
-      "https://overcast.fm/art?s=8bfd2655c176eee868cbceb33e17cb4c7dddc05b4024f374062180e7d70f6f73&w=160&u=https%3A%2F%2Fcontent.production.cdn.art19.com%2Fimages%2F2c%2F80%2F3e%2F3a%2F2c803e3a-263b-4f9b-a43a-422a1cbab445%2Ff1099d0dfeb0f9a4e6ad8a7d65dbb6057b353aa2e8a570d80ba046379050e2f13e0a1216e606f4f0dbc0763db55fa3b585ea9eb606b702bbb1f4f4e5116ae668.jpeg",
+    image: "https://wondery.com/wp-content/uploads/2019/05/Cold-300x300.jpeg",
     title: "Cold",
     rating: 4
   },

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import MainLayout from "../layouts/main";
 import podcasts from "../data/podcasts";
 
@@ -19,11 +20,6 @@ const Star = ({ filled }) => {
 
 function Home() {
   const [filter, setFilter] = useState(0);
-  const [filteredPodcasts, setFilteredPodcasts] = useState(podcasts);
-
-  useEffect(() => {
-    setFilteredPodcasts(podcasts.filter(podcast => podcast.rating >= filter));
-  }, [filter]);
 
   return (
     <MainLayout>
@@ -89,15 +85,24 @@ function Home() {
           </button>
         </div>
         <div className="flex flex-wrap container mx-auto mt-4 items-stretch">
-          {filteredPodcasts.map(podcast => {
+          {podcasts.map(podcast => {
             return (
-              <div key={podcast.title} className="w-full h-full md:w-1/2 p-4">
+              <div
+                key={podcast.title}
+                className={`${
+                  podcast.rating >= filter
+                    ? "w-full h-full md:w-1/2 p-4"
+                    : "hidden"
+                }`}
+              >
                 <div className="flex bg-white items-center rounded-lg shadow-lg w-full">
                   <a href={podcast.url} target="_blank" className="w-1/4">
-                    <img
+                    <LazyLoadImage
                       className="rounded-lg rounded-r-none w-full"
                       alt={`${podcast.title} Poster`}
+                      height={400}
                       src={podcast.image}
+                      width={400}
                     />
                   </a>
                   <div className="w-3/4 px-6">
