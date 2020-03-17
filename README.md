@@ -2,6 +2,6 @@
 
 Runs here: [https://podcasts.michaelbonner.dev/](https://podcasts.michaelbonner.dev/)
 
-Deployed using [Netlify](https://www.netlify.com/)
+Built with [Next.js](https://nextjs.org/)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/cd2d449e-f4a4-44d8-93ee-fc959d238733/deploy-status)](https://app.netlify.com/sites/podcastsilistento/deploys)
+Deployed using [ZEIT Now](https://zeit.co/)
