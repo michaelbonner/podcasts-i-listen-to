@@ -2,7 +2,7 @@ export default [
   {
     url: "https://overcast.fm/itunes1335814741/business-wars",
     image:
-      "https://overcast.fm/art?s=7aef4e92900b45ae4587978f80c71989d83f21a9ea0632ad1ef68f142165a830&w=160&u=https%3A%2F%2Fcontent.production.cdn.art19.com%2Fimages%2F72%2F49%2Ff7%2Fa4%2F7249f7a4-163e-443e-9d0b-c4d2133eb36c%2F28ee9ab994e1d3017649f8beb239f7f01c4c677cd3dce26ccec4a27f8c066901c8de40be841fe20e91c8ec5b8713ae3fda343671b3dbf73b9bd537cee88d7988.jpeg",
+      "https://wondery.com/wp-content/uploads/2019/05/BusinessWars-300x300.jpeg",
     title: "Business Wars",
     rating: 4
   },
@@ -38,7 +38,7 @@ export default [
   {
     url: "https://overcast.fm/itunes1313596069/american-history-tellers",
     image:
-      "https://overcast.fm/art?s=ec24a12b6f9898b2561586ef0143e2e8df59909321cb7945d978141c4b832b11&w=160&u=https%3A%2F%2Fcontent.production.cdn.art19.com%2Fimages%2F28%2F64%2Ff6%2Fde%2F2864f6de-3194-4381-9629-081cf744cecf%2Fd392809bbdd2cb70122102ee273b6096314d7de7a11da60f3d6c89c424b282f30c6a61fcc4b7415ade9fca34f14b1afc06412524713c4214c0f3906bf7295dcc.jpeg",
+      "https://wondery.com/wp-content/uploads/2019/05/AmericanHistoryTellers-300x300.jpeg",
     title: "American History Tellers",
     rating: 4
   },
@@ -58,7 +58,7 @@ export default [
   {
     url: "https://overcast.fm/itunes1272970334/dirty-john",
     image:
-      "https://overcast.fm/art?s=5ce4c4a1f33d312a13fce0d94edeecb25988fd653615f770ebf066be61cb0428&w=160&u=https%3A%2F%2Fcontent.production.cdn.art19.com%2Fimages%2Ff5%2Fcf%2Fd8%2F37%2Ff5cfd837-6c97-4422-a573-4ea06f2b2a13%2F92560badd97d72391e87a7f98ef308a82f3f8973b0ac04d558be398f1bb06c4d0b09e982e9f7d939e7a7be6f06470d4b2f015e2211d4c4a67c73378122690d54.jpeg",
+      "https://wondery.com/wp-content/uploads/2019/04/DirtyJohn-1024x1024.jpeg",
     title: "Dirty John",
     rating: 3
   },
@@ -235,7 +235,7 @@ export default [
     url:
       "https://overcast.fm/itunes1465334342/man-in-the-window-the-golden-state-killer",
     image:
-      "https://overcast.fm/art?s=923dc949460c3a919a84ec8d53c42b206a7a213b960ff579dc0faf7cfd0fc212&w=160&u=https%3A%2F%2Fcontent.production.cdn.art19.com%2Fimages%2F36%2F7d%2F69%2F27%2F367d6927-ff27-4a36-8140-c1a1af61886f%2F20646864b49d4c9b5e14a615ae7430ce3b71bbeca8039d12ecb0f95b6116d99197c864cd6071451713b7df9b66abae6cb788a63162846f88331aa6a5b194f844.jpeg",
+      "https://wondery.com/wp-content/uploads/2019/06/MITW_Key-1024x1024.jpeg",
     title: "Man In The Window: The Golden State Killer",
     rating: 4
   },
@@ -270,14 +270,14 @@ export default [
   {
     url: "https://overcast.fm/itunes1482851200/bad-batch",
     image:
-      "https://overcast.fm/art?s=ca9e19a643f201ecf6e6409f50afe1675cc61bf4a385f0aec0e412fa641003e1&w=840&u=https%3A%2F%2Fcontent.production.cdn.art19.com%2Fimages%2F2b%2F4b%2F69%2Ff8%2F2b4b69f8-3eae-43f4-b533-0b1723a944da%2Fc40cbf1bb9d6b5bf753e5c1e086cd12d8bb8f2c3e8037547524d041af0cbb213e41f58e9b33c4bcc1993520033d78cef6fedc3a97fe9b83d0ad6cf1dedec2bd7.jpeg",
+      "https://wondery.com/wp-content/uploads/2019/10/BadBatchKey-300x300.jpg",
     title: "Bad Batch",
     rating: "3"
   },
   {
     url: "https://overcast.fm/itunes1373812661/behind-the-bastards",
     image:
-      "https://overcast.fm/art?s=762b8fe2ebc2b4ea95693f377f019dbdcbdbf4a98e55545f1d26d5034941ade3&w=840&u=https%3A%2F%2Fmegaphone-prod.s3.amazonaws.com%2Fpodcasts%2F22c36480-3778-11e8-806d-cfb84f1d0648%2Fimage%2Fuploads_2F1547069138516-4edafwuejvc-14cc4c048140986ac2bacd6b0e0f022d_2FBehindTheBastards-Logo-iHR-FINAL-3000x3000.jpg",
+      "https://i.iheart.com/v3/catalog/podcast/29236323?ops=fit(240%2C240)",
     title: "Behind the Bastards",
     rating: "4"
   }
