@@ -53,17 +53,6 @@ function Home() {
           </button>
           <button
             type="button"
-            onClick={() => setFilter(2)}
-            className={`flex flex-wrap mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-none ${
-              filter === 2 ? "bg-yellow-200" : "bg-white"
-            } `}
-          >
-            <Star filled={true} />
-            <Star filled={true} />
-            <span className="font-black pl-1">+</span>
-          </button>
-          <button
-            type="button"
             onClick={() => setFilter(3)}
             className={`flex flex-wrap mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-none ${
               filter === 3 ? "bg-yellow-200" : "bg-white"
