@@ -18,17 +18,17 @@ function MainLayout({ children }) {
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-WKV6C4B');`
+      })(window,document,'script','dataLayer','GTM-WKV6C4B');`,
           }}
         />
 
         <noscript
           dangerouslySetInnerHTML={{
-            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKV6C4BX" height="0" width="0" style="display:none;visibility:hidden;"></iframe>`
+            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKV6C4BX" height="0" width="0" style="display:none;visibility:hidden;"></iframe>`,
           }}
         />
       </Head>
-      <div className="bg-indigo-800 text-indigo-100 py-12">
+      <div className="text-indigo-100 py-12">
         <div className="container mx-auto flex flex-wrap items-center justify-center">
           <h1 className="text-center text-5xl">The Podcasts I Listen To</h1>
           <svg
@@ -48,7 +48,7 @@ function MainLayout({ children }) {
         </div>
       </div>
       {children}
-      <div className="bg-indigo-900 text-indigo-100 pt-16 px-4 lg:px-0 text-center lg:text-left">
+      <div className="text-indigo-100 pt-16 px-4 lg:px-0 text-center lg:text-left">
         <div className="container mx-auto">
           <div className="flex flex-wrap">
             <a className="w-full lg:w-auto" href="https://overcast.fm/">
