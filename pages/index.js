@@ -24,7 +24,7 @@ function Home() {
   const [sortedPodcasts, setSortedPodcasts] = useState([]);
   const [filteredPodcasts, setFilteredPodcasts] = useState([]);
   const [tags, setTags] = useState([]);
-  const [toggleFilters, setToggleFilters] = useState(true);
+  const [toggleFilters, setToggleFilters] = useState(false);
 
   useEffect(() => {
     setSortedPodcasts(
