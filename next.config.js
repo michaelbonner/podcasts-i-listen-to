@@ -7,16 +7,12 @@ if (fs.existsSync(path)) {
     throw dotEnvResult.error;
   }
 
-  process.env.FUNCTIONS_HOST = dotEnvResult.parsed.FUNCTIONS_HOST;
-  process.env.MONGO_DB_USER = dotEnvResult.parsed.MONGO_DB_USER;
-  process.env.MONGO_DB_PASSWORD = dotEnvResult.parsed.MONGO_DB_PASSWORD;
+  process.env.SLACK_WEBHOOK_URL = dotEnvResult.parsed.SLACK_WEBHOOK_URL;
 
   module.exports = {
     env: {
-      FUNCTIONS_HOST: process.env.FUNCTIONS_HOST,
-      MONGO_DB_USER: process.env.MONGO_DB_USER,
-      MONGO_DB_PASSWORD: process.env.MONGO_DB_PASSWORD
-    }
+      SLACK_WEBHOOK_URL: process.env.SLACK_WEBHOOK_URL,
+    },
   };
 }
 

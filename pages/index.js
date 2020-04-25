@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import MainLayout from "../layouts/main";
 import podcasts from "../data/podcasts";
+import ContactForm from "../components/ContactForm";
 
 const Star = ({ filled }) => {
   return (
@@ -237,6 +238,12 @@ function Home() {
               </div>
             </div>
           )}
+        </div>
+        <div className="max-w-2xl mx-auto mt-12 bg-white rounded-lg px-6 lg:px-12 py-4">
+          <h3 className="text-2xl font-bold text-indigo-800 mt-3">
+            Got a podcast I should check out?
+          </h3>
+          <ContactForm />
         </div>
       </div>
     </MainLayout>
