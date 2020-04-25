@@ -1,5 +1,4 @@
 const { IncomingWebhook } = require("@slack/webhook");
-const bodyParser = require("body-parser");
 
 const postToSlack = async (text) => {
   try {
