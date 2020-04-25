@@ -3,6 +3,7 @@ const purgecss = require("@fullhuman/postcss-purgecss")({
   content: [
     "./pages/*.js",
     "./layouts/*.js"
+    "./components/*.js"
   ],
   whitelist: ['body'],
 
