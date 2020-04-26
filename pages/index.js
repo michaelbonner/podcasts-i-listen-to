@@ -140,8 +140,8 @@ function Home() {
           <div className="w-1/3 lg:w-auto text-right flex justify-end">
             <button
               className={`flex items-center ${
-                toggleFilters
-                  ? "bg-indigo-600 text-indigo-100"
+                toggleFilters || ratingFilter || tagFilter
+                  ? "bg-indigo-500 text-indigo-100"
                   : "bg-white text-gray-600"
               } rounded py-2 px-4 shadow focus:outline-none font-semibold text-sm`}
               onClick={() => setToggleFilters(!toggleFilters)}
@@ -149,7 +149,9 @@ function Home() {
               Filters
               <svg
                 className={`w-5 h-5 ml-2 ${
-                  toggleFilters ? "text-indigo-200" : "text-indigo-600"
+                  toggleFilters || ratingFilter || tagFilter
+                    ? "text-indigo-200"
+                    : "text-indigo-600"
                 } fill-current`}
                 xmlns="http://www.w3.org/2000/svg"
                 width="512"
@@ -287,9 +289,17 @@ function Home() {
                         <div className="my-1">
                           {podcast.tags.map((tag) => (
                             <button
-                              className="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 focus:outline-none focus:bg-gray-300"
+                              className={`inline-block ${
+                                tagFilter === tag
+                                  ? "bg-indigo-200 text-indigo-700"
+                                  : "bg-gray-200 text-gray-700"
+                              } rounded px-3 py-1 text-xs font-semibold mr-2 focus:outline-none`}
                               key={tag}
-                              onClick={() => setTagFilter(tag)}
+                              onClick={() =>
+                                tagFilter === tag
+                                  ? setTagFilter("")
+                                  : setTagFilter(tag)
+                              }
                               type="button"
                             >
                               {tag}
