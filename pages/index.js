@@ -272,7 +272,7 @@ function Home() {
                   key={podcast.title}
                   className="w-full h-full md:w-1/2 p-4 overflow-x-hidden"
                 >
-                  <div className="flex bg-white items-center rounded-lg shadow-lg w-full">
+                  <div className="flex bg-white items-stretch rounded-lg shadow-lg w-full">
                     <a
                       href={podcast.url}
                       target="_blank"
@@ -288,7 +288,7 @@ function Home() {
                     </a>
                     <div className="w-3/5 lg:w-3/4 px-6 flex flex-col justify-between">
                       <div>
-                        <p className="text-xl font-bold truncate">
+                        <p className="text-xl font-bold truncate pt-6">
                           <a href={podcast.url} target="_blank">
                             <span
                               dangerouslySetInnerHTML={{
@@ -318,7 +318,7 @@ function Home() {
                           ))}
                         </div>
                       </div>
-                      <p className="w-1/2 flex my-2">
+                      <p className="w-1/2 flex my-2 pb-2">
                         <Star filled={podcast.rating > 0} />
                         <Star filled={podcast.rating > 1} />
                         <Star filled={podcast.rating > 2} />
