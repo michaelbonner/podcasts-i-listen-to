@@ -279,7 +279,7 @@ function Home() {
                       className="w-2/5 lg:w-1/4"
                     >
                       <LazyLoadImage
-                        className="rounded-lg rounded-r-none w-full"
+                        className="rounded-lg rounded-r-none w-full h-full"
                         alt={`${podcast.title} Poster`}
                         height={400}
                         src={podcast.image}
