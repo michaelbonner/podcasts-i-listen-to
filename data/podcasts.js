@@ -1,5 +1,13 @@
 export default [
   {
+    title: "1865",
+    sortTitle: "1865",
+    url: "https://overcast.fm/itunes1467256065/1865",
+    image: "https://overcast.fm/art/thumb/1210950",
+    rating: 4,
+    tags: ["History"],
+  },
+  {
     title: "American History Tellers",
     sortTitle: "American History Tellers",
     url: "https://overcast.fm/itunes1313596069/american-history-tellers",
@@ -111,6 +119,15 @@ export default [
     image: "https://overcast.fm/art/thumb/565258",
     rating: 4,
     tags: ["Development"],
+  },
+  {
+    title: "The Happiness Lab with Dr. Laurie Santos",
+    sortTitle: "Happiness Lab",
+    url:
+      "https://overcast.fm/itunes1474245040/the-happiness-lab-with-dr-laurie-santos",
+    image: "https://overcast.fm/art/thumb/1269424",
+    rating: 3,
+    tags: ["Learn"],
   },
   {
     title: "HBR IdeaCast",
