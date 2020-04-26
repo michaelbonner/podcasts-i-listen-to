@@ -48,51 +48,65 @@ function MainLayout({ children }) {
         </div>
       </div>
       {children}
-      <div className="text-indigo-100 pt-16 px-4 lg:px-0 text-center lg:text-left">
-        <div className="container mx-auto">
-          <div className="flex flex-wrap">
-            <a className="w-full lg:w-auto" href="https://overcast.fm/">
-              <img
-                className="w-32 mx-auto lg:mx-0"
-                src="https://overcast.fm/img/logo.svg?3"
-                alt="overcast"
-              />
-            </a>
-            <div className="w-full lg:w-auto pl-0 lg:pl-6">
-              <h2 className="text-2xl font-semibold pt-4">
-                <a
-                  className="w-full lg:w-auto underline"
-                  href="https://overcast.fm/"
-                >
-                  Check out Overcast for free
-                </a>
-              </h2>
-              <p className="text-gray-500 pt-1">
-                A powerful yet simple podcast player for iPhone, iPad, and Apple
-                Watch.
-              </p>
-
+      <div className="text-indigo-100 px-4 lg:px-0 text-center lg:text-left">
+        <div className="container mx-auto text-center lg:flex lg:flex-wrap lg:justify-between lg:items-center text-gray-300 pt-12 pb-10">
+          <div className="lg:flex lg:flex-wrap">
+            <p className="pt-4 lg:pt-0 lg:pr-4 lg:mr-4">
+              &copy; {new Date().getFullYear()}{" "}
               <a
-                className="block mt-2"
-                href="https://itunes.apple.com/us/app/overcast-podcast-player/id888422857?ls=1&amp;mt=8"
+                className="font-semibold hover:underline"
+                href="https://michaelbonner.dev/"
               >
-                <AppStoreLogo />
+                Michael Bonner
               </a>
-            </div>
+            </p>
+            <p className="pt-4 lg:pt-0 lg:pr-4 lg:mr-4">
+              <a
+                className="font-semibold hover:underline"
+                href="https://bootpackdigital.com/"
+              >
+                Bootpack Digital, LLC
+              </a>
+            </p>
           </div>
-
-          <p className="mt-8 py-8 text-gray-300 border-t border-indigo-800">
-            &copy; {new Date().getFullYear()}{" "}
-            <a href="https://michaelbonner.dev/">Michael Bonner</a>
-            <span className="px-4 text-purple-800">|</span>
-            <a
-              className="pr-4"
-              href="https://github.com/michaelbonner/podcasts-i-listen-to"
-            >
-              GitHub
-            </a>
-            <a href="https://www.instagram.com/michael__bonner/">Instagram</a>
-          </p>
+          <div className="flex flex-wrap justify-center lg:justify-end">
+            <p className="pt-4 lg:pt-0">
+              <a
+                className="font-semibold hover:underline"
+                href="https://github.com/michaelbonner/podcasts-i-listen-to"
+              >
+                <svg
+                  className="fill-current w-10 h-10 mx-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="512"
+                  height="512"
+                  viewBox="0 0 512 512"
+                >
+                  <title>GitHub</title>
+                  <path d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z" />
+                </svg>
+              </a>
+            </p>
+            <p className="pt-4 lg:pt-0">
+              <a
+                className="font-semibold hover:underline"
+                href="https://www.instagram.com/michael__bonner/"
+              >
+                <svg
+                  className="fill-current w-10 h-10 mx-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="512"
+                  height="512"
+                  viewBox="0 0 512 512"
+                >
+                  <title>Instagram</title>
+                  <path d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z" />
+                  <path d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z" />
+                  <path d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z" />
+                </svg>
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </>

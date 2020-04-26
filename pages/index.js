@@ -77,7 +77,7 @@ function Home() {
 
   return (
     <MainLayout>
-      <div className="bg-indigo-100 pt-8 pb-16">
+      <div className="main-content pt-8 pb-16">
         {/* Filters */}
         <div className="container mx-auto px-4 text-right flex flex-wrap justify-end">
           <div className="w-2/3 lg:w-auto pr-0 lg:pr-4">
@@ -288,7 +288,7 @@ function Home() {
                     </a>
                     <div className="w-3/5 lg:w-3/4 px-6 flex flex-col justify-between">
                       <div>
-                        <p className="text-xl font-semibold truncate">
+                        <p className="text-xl font-bold truncate">
                           <a href={podcast.url} target="_blank">
                             <span
                               dangerouslySetInnerHTML={{
@@ -297,7 +297,7 @@ function Home() {
                             />
                           </a>
                         </p>
-                        <div className="my-1">
+                        <div className="mt-2 mb-1">
                           {podcast.tags.map((tag) => (
                             <button
                               className={`inline-block ${
@@ -340,11 +340,57 @@ function Home() {
             </div>
           )}
         </div>
-        <div className="max-w-2xl mx-auto mt-12 bg-white rounded-lg px-6 lg:px-12 py-4">
-          <h3 className="text-2xl font-bold text-indigo-800 mt-3">
-            Got a podcast I should check out?
-          </h3>
-          <ContactForm />
+        <div className="flex justify-between max-w-3xl mx-4 lg:mx-auto mt-16 mb-4 bg-gray-400 rounded-md shadow-lg">
+          <div className="lg:w-16 callout-bar rounded-l-lg"></div>
+          <div className="bg-white px-6 lg:px-12 py-4 rounded-md lg:rounded-l-none">
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="items-center text-2xl lg:text-3xl font-bold text-indigo-800 mt-3 pr-8">
+                  Got a podcast I should check out?
+                </h3>
+                <p className="text-gray-600 pr-8">
+                  Let me know what you're listening to. I'm always looking for
+                  new podcasts.
+                </p>
+              </div>
+              <svg
+                className="text-orange-300 stroke-current w-16 h-16 mt-2"
+                xmlns="http://www.w3.org/2000/svg"
+                width="512"
+                height="512"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M335.72,330.76C381.73,299.5,416,251.34,416,192a160,160,0,0,0-320,0V398.57C96,442.83,131.74,480,176,480h0c44.26,0,66.83-25.94,77.29-40C268.06,420.19,295,358.44,335.72,330.76Z"
+                  style={{
+                    fill: "none",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    strokeWidth: "32px",
+                  }}
+                />
+                <path
+                  d="M160,304V184c0-48.4,43.2-88,96-88h0c52.8,0,96,39.6,96,88"
+                  style={{
+                    fill: "none",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    strokeWidth: "32px",
+                  }}
+                />
+                <path
+                  d="M160,239c25-18,79.82-15,79.82-15,26,0,41.17,29.42,26,50.6,0,0-36.86,42.4-41.86,61.4"
+                  style={{
+                    fill: "none",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    strokeWidth: "32px",
+                  }}
+                />
+              </svg>
+            </div>
+            <ContactForm />
+          </div>
         </div>
       </div>
     </MainLayout>

@@ -71,7 +71,7 @@ const ContactForm = () => {
             id="your-name"
             name="your_name"
             onChange={(e) => setYourName(e.target.value)}
-            placeholder="Michael Jordan"
+            placeholder=""
             required
             type="text"
             value={yourName}
@@ -89,7 +89,7 @@ const ContactForm = () => {
             id="podcast-name"
             name="podcast_name"
             onChange={(e) => setPodcastName(e.target.value)}
-            placeholder="Cool Podcast"
+            placeholder=""
             required
             type="text"
             value={podcastName}
@@ -107,7 +107,7 @@ const ContactForm = () => {
             id="podcast-url"
             name="podcast_url"
             onChange={(e) => setPodcastUrl(e.target.value)}
-            placeholder="https://overcast.fm"
+            placeholder="https://"
             required
             type="url"
             value={podcastUrl}
