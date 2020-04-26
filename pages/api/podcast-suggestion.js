@@ -1,4 +1,35 @@
 const { IncomingWebhook } = require("@slack/webhook");
+const fetch = require("node-fetch");
+
+const createRecommendationEntry = async (yourName, podcastName, podcastUrl) => {
+  const query = `mutation CreateRecommendation($yourName: String!, $podcastName: String!, $podcastUrl: String!) {
+    createRecommendation(data: {
+      your_name: $yourName,
+      podcast_name: $podcastName,
+      podcast_url: $podcastUrl,
+    }) {
+      _id
+      _ts
+      your_name
+    }
+  }`;
+
+  const res = await fetch(process.env.FAUNA_DB_ENDPOINT, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${process.env.FAUNA_DB_SECRET}`,
+      "Content-type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      query,
+      variables: { yourName, podcastName, podcastUrl },
+    }),
+  });
+  const data = await res.json();
+
+  return data;
+};
 
 const postToSlack = async (text) => {
   try {
@@ -61,14 +92,23 @@ export default async (req, res) => {
     return;
   }
 
+  const saveIt = await createRecommendationEntry(
+    req.body.your_name,
+    req.body.podcast_name,
+    req.body.podcast_url
+  );
+
   const postIt = await postToSlack(
     `${req.body.your_name} thinks you should check out <${req.body.podcast_url}|${req.body.podcast_name}>`
   );
 
-  if (postIt) {
+  if (postIt && !saveIt.errors) {
     res.statusCode = 200;
-    res.end(JSON.stringify({ success: true, data: "Sent notification" }));
+    res.end(
+      JSON.stringify({ success: true, data: "Saved and sent notification" })
+    );
   } else {
+    console.log("saveIt", saveIt);
     console.log("postIt", postIt);
     res.statusCode = 400;
     res.end(
