@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import MainLayout from "../layouts/main";
 import podcasts from "../data/podcasts";
@@ -28,6 +28,7 @@ function Home() {
   const [toggleFilters, setToggleFilters] = useState(false);
   const [search, setSearch] = useState("");
   const [toggleSearch, setToggleSearch] = useState(false);
+  const searchField = useRef(null);
 
   useEffect(() => {
     setSortedPodcasts(
@@ -67,6 +68,13 @@ function Home() {
     setFilteredPodcasts(filteredOnes);
   }, [ratingFilter, search, sortedPodcasts, tagFilter]);
 
+  useEffect(() => {
+    if (!toggleSearch) {
+      return;
+    }
+    searchField.current.focus();
+  }, [toggleSearch]);
+
   return (
     <MainLayout>
       <div className="bg-indigo-100 pt-8 pb-16">
@@ -86,6 +94,7 @@ function Home() {
                   name="search"
                   id="search"
                   onChange={(e) => setSearch(e.target.value)}
+                  ref={searchField}
                   type="text"
                   value={search}
                 />
@@ -102,7 +111,9 @@ function Home() {
               <div className="w-full lg:w-auto text-right flex justify-end">
                 <button
                   className="flex items-center bg-white rounded p-4 shadow focus:outline-none focus:bg-gray-300 font-semibold text-gray-600 text-sm"
-                  onClick={() => setToggleSearch(!toggleSearch)}
+                  onClick={() => {
+                    setToggleSearch(!toggleSearch);
+                  }}
                 >
                   Search
                   <svg
