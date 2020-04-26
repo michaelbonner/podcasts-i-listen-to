@@ -4,4 +4,4 @@ Runs here: [https://podcasts.michaelbonner.dev/](https://podcasts.michaelbonner.
 
 Built with [Next.js](https://nextjs.org/)
 
-Deployed using [ZEIT Now](https://zeit.co/)
+Deployed using [Vercel](https://vercel.com/)
