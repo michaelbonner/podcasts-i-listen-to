@@ -26,6 +26,7 @@ function Home() {
   const [filteredPodcasts, setFilteredPodcasts] = useState([]);
   const [tags, setTags] = useState([]);
   const [toggleFilters, setToggleFilters] = useState(false);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     setSortedPodcasts(
@@ -55,41 +56,74 @@ function Home() {
 
   useEffect(() => {
     const filteredOnes = sortedPodcasts
+      .filter(
+        (podcast) =>
+          !search ||
+          podcast.sortTitle.toLowerCase().includes(search.toLowerCase())
+      )
       .filter((podcast) => podcast.rating >= ratingFilter)
       .filter((podcast) => !tagFilter || podcast.tags.includes(tagFilter));
     setFilteredPodcasts(filteredOnes);
-  }, [ratingFilter, sortedPodcasts, tagFilter]);
+  }, [ratingFilter, search, sortedPodcasts, tagFilter]);
 
   return (
     <MainLayout>
       <div className="bg-indigo-100 pt-8 pb-16">
         {/* Filters */}
-        <div className="container mx-auto px-4 text-right flex justify-end">
-          <button
-            className="flex items-center bg-white rounded py-2 px-4 shadow-md focus:outline-none focus:bg-gray-300 font-semibold text-gray-600 text-sm"
-            onClick={() => setToggleFilters(!toggleFilters)}
-          >
-            Filters
-            <svg
-              className="w-5 h-5 ml-2 text-indigo-600 fill-current"
-              xmlns="http://www.w3.org/2000/svg"
-              width="512"
-              height="512"
-              viewBox="0 0 512 512"
+        <div className="container mx-auto px-4 text-right flex flex-wrap justify-end">
+          <div className="w-full lg:w-auto pr-0 lg:pr-4">
+            <div className="hidden lg:relative lg:flex items-center bg-white rounded py-2 px-3 shadow">
+              <label
+                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mr-4 px-3"
+                htmlFor="search"
+              >
+                Search
+              </label>
+              <input
+                className="appearance-none block w-64 bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                name="search"
+                id="search"
+                onChange={(e) => setSearch(e.target.value)}
+                type="text"
+                value={search}
+              />
+              {search.length ? (
+                <button
+                  className={`absolute right-0 mr-3 px-2`}
+                  onClick={() => setSearch("")}
+                >
+                  X
+                </button>
+              ) : null}
+            </div>
+          </div>
+          <div className="w-full lg:w-auto text-right flex justify-end">
+            <button
+              className="flex items-center bg-white rounded py-2 px-4 shadow focus:outline-none focus:bg-gray-300 font-semibold text-gray-600 text-sm"
+              onClick={() => setToggleFilters(!toggleFilters)}
             >
-              <path d="M472,168H40a24,24,0,0,1,0-48H472a24,24,0,0,1,0,48Z" />
-              <path d="M392,280H120a24,24,0,0,1,0-48H392a24,24,0,0,1,0,48Z" />
-              <path d="M296,392H216a24,24,0,0,1,0-48h80a24,24,0,0,1,0,48Z" />
-            </svg>
-          </button>
+              Filters
+              <svg
+                className="w-5 h-5 ml-2 text-indigo-600 fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                width="512"
+                height="512"
+                viewBox="0 0 512 512"
+              >
+                <path d="M472,168H40a24,24,0,0,1,0-48H472a24,24,0,0,1,0,48Z" />
+                <path d="M392,280H120a24,24,0,0,1,0-48H392a24,24,0,0,1,0,48Z" />
+                <path d="M296,392H216a24,24,0,0,1,0-48h80a24,24,0,0,1,0,48Z" />
+              </svg>
+            </button>
+          </div>
         </div>
         {toggleFilters && (
-          <div className="flex flex-wrap container mx-auto justify-between">
+          <div className="flex flex-wrap container mx-auto justify-between mt-3">
             <div className="w-full lg:w-1/2">
               <h3 className="font-semibold text-lg text-indigo-800 mt-6 lg:mt-0 mx-4">
                 Rating
               </h3>
-              <div className="flex flex-wrap items-center px-2 text-yellow-500 text-sm">
+              <div className="flex flex-wrap justify-start items-center px-2 text-yellow-500 text-sm">
                 <button
                   type="button"
                   onClick={() => setRatingFilter(0)}
@@ -143,7 +177,7 @@ function Home() {
               <h3 className="font-semibold text-lg text-indigo-800 mt-6 lg:mt-0 mx-4">
                 Tags
               </h3>
-              <div className="flex flex-wrap items-center lg:justify-end lg:mt-0 px-2 text-yellow-500 text-sm">
+              <div className="flex flex-wrap items-center lg:justify-start lg:mt-0 px-2 text-yellow-500 text-sm">
                 <button
                   type="button"
                   onClick={() => setTagFilter("")}
