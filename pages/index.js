@@ -27,6 +27,7 @@ function Home() {
   const [tags, setTags] = useState([]);
   const [toggleFilters, setToggleFilters] = useState(false);
   const [search, setSearch] = useState("");
+  const [toggleSearch, setToggleSearch] = useState(false);
 
   useEffect(() => {
     setSortedPodcasts(
@@ -71,40 +72,85 @@ function Home() {
       <div className="bg-indigo-100 pt-8 pb-16">
         {/* Filters */}
         <div className="container mx-auto px-4 text-right flex flex-wrap justify-end">
-          <div className="w-full lg:w-auto pr-0 lg:pr-4">
-            <div className="hidden lg:relative lg:flex items-center bg-white rounded py-2 px-3 shadow">
-              <label
-                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mr-4 px-3"
-                htmlFor="search"
-              >
-                Search
-              </label>
-              <input
-                className="appearance-none block w-64 bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                name="search"
-                id="search"
-                onChange={(e) => setSearch(e.target.value)}
-                type="text"
-                value={search}
-              />
-              {search.length ? (
-                <button
-                  className={`absolute right-0 mr-3 px-2`}
-                  onClick={() => setSearch("")}
+          <div className="w-2/3 lg:w-auto pr-0 lg:pr-4">
+            {toggleSearch ? (
+              <div className="relative flex items-center bg-white rounded py-2 px-3 shadow">
+                <label
+                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mr-4 px-3"
+                  htmlFor="search"
                 >
-                  X
+                  Search
+                </label>
+                <input
+                  className="appearance-none block w-full lg:w-64 bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  name="search"
+                  id="search"
+                  onChange={(e) => setSearch(e.target.value)}
+                  type="text"
+                  value={search}
+                />
+                {search.length ? (
+                  <button
+                    className={`absolute right-0 mr-3 px-2`}
+                    onClick={() => setSearch("")}
+                  >
+                    X
+                  </button>
+                ) : null}
+              </div>
+            ) : (
+              <div className="w-full lg:w-auto text-right flex justify-end">
+                <button
+                  className="flex items-center bg-white rounded p-4 shadow focus:outline-none focus:bg-gray-300 font-semibold text-gray-600 text-sm"
+                  onClick={() => setToggleSearch(!toggleSearch)}
+                >
+                  Search
+                  <svg
+                    className="w-5 h-5 ml-2 text-indigo-600 stroke-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="512"
+                    height="512"
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      d="M221.09,64A157.09,157.09,0,1,0,378.18,221.09,157.1,157.1,0,0,0,221.09,64Z"
+                      style={{
+                        fill: "none",
+                        strokeMiterlimit: 10,
+                        strokeWidth: "32px",
+                      }}
+                    />
+                    <line
+                      x1="338.29"
+                      y1="338.29"
+                      x2="448"
+                      y2="448"
+                      style={{
+                        fill: "none",
+                        strokeLinecap: "round",
+                        strokeMiterlimit: 10,
+                        strokeWidth: "32px",
+                      }}
+                    />
+                  </svg>
                 </button>
-              ) : null}
-            </div>
+              </div>
+            )}
           </div>
-          <div className="w-full lg:w-auto text-right flex justify-end">
+          <div className="w-1/3 lg:w-auto text-right flex justify-end">
             <button
-              className="flex items-center bg-white rounded py-2 px-4 shadow focus:outline-none focus:bg-gray-300 font-semibold text-gray-600 text-sm"
+              className={`flex items-center ${
+                toggleFilters
+                  ? "bg-indigo-600 text-indigo-100"
+                  : "bg-white text-gray-600"
+              } rounded py-2 px-4 shadow focus:outline-none font-semibold text-sm`}
               onClick={() => setToggleFilters(!toggleFilters)}
             >
               Filters
               <svg
-                className="w-5 h-5 ml-2 text-indigo-600 fill-current"
+                className={`w-5 h-5 ml-2 ${
+                  toggleFilters ? "text-indigo-200" : "text-indigo-600"
+                } fill-current`}
                 xmlns="http://www.w3.org/2000/svg"
                 width="512"
                 height="512"
