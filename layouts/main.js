@@ -11,6 +11,10 @@ function MainLayout({ children }) {
         <link rel="canonical" href="https://podcasts.michaelbonner.dev" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width" />
+        <meta
+          name="Description"
+          content="The podcasts that Michael Bonner listens to. Just an easy way to share with my friends."
+        />
 
         <script
           dangerouslySetInnerHTML={{
