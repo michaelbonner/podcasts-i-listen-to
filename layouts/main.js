@@ -15,6 +15,15 @@ function MainLayout({ children }) {
           name="Description"
           content="The podcasts that Michael Bonner listens to. Just an easy way to share with my friends."
         />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:description"
+          content="The podcasts that Michael Bonner listens to. Just an easy way to share with my friends."
+        />
+        <meta
+          property="og:image"
+          content="https://podcasts.michaelbonner.dev/og-image.jpg"
+        />
 
         <script
           dangerouslySetInnerHTML={{
