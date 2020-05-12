@@ -16,6 +16,8 @@ function MainLayout({ children }) {
           content="The podcasts that Michael Bonner listens to. Just an easy way to share with my friends."
         />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://podcasts.michaelbonner.dev/" />
+        <meta property="og:title" content="Podcasts I Listen To" />
         <meta
           property="og:description"
           content="The podcasts that Michael Bonner listens to. Just an easy way to share with my friends."
