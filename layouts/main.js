@@ -42,6 +42,10 @@ function MainLayout({ children }) {
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKV6C4BX" height="0" width="0" style="display:none;visibility:hidden;"></iframe>`,
           }}
         />
+
+        <link rel="preconnect" href="https://overcast.fm" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
       </Head>
       <div className="text-indigo-100 py-12">
         <div className="container mx-auto flex flex-wrap items-center justify-center">
