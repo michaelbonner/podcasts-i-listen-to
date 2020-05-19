@@ -274,9 +274,10 @@ function Home() {
                 >
                   <div className="flex bg-white items-stretch rounded-lg shadow-lg w-full">
                     <a
+                      className="w-2/5 lg:w-1/4"
                       href={podcast.url}
                       target="_blank"
-                      className="w-2/5 lg:w-1/4"
+                      rel="noopener"
                     >
                       <LazyLoadImage
                         className="rounded-lg rounded-r-none w-full h-full"
@@ -289,7 +290,7 @@ function Home() {
                     <div className="w-3/5 lg:w-3/4 px-6 flex flex-col justify-between">
                       <div>
                         <p className="text-xl font-bold truncate pt-6">
-                          <a href={podcast.url} target="_blank">
+                          <a href={podcast.url} rel="noopener" target="_blank">
                             <span
                               dangerouslySetInnerHTML={{
                                 __html: podcast.title,
