@@ -278,6 +278,7 @@ function Home() {
                       href={podcast.url}
                       target="_blank"
                       rel="noopener"
+                      title={`${podcast.title} Poster`}
                     >
                       <LazyLoadImage
                         className="rounded-lg rounded-r-none w-full h-full"
