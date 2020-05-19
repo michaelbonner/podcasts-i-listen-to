@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import MainLayout from "../layouts/main";
-import podcasts from "../data/podcasts";
-import ContactForm from "../components/ContactForm";
+import MainLayout from "layouts/main";
+import podcasts from "data/podcasts";
+import ContactForm from "components/ContactForm";
 
 const Star = ({ filled }) => {
   return (

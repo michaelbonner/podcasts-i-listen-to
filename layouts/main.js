@@ -1,6 +1,5 @@
 import Head from "next/head";
 import "../styles/index.css";
-import AppStoreLogo from "../components/AppStoreLogo";
 
 function MainLayout({ children }) {
   return (
