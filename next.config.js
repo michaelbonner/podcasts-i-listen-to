@@ -1,7 +1,6 @@
 require("dotenv").config();
 
-const withCSS = require("@zeit/next-css");
-module.exports = withCSS({
+module.exports = {
   env: {
     SLACK_WEBHOOK_URL: process.env.SLACK_WEBHOOK_URL,
     FAUNA_DB_SECRET: process.env.FAUNA_DB_SECRET,
@@ -17,4 +16,4 @@ module.exports = withCSS({
 
     return config;
   },
-});
+};
