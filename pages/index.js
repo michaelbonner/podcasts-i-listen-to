@@ -7,8 +7,8 @@ import ContactForm from "components/ContactForm";
 const Star = ({ filled }) => {
   return (
     <svg
-      className={`block w-5 h-5 ${
-        filled ? "text-yellow-400" : "text-gray-300"
+      className={`block w-4 h-4 ${
+        filled ? "text-yellow-500" : "text-gray-300"
       }`}
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
