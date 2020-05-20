@@ -8,12 +8,28 @@ export default [
     tags: ["History"],
   },
   {
+    title: "30 for 30",
+    sortTitle: "30 for 30",
+    url: "https://overcast.fm/itunes1244784611/30-for-30-podcasts",
+    image: "https://overcast.fm/art/thumb/606351",
+    rating: 3,
+    tags: ["Documentary", "Sports"],
+  },
+  {
     title: "American History Tellers",
     sortTitle: "American History Tellers",
     url: "https://overcast.fm/itunes1313596069/american-history-tellers",
     image: "https://overcast.fm/art/thumb/735194",
     rating: 4,
     tags: ["History"],
+  },
+  {
+    title: "Ascension with Simon Dumont",
+    sortTitle: "Ascension with Simon Dumont",
+    url: "https://overcast.fm/itunes1501483243/ascension-with-simon-dumont",
+    image: "https://overcast.fm/art/thumb/1595055",
+    rating: 4,
+    tags: ["Sports"],
   },
   {
     title: "Bad Batch",
