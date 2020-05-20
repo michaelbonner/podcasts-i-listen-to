@@ -110,14 +110,14 @@ function Home({ podcasts }) {
             ) : (
               <div className="w-full lg:w-auto text-right flex justify-end">
                 <button
-                  className="flex items-center bg-white rounded p-4 shadow focus:outline-none focus:bg-gray-300 font-semibold text-gray-600 text-sm"
+                  className="flex items-center bg-white rounded p-4 shadow focus:outline-none focus:bg-gray-300 font-semibold text-gray-700 text-sm"
                   onClick={() => {
                     setToggleSearch(!toggleSearch);
                   }}
                 >
                   Search
                   <svg
-                    className="w-5 h-5 ml-2 text-indigo-600 stroke-current"
+                    className="w-5 h-5 ml-2 text-indigo-500 stroke-current"
                     xmlns="http://www.w3.org/2000/svg"
                     width="512"
                     height="512"
@@ -153,7 +153,7 @@ function Home({ podcasts }) {
               className={`flex items-center ${
                 toggleFilters || ratingFilter || tagFilter
                   ? "bg-indigo-500 text-indigo-100"
-                  : "bg-white text-gray-600"
+                  : "bg-white text-gray-700"
               } rounded py-2 px-4 shadow focus:outline-none font-semibold text-sm`}
               onClick={() => setToggleFilters(!toggleFilters)}
             >
@@ -162,7 +162,7 @@ function Home({ podcasts }) {
                 className={`w-5 h-5 ml-2 ${
                   toggleFilters || ratingFilter || tagFilter
                     ? "text-indigo-200"
-                    : "text-indigo-600"
+                    : "text-indigo-500"
                 } fill-current`}
                 xmlns="http://www.w3.org/2000/svg"
                 width="512"
@@ -350,7 +350,7 @@ function Home({ podcasts }) {
                 <h3 className="items-center text-2xl lg:text-3xl font-bold text-indigo-800 mt-3 pr-8">
                   Got a podcast I should check out?
                 </h3>
-                <p className="text-gray-600 pr-8">
+                <p className="text-gray-700 pr-8">
                   Let me know what you're listening to. I'm always looking for
                   new podcasts.
                 </p>
