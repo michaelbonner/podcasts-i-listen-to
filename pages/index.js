@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import MainLayout from "layouts/main";
-import podcasts from "data/podcasts";
+import podcastsFileData from "data/podcasts";
 import ContactForm from "components/ContactForm";
 
 const Star = ({ filled }) => {
@@ -19,7 +19,7 @@ const Star = ({ filled }) => {
   );
 };
 
-function Home() {
+function Home({ podcasts }) {
   const [ratingFilter, setRatingFilter] = useState(0);
   const [tagFilter, setTagFilter] = useState("");
   const [sortedPodcasts, setSortedPodcasts] = useState([]);
@@ -397,6 +397,14 @@ function Home() {
       </div>
     </MainLayout>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      podcasts: podcastsFileData,
+    },
+  };
 }
 
 export default Home;
