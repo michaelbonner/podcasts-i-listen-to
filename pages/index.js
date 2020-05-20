@@ -22,8 +22,8 @@ const Star = ({ filled }) => {
 function Home({ podcasts }) {
   const [ratingFilter, setRatingFilter] = useState(0);
   const [tagFilter, setTagFilter] = useState("");
-  const [sortedPodcasts, setSortedPodcasts] = useState([]);
-  const [filteredPodcasts, setFilteredPodcasts] = useState([]);
+  const [sortedPodcasts, setSortedPodcasts] = useState(podcasts);
+  const [filteredPodcasts, setFilteredPodcasts] = useState(podcasts);
   const [tags, setTags] = useState([]);
   const [toggleFilters, setToggleFilters] = useState(false);
   const [search, setSearch] = useState("");
