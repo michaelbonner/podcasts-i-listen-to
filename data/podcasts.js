@@ -32,22 +32,6 @@ export default [
     tags: ["Sports"],
   },
   {
-    title: "Bad Batch",
-    sortTitle: "Bad Batch",
-    url: "https://overcast.fm/itunes1482851200/bad-batch",
-    image: "https://overcast.fm/art/thumb/1356306",
-    rating: "3",
-    tags: ["Documentary"],
-  },
-  {
-    title: "Behind the Bastards",
-    sortTitle: "Behind the Bastards",
-    url: "https://overcast.fm/itunes1373812661/behind-the-bastards/839359",
-    image: "https://overcast.fm/art/thumb/839359",
-    rating: "3",
-    tags: ["Documentary", "History"],
-  },
-  {
     title: "Build Your SaaS &ndash; bootstrap in 2020",
     sortTitle: "Build Your SaaS &ndash; bootstrap in 2020",
     url:
@@ -308,14 +292,6 @@ export default [
     tags: ["Documentary", "History"],
   },
   {
-    title: "Solvable",
-    sortTitle: "Solvable",
-    url: "https://overcast.fm/itunes1463448386/solvable",
-    image: "https://overcast.fm/art/thumb/1187253",
-    rating: 3,
-    tags: ["Learn"],
-  },
-  {
     title: "StartUp Podcast",
     sortTitle: "StartUp Podcast",
     url: "https://overcast.fm/itunes913805339/startup-podcast",
@@ -339,14 +315,6 @@ export default [
     image: "https://overcast.fm/art/thumb/506114",
     rating: 4,
     tags: ["Learn"],
-  },
-  {
-    title: "Today, Explained",
-    sortTitle: "Today, Explained",
-    url: "https://overcast.fm/itunes1346207297/today-explained",
-    image: "https://overcast.fm/art/thumb/1445993",
-    rating: 2,
-    tags: ["News"],
   },
   {
     title: "Without Fail",
