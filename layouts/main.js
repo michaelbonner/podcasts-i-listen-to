@@ -91,12 +91,7 @@ function MainLayout({ children }) {
           muted={true}
           playsInline={true}
           src="/rick-and-morty-i-like-what-you-got.mp4"
-        >
-          <img
-            src="/rick-and-morty-i-like-what-you-got.gif "
-            alt="I like what you got"
-          />
-        </video>
+        />
         <p className="px-4 py-5 font-semibold text-indigo-100 text-2xl text-center">
           Wow you have a wide monitor &#129299;
         </p>
