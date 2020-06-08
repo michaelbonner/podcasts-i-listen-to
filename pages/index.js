@@ -264,13 +264,13 @@ function Home({ podcasts }) {
         )}
         {/* End filters */}
 
-        <div className="flex flex-wrap container mx-auto mt-4 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 container mx-auto mt-4">
           {filteredPodcasts.length ? (
             filteredPodcasts.map((podcast) => {
               return (
                 <div
                   key={podcast.title}
-                  className="w-full h-full md:w-1/2 p-4 overflow-x-hidden"
+                  className="w-full h-full p-4 overflow-x-hidden"
                 >
                   <div className="flex bg-white items-stretch rounded-lg shadow-lg w-full">
                     <a
@@ -283,9 +283,9 @@ function Home({ podcasts }) {
                       <LazyLoadImage
                         className="rounded-lg rounded-r-none w-full h-full"
                         alt={`${podcast.title} Poster`}
-                        height={400}
+                        height={200}
                         src={podcast.image}
-                        width={400}
+                        width={200}
                       />
                     </a>
                     <div className="w-3/5 lg:w-3/4 px-6 flex flex-col justify-between">
