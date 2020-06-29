@@ -82,30 +82,120 @@ function Home({ podcasts }) {
         <div className="container mx-auto px-4 text-right flex flex-wrap justify-end">
           <div className="w-2/3 lg:w-auto pr-0 lg:pr-4">
             {toggleSearch ? (
-              <div className="relative flex items-center bg-white rounded py-2 px-3 shadow">
-                <label
-                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mr-4 px-3"
-                  htmlFor="search"
-                >
-                  Search
-                </label>
-                <input
-                  className="appearance-none block w-full lg:w-64 bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  name="search"
-                  id="search"
-                  onChange={(e) => setSearch(e.target.value)}
-                  ref={searchField}
-                  type="text"
-                  value={search}
-                />
-                {search.length ? (
+              <div className="flex items-center">
+                <div className="z-0 relative flex items-center bg-orange-100 px-2 py-2 shadow rounded-l">
                   <button
-                    className={`absolute right-0 mr-3 px-2`}
-                    onClick={() => setSearch("")}
+                    onClick={() => setToggleSearch(false)}
+                    className="focus:outline-none active:bg-green-200 text-orange-500"
                   >
-                    X
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="512"
+                      height="512"
+                      viewBox="0 0 512 512"
+                      className="stroke-current w-5 h-5"
+                    >
+                      <title>Close</title>
+                      <path
+                        d="M448,256c0-106-86-192-192-192S64,150,64,256s86,192,192,192S448,362,448,256Z"
+                        style={{
+                          fill: "none",
+                          strokeMiterlimit: 10,
+                          strokeWidth: "32px",
+                        }}
+                      />
+                      <line
+                        x1="320"
+                        y1="320"
+                        x2="192"
+                        y2="192"
+                        style={{
+                          fill: "none",
+                          strokeLinecap: "round",
+                          strokeLinejoin: "round",
+                          strokeWidth: "32px",
+                        }}
+                      />
+                      <line
+                        x1="192"
+                        y1="320"
+                        x2="320"
+                        y2="192"
+                        style={{
+                          fill: "none",
+                          strokeLinecap: "round",
+                          strokeLinejoin: "round",
+                          strokeWidth: "32px",
+                        }}
+                      />
+                    </svg>
                   </button>
-                ) : null}
+                </div>
+                <div className="relative z-10 flex items-center bg-white rounded py-2 px-3 shadow">
+                  <label
+                    className="block uppercase tracking-wide text-gray-700 text-xs font-bold mr-4 px-3"
+                    htmlFor="search"
+                  >
+                    Search
+                  </label>
+                  <input
+                    className="appearance-none block w-full lg:w-64 bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    name="search"
+                    id="search"
+                    onChange={(e) => setSearch(e.target.value)}
+                    ref={searchField}
+                    type="text"
+                    value={search}
+                  />
+                  {search.length ? (
+                    <button
+                      className={`absolute flex items-center right-0 mr-3 px-2`}
+                      onClick={() => setSearch("")}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="512"
+                        height="512"
+                        viewBox="0 0 512 512"
+                        className="stroke-current text-gray-700 w-5 h-5"
+                      >
+                        <title>Close</title>
+                        <path
+                          d="M448,256c0-106-86-192-192-192S64,150,64,256s86,192,192,192S448,362,448,256Z"
+                          style={{
+                            fill: "none",
+                            strokeMiterlimit: 10,
+                            strokeWidth: "32px",
+                          }}
+                        />
+                        <line
+                          x1="320"
+                          y1="320"
+                          x2="192"
+                          y2="192"
+                          style={{
+                            fill: "none",
+                            strokeLinecap: "round",
+                            strokeLinejoin: "round",
+                            strokeWidth: "32px",
+                          }}
+                        />
+                        <line
+                          x1="192"
+                          y1="320"
+                          x2="320"
+                          y2="192"
+                          style={{
+                            fill: "none",
+                            strokeLinecap: "round",
+                            strokeLinejoin: "round",
+                            strokeWidth: "32px",
+                          }}
+                        />
+                      </svg>
+                    </button>
+                  ) : null}
+                </div>
               </div>
             ) : (
               <div className="w-full lg:w-auto text-right flex justify-end">
