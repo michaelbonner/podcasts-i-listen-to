@@ -79,23 +79,21 @@ function MainLayout({ children }) {
       </div>
       {children}
 
-      <div
-        className={`${
-          showWideMonitor ? "fixed" : "hidden"
-        } right-0 bottom-0 mb-16 mr-16 bg-indigo-700 shadow-lg rounded-lg`}
-      >
-        <video
-          autoPlay={true}
-          className="rounded-t-lg shadow"
-          loop={true}
-          muted={true}
-          playsInline={true}
-          src="/rick-and-morty-i-like-what-you-got.mp4"
-        />
-        <p className="px-4 py-5 font-semibold text-indigo-100 text-2xl text-center">
-          Wow you have a wide monitor &#129299;
-        </p>
-      </div>
+      {showWideMonitor && (
+        <div className="fixed right-0 bottom-0 mb-16 mr-16 bg-indigo-700 shadow-lg rounded-lg">
+          <video
+            autoPlay={true}
+            className="rounded-t-lg shadow"
+            loop={true}
+            muted={true}
+            playsInline={true}
+            src="/rick-and-morty-i-like-what-you-got.mp4"
+          />
+          <p className="px-4 py-5 font-semibold text-indigo-100 text-2xl text-center">
+            Wow you have a wide monitor &#129299;
+          </p>
+        </div>
+      )}
 
       <div className="text-indigo-100 px-4 lg:px-0 text-center lg:text-left">
         <div className="container mx-auto text-center lg:flex lg:flex-wrap lg:justify-between lg:items-center text-gray-300 pt-12 pb-10">
