@@ -322,7 +322,7 @@ export default [
     url: "https://overcast.fm/itunes1451109634/throughline",
     image: "https://overcast.fm/art/thumb/1618924",
     rating: 4,
-    tags: ["Documentary"],
+    tags: ["History"],
   },
   {
     title: "Without Fail",
