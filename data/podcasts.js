@@ -202,16 +202,14 @@ export default [
     tags: ["Development"],
   },
   {
-    title: "Man In The Window: The Golden State Killer",
-    sortTitle: "Man In The Window: The Golden State Killer",
-    url:
-      "https://overcast.fm/itunes1465334342/man-in-the-window-the-golden-state-killer",
-    image: "https://overcast.fm/art/thumb/1208698",
+    title: "Making Sense with Sam Harris",
+    sortTitle: "Making Sense with Sam Harris",
+    url: "https://overcast.fm/itunes733163012/making-sense-with-sam-harris",
+    image: "https://overcast.fm/art/thumb/689825",
     rating: 4,
-    tags: ["Documentary"],
+    tags: ["Learn"],
   },
-
- {
+  {
     title: "Man In The Window: The Golden State Killer",
     sortTitle: "Man In The Window: The Golden State Killer",
     url:
@@ -221,12 +219,12 @@ export default [
     tags: ["Documentary"],
   },
   {
-    title: "Making Sense with Sam Harris",
-    sortTitle: "Making Sense with Sam Harris",
-    url: "https://overcast.fm/itunes733163012/making-sense-with-sam-harris",
-    image: "https://overcast.fm/art/thumb/689825",
+    title: "Planet Money",
+    sortTitle: "Planet Money",
+    url: "https://overcast.fm/itunes290783428/planet-money",
+    image: "https://overcast.fm/art/thumb/1618164",
     rating: 4,
-    tags: ["Learn"],
+    tags: ["Documentary"],
   },
   {
     title: "Radiolab Presents: More Perfect",
