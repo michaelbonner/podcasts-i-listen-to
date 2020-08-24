@@ -276,14 +276,6 @@ export default [
     tags: ["Documentary"],
   },
   {
-    title: "ShopTalk &raquo;",
-    sortTitle: "ShopTalk &raquo;",
-    url: "https://overcast.fm/itunes493890455/shoptalk",
-    image: "https://overcast.fm/art/thumb/950653",
-    rating: 3,
-    tags: ["Development"],
-  },
-  {
     title: "Silicon Slopes",
     sortTitle: "Silicon Slopes",
     url: "https://overcast.fm/itunes1262148655/silicon-slopes",
