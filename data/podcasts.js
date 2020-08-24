@@ -182,7 +182,7 @@ export default [
     sortTitle: "Laravel News Podcast",
     url: "https://overcast.fm/itunes1051289963/laravel-news-podcast",
     image: "https://overcast.fm/art/thumb/355889",
-    rating: 4,
+    rating: 3,
     tags: ["Development"],
   },
   {
@@ -198,7 +198,7 @@ export default [
     sortTitle: "Laravel Snippet",
     url: "https://overcast.fm/itunes1451072164/the-laravel-snippet",
     image: "https://overcast.fm/art/thumb/1059089",
-    rating: 3,
+    rating: 4,
     tags: ["Development"],
   },
   {
@@ -256,7 +256,7 @@ export default [
     sortTitle: "Rework",
     url: "https://overcast.fm/itunes1264193508/rework",
     image: "https://overcast.fm/art/thumb/632536",
-    rating: "4",
+    rating: 3,
     tags: ["Learn", "Development"],
   },
   {
