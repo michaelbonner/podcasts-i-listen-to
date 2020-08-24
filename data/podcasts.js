@@ -206,7 +206,7 @@ export default [
     sortTitle: "Making Sense with Sam Harris",
     url: "https://overcast.fm/itunes733163012/making-sense-with-sam-harris",
     image: "https://overcast.fm/art/thumb/689825",
-    rating: 4,
+    rating: 5,
     tags: ["Learn"],
   },
   {
