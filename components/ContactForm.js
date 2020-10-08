@@ -116,7 +116,7 @@ const ContactForm = () => {
         <div className="w-full flex justify-end px-3 mt-8">
           <button
             disabled={submitState === "submitting"}
-            className="shadow bg-indigo-600 hover:bg-indigo-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            className="shadow bg-green-600 hover:bg-green-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
             type="submit"
           >
             Send it

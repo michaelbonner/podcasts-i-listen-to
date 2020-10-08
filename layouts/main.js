@@ -58,7 +58,7 @@ function MainLayout({ children }) {
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
       </Head>
-      <div className="text-indigo-100 py-12">
+      <div className="text-green-100 py-12">
         <div className="container mx-auto flex flex-wrap items-center justify-center">
           <h1 className="text-center text-5xl">The Podcasts I Listen To</h1>
           <svg
@@ -67,11 +67,11 @@ function MainLayout({ children }) {
             className="icon-microphone w-12 h-12 ml-4"
           >
             <path
-              className="secondary text-indigo-400 fill-current"
+              className="secondary text-green-200 fill-current"
               d="M12 1a4 4 0 0 1 4 4v6a4 4 0 1 1-8 0V5a4 4 0 0 1 4-4z"
             />
             <path
-              className="primary text-indigo-600 fill-current"
+              className="primary text-green-300 fill-current"
               d="M13 18.94V21h3a1 1 0 0 1 0 2H8a1 1 0 0 1 0-2h3v-2.06A8 8 0 0 1 4 11a1 1 0 0 1 2 0 6 6 0 1 0 12 0 1 1 0 0 1 2 0 8 8 0 0 1-7 7.94z"
             />
           </svg>
@@ -80,7 +80,7 @@ function MainLayout({ children }) {
       {children}
 
       {showWideMonitor && (
-        <div className="fixed right-0 bottom-0 mb-16 mr-16 bg-indigo-700 shadow-lg rounded-lg">
+        <div className="fixed right-0 bottom-0 mb-16 mr-16 bg-green-700 shadow-lg rounded-lg">
           <video
             autoPlay={true}
             className="rounded-t-lg shadow"
@@ -89,13 +89,13 @@ function MainLayout({ children }) {
             playsInline={true}
             src="/rick-and-morty-i-like-what-you-got.mp4"
           />
-          <p className="px-4 py-5 font-semibold text-indigo-100 text-2xl text-center">
+          <p className="px-4 py-5 font-semibold text-green-100 text-2xl text-center">
             Wow you have a wide monitor &#129299;
           </p>
         </div>
       )}
 
-      <div className="text-indigo-100 px-4 lg:px-0 text-center lg:text-left">
+      <div className="text-green-100 px-4 lg:px-0 text-center lg:text-left">
         <div className="container mx-auto text-center lg:flex lg:flex-wrap lg:justify-between lg:items-center text-gray-300 pt-12 pb-10">
           <div className="lg:flex lg:flex-wrap">
             <p className="pt-4 lg:pt-0 lg:pr-4 lg:mr-4">
