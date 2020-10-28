@@ -24,14 +24,6 @@ export default [
     tags: ["History"],
   },
   {
-    title: "Ascension with Simon Dumont",
-    sortTitle: "Ascension with Simon Dumont",
-    url: "https://overcast.fm/itunes1501483243/ascension-with-simon-dumont",
-    image: "https://overcast.fm/art/thumb/1595055",
-    rating: 4,
-    tags: ["Sports"],
-  },
-  {
     title: "Build Your SaaS &ndash; bootstrap in 2020",
     sortTitle: "Build Your SaaS &ndash; bootstrap in 2020",
     url:
