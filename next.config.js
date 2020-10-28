@@ -6,6 +6,9 @@ module.exports = {
     FAUNA_DB_SECRET: process.env.FAUNA_DB_SECRET,
     FAUNA_DB_ENDPOINT: "https://graphql.fauna.com/graphql",
   },
+  images: {
+    domains: ["overcast.fm"],
+  },
   webpack: (config, { isServer }) => {
     // Fixes npm packages that depend on `fs` module
     if (!isServer) {

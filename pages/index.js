@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import Image from "next/image";
 import MainLayout from "layouts/main";
 import podcastsFileData from "data/podcasts";
 import ContactForm from "components/ContactForm";
@@ -370,7 +370,7 @@ function Home({ podcasts }) {
                       rel="noopener"
                       title={`${podcast.title} Poster`}
                     >
-                      <LazyLoadImage
+                      <Image
                         className="rounded-lg rounded-r-none w-full h-full"
                         alt={`${podcast.title} Poster`}
                         height={200}
