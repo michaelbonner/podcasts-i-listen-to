@@ -368,6 +368,7 @@ function Home({ podcasts }) {
                       href={podcast.url}
                       target="_blank"
                       rel="noopener"
+                      style={{ marginBottom: "-6px" }}
                       title={`${podcast.title} Poster`}
                     >
                       <Image
