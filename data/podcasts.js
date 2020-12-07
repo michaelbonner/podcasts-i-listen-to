@@ -2,7 +2,7 @@ export default [
   {
     title: "1865",
     sortTitle: "1865",
-    url: "https://overcast.fm/itunes1467256065/1865",
+    url: "https://podcasts.apple.com/us/podcast/1865/id1467256065",
     image: "https://overcast.fm/art/thumb/1210950",
     rating: 4,
     tags: ["History"],
@@ -10,7 +10,8 @@ export default [
   {
     title: "30 for 30",
     sortTitle: "30 for 30",
-    url: "https://overcast.fm/itunes1244784611/30-for-30-podcasts",
+    url:
+      "https://podcasts.apple.com/us/podcast/30-for-30-podcasts/id1244784611",
     image: "https://overcast.fm/art/thumb/606351",
     rating: 3,
     tags: ["Documentary", "Sports"],
@@ -18,7 +19,8 @@ export default [
   {
     title: "American History Tellers",
     sortTitle: "American History Tellers",
-    url: "https://overcast.fm/itunes1313596069/american-history-tellers",
+    url:
+      "https://podcasts.apple.com/us/podcast/american-history-tellers/id1313596069",
     image: "https://overcast.fm/art/thumb/735194",
     rating: 4,
     tags: ["History"],
@@ -27,7 +29,7 @@ export default [
     title: "Build Your SaaS &ndash; bootstrap in 2020",
     sortTitle: "Build Your SaaS &ndash; bootstrap in 2020",
     url:
-      "https://overcast.fm/itunes1357295850/build-your-saas-bootstrapping-in-2019",
+      "https://podcasts.apple.com/us/podcast/build-your-saas-bootstrap-in-2020/id1357295850",
     image: "https://overcast.fm/art/thumb/788069",
     rating: 3,
     tags: ["Development"],
@@ -35,7 +37,7 @@ export default [
   {
     title: "Business Wars",
     sortTitle: "Business Wars",
-    url: "https://overcast.fm/itunes1335814741/business-wars",
+    url: "https://podcasts.apple.com/us/podcast/business-wars/id1335814741",
     image: "https://overcast.fm/art/thumb/760983",
     rating: 4,
     tags: ["Documentary", "History"],
@@ -43,7 +45,7 @@ export default [
   {
     title: "Cold",
     sortTitle: "Cold",
-    url: "https://overcast.fm/itunes1441595858/cold",
+    url: "https://podcasts.apple.com/us/podcast/cold/id1441595858",
     image: "https://overcast.fm/art/thumb/1005777",
     rating: 4,
     tags: ["Documentary", "History"],
@@ -51,7 +53,7 @@ export default [
   {
     title: "Constitutional",
     sortTitle: "Constitutional",
-    url: "https://overcast.fm/itunes1254001472/constitutional",
+    url: "https://podcasts.apple.com/us/podcast/constitutional/id1254001472",
     image: "https://overcast.fm/art/thumb/617704?v=2",
     rating: 3,
     tags: ["History"],
@@ -59,7 +61,7 @@ export default [
   {
     title: "Dirty John",
     sortTitle: "Dirty John",
-    url: "https://overcast.fm/itunes1272970334/dirty-john",
+    url: "https://podcasts.apple.com/us/podcast/dirty-john/id1272970334",
     image: "https://overcast.fm/art/thumb/670364",
     rating: 3,
     tags: ["Documentary"],
@@ -67,7 +69,7 @@ export default [
   {
     title: "Dr. Death",
     sortTitle: "Dr. Death",
-    url: "https://overcast.fm/itunes1421573955/dr-death",
+    url: "https://podcasts.apple.com/us/podcast/dr-death/id1421573955",
     image: "https://overcast.fm/art/thumb/924994",
     rating: 4,
     tags: ["Documentary"],
@@ -75,7 +77,7 @@ export default [
   {
     title: "The Dropout",
     sortTitle: "Dropout",
-    url: "https://overcast.fm/itunes1449500734/the-dropout",
+    url: "https://podcasts.apple.com/us/podcast/the-dropout/id1449500734",
     image: "https://overcast.fm/art/thumb/1063419",
     rating: 3,
     tags: ["Documentary"],
@@ -83,7 +85,8 @@ export default [
   {
     title: "Egghead.io developer chats",
     sortTitle: "Egghead.io developer chats",
-    url: "https://overcast.fm/itunes1308497805/egghead-io-developer-chats",
+    url:
+      "https://podcasts.apple.com/us/podcast/egghead-io-developer-chats/id1308497805",
     image: "https://overcast.fm/art/thumb/712338",
     rating: 3,
     tags: ["Development"],
@@ -91,7 +94,7 @@ export default [
   {
     title: "Freakonomics Radio",
     sortTitle: "Freakonomics Radio",
-    url: "https://overcast.fm/itunes354668519/freakonomics-radio",
+    url: "https://podcasts.apple.com/us/podcast/freakonomics-radio/id354668519",
     image: "https://overcast.fm/art/thumb/1468593",
     rating: 4,
     tags: ["Learn"],
@@ -99,7 +102,8 @@ export default [
   {
     title: "The FRONTLINE Dispatch",
     sortTitle: "FRONTLINE Dispatch",
-    url: "https://overcast.fm/itunes1277250997/the-frontline-dispatch",
+    url:
+      "https://podcasts.apple.com/us/podcast/the-frontline-dispatch/id1277250997",
     image: "https://overcast.fm/art/thumb/650949",
     rating: 3,
     tags: ["Documentary"],
@@ -107,7 +111,7 @@ export default [
   {
     title: "Full Stack Radio",
     sortTitle: "Full Stack Radio",
-    url: "https://overcast.fm/itunes931714873/full-stack-radio",
+    url: "https://podcasts.apple.com/us/podcast/full-stack-radio/id931714873",
     image: "https://overcast.fm/art/thumb/565258",
     rating: 4,
     tags: ["Development"],
@@ -116,7 +120,7 @@ export default [
     title: "The Happiness Lab with Dr. Laurie Santos",
     sortTitle: "Happiness Lab",
     url:
-      "https://overcast.fm/itunes1474245040/the-happiness-lab-with-dr-laurie-santos",
+      "https://podcasts.apple.com/us/podcast/the-happiness-lab-with-dr-laurie-santos/id1474245040",
     image: "https://overcast.fm/art/thumb/1269424",
     rating: 3,
     tags: ["Learn"],
@@ -124,7 +128,7 @@ export default [
   {
     title: "HBR IdeaCast",
     sortTitle: "HBR IdeaCast",
-    url: "https://overcast.fm/itunes152022135/hbr-ideacast",
+    url: "https://podcasts.apple.com/us/podcast/hbr-ideacast/id152022135",
     image: "https://overcast.fm/art/thumb/56",
     rating: 3,
     tags: ["Learn"],
@@ -132,7 +136,7 @@ export default [
   {
     title: "Hidden Brain",
     sortTitle: "Hidden Brain",
-    url: "https://overcast.fm/itunes1028908750/hidden-brain",
+    url: "https://podcasts.apple.com/us/podcast/hidden-brain/id1028908750",
     image: "https://overcast.fm/art/thumb/1618616",
     rating: 5,
     tags: ["Learn"],
@@ -140,7 +144,8 @@ export default [
   {
     title: "How I Built This with Guy Raz",
     sortTitle: "How I Built This with Guy Raz",
-    url: "https://overcast.fm/itunes1150510297/how-i-built-this-with-guy-raz",
+    url:
+      "https://podcasts.apple.com/us/podcast/how-i-built-this-with-guy-raz/id1150510297",
     image: "https://overcast.fm/art/thumb/1618614",
     rating: 4,
     tags: ["Documentary"],
@@ -148,7 +153,8 @@ export default [
   {
     title: "The Indicator from Planet Money",
     sortTitle: "Indicator from Planet Money",
-    url: "https://overcast.fm/itunes1320118593/the-indicator-from-planet-money",
+    url:
+      "https://podcasts.apple.com/us/podcast/the-indicator-from-planet-money/id1320118593",
     image: "https://overcast.fm/art/thumb/1618926",
     rating: 4,
     tags: ["News"],
@@ -156,7 +162,7 @@ export default [
   {
     title: "Invisibilia",
     sortTitle: "Invisibilia",
-    url: "https://overcast.fm/itunes953290300/invisibilia",
+    url: "https://podcasts.apple.com/us/podcast/invisibilia/id953290300",
     image: "https://overcast.fm/art/thumb/505825",
     rating: 4,
     tags: ["Learn"],
@@ -164,7 +170,8 @@ export default [
   {
     title: "The Laracasts Snippet",
     sortTitle: "Laracasts Snippet",
-    url: "https://overcast.fm/itunes1059530816/the-laracasts-snippet",
+    url:
+      "https://podcasts.apple.com/us/podcast/the-laracasts-snippet/id1059530816",
     image: "https://overcast.fm/art/thumb/365699",
     rating: 3,
     tags: ["Development"],
@@ -172,7 +179,8 @@ export default [
   {
     title: "Laravel News Podcast",
     sortTitle: "Laravel News Podcast",
-    url: "https://overcast.fm/itunes1051289963/laravel-news-podcast",
+    url:
+      "https://podcasts.apple.com/us/podcast/laravel-news-podcast/id1051289963",
     image: "https://overcast.fm/art/thumb/355889",
     rating: 3,
     tags: ["Development"],
@@ -180,7 +188,8 @@ export default [
   {
     title: "The Laravel Podcast",
     sortTitle: "Laravel Podcast",
-    url: "https://overcast.fm/itunes653204183/the-laravel-podcast",
+    url:
+      "https://podcasts.apple.com/us/podcast/the-laravel-podcast/id653204183",
     image: "https://overcast.fm/art/thumb/726869",
     rating: 4,
     tags: ["Development"],
@@ -188,7 +197,8 @@ export default [
   {
     title: "The Laravel Snippet",
     sortTitle: "Laravel Snippet",
-    url: "https://overcast.fm/itunes1451072164/the-laravel-snippet",
+    url:
+      "https://podcasts.apple.com/us/podcast/the-laravel-snippet/id1451072164",
     image: "https://overcast.fm/art/thumb/1059089",
     rating: 4,
     tags: ["Development"],
@@ -196,7 +206,8 @@ export default [
   {
     title: "Making Sense with Sam Harris",
     sortTitle: "Making Sense with Sam Harris",
-    url: "https://overcast.fm/itunes733163012/making-sense-with-sam-harris",
+    url:
+      "https://podcasts.apple.com/us/podcast/making-sense-with-sam-harris/id733163012",
     image: "https://overcast.fm/art/thumb/689825",
     rating: 5,
     tags: ["Learn"],
@@ -205,7 +216,7 @@ export default [
     title: "Man In The Window: The Golden State Killer",
     sortTitle: "Man In The Window: The Golden State Killer",
     url:
-      "https://overcast.fm/itunes1465334342/man-in-the-window-the-golden-state-killer",
+      "https://podcasts.apple.com/us/podcast/man-in-the-window-the-golden-state-killer/id1465334342",
     image: "https://overcast.fm/art/thumb/1208698",
     rating: 4,
     tags: ["Documentary"],
@@ -213,7 +224,7 @@ export default [
   {
     title: "Planet Money",
     sortTitle: "Planet Money",
-    url: "https://overcast.fm/itunes290783428/planet-money",
+    url: "https://podcasts.apple.com/us/podcast/planet-money/id290783428",
     image: "https://overcast.fm/art/thumb/1618164",
     rating: 4,
     tags: ["Documentary"],
@@ -221,7 +232,8 @@ export default [
   {
     title: "Radiolab Presents: More Perfect",
     sortTitle: "Radiolab Presents: More Perfect",
-    url: "https://overcast.fm/itunes1117202653/radiolab-presents-more-perfect",
+    url:
+      "https://podcasts.apple.com/us/podcast/radiolab-presents-more-perfect/id1117202653",
     image: "https://overcast.fm/art/thumb/435523",
     rating: 4,
     tags: ["History"],
@@ -230,7 +242,7 @@ export default [
   {
     title: "React Podcast",
     sortTitle: "React Podcast",
-    url: "https://overcast.fm/itunes1341969432/react-podcast",
+    url: "https://podcasts.apple.com/us/podcast/react-podcast/id1341969432",
     image: "https://overcast.fm/art/thumb/917410",
     rating: 4,
     tags: ["Development"],
@@ -238,7 +250,8 @@ export default [
   {
     title: "Revisionist History",
     sortTitle: "Revisionist History",
-    url: "https://overcast.fm/itunes1119389968/revisionist-history",
+    url:
+      "https://podcasts.apple.com/us/podcast/revisionist-history/id1119389968",
     image: "https://overcast.fm/art/thumb/859090",
     rating: 5,
     tags: ["Learn"],
@@ -246,7 +259,7 @@ export default [
   {
     title: "Rework",
     sortTitle: "Rework",
-    url: "https://overcast.fm/itunes1264193508/rework",
+    url: "https://podcasts.apple.com/us/podcast/rework/id1264193508",
     image: "https://overcast.fm/art/thumb/632536",
     rating: 3,
     tags: ["Learn", "Development"],
@@ -254,7 +267,7 @@ export default [
   {
     title: "Science Vs",
     sortTitle: "Science Vs",
-    url: "https://overcast.fm/itunes1051557000/science-vs",
+    url: "https://podcasts.apple.com/us/podcast/science-vs/id1051557000",
     image: "https://overcast.fm/art/thumb/1290111",
     rating: 4,
     tags: ["Learn"],
@@ -262,7 +275,7 @@ export default [
   {
     title: "Serial",
     sortTitle: "Serial",
-    url: "https://overcast.fm/itunes917918570/serial",
+    url: "https://podcasts.apple.com/us/podcast/serial/id917918570",
     image: "https://overcast.fm/art/thumb/228611",
     rating: 5,
     tags: ["Documentary"],
@@ -270,7 +283,7 @@ export default [
   {
     title: "Silicon Slopes",
     sortTitle: "Silicon Slopes",
-    url: "https://overcast.fm/itunes1262148655/silicon-slopes",
+    url: "https://podcasts.apple.com/us/podcast/silicon-slopes/id1262148655",
     image: "https://overcast.fm/art/thumb/629801?v=2",
     rating: 3,
     tags: ["Learn"],
@@ -278,24 +291,16 @@ export default [
   {
     title: "Slow Burn",
     sortTitle: "Slow Burn",
-    url: "https://overcast.fm/itunes1315040130/slow-burn",
+    url: "https://podcasts.apple.com/us/podcast/slow-burn/id1315040130",
     image: "https://overcast.fm/art/thumb/719421",
     rating: 4,
     tags: ["Documentary", "History"],
   },
   {
-    title: "StartUp Podcast",
-    sortTitle: "StartUp Podcast",
-    url: "https://overcast.fm/itunes913805339/startup-podcast",
-    image: "https://overcast.fm/art/thumb/1289453",
-    rating: 4,
-    tags: ["Documentary"],
-  },
-  {
     title: "Syntax - Tasty Web Development Treats",
     sortTitle: "Syntax - Tasty Web Development Treats",
     url:
-      "https://overcast.fm/itunes1253186678/syntax-tasty-web-development-treats",
+      "https://podcasts.apple.com/us/podcast/syntax-tasty-web-development-treats/id1253186678",
     image: "https://overcast.fm/art/thumb/616590",
     rating: 5,
     tags: ["Development"],
@@ -303,7 +308,7 @@ export default [
   {
     title: "TED Radio Hour",
     sortTitle: "TED Radio Hour",
-    url: "https://overcast.fm/itunes523121474/ted-radio-hour",
+    url: "https://podcasts.apple.com/us/podcast/ted-radio-hour/id523121474",
     image: "https://overcast.fm/art/thumb/506114",
     rating: 4,
     tags: ["Learn"],
@@ -311,17 +316,9 @@ export default [
   {
     title: "Throughline",
     sortTitle: "Throughline",
-    url: "https://overcast.fm/itunes1451109634/throughline",
+    url: "https://podcasts.apple.com/us/podcast/throughline/id1451109634",
     image: "https://overcast.fm/art/thumb/1618924",
     rating: 4,
     tags: ["History"],
-  },
-  {
-    title: "Without Fail",
-    sortTitle: "Without Fail",
-    url: "https://overcast.fm/itunes1437293054/without-fail",
-    image: "https://overcast.fm/art/thumb/967692",
-    rating: 4,
-    tags: ["Documentary"],
   },
 ];
