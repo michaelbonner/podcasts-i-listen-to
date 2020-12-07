@@ -75,6 +75,17 @@ function Home({ podcasts }) {
     searchField.current.focus();
   }, [toggleSearch]);
 
+  const onSearchKeyUp = (e) => {
+    if (e.keyCode !== 27) {
+      return;
+    }
+    if (search !== "") {
+      setSearch("");
+    } else {
+      setToggleSearch(false);
+    }
+  };
+
   return (
     <MainLayout>
       <div className="main-content pt-8 pb-16">
@@ -143,6 +154,7 @@ function Home({ podcasts }) {
                     name="search"
                     id="search"
                     onChange={(e) => setSearch(e.target.value)}
+                    onKeyUp={(e) => onSearchKeyUp(e)}
                     ref={searchField}
                     type="text"
                     value={search}
