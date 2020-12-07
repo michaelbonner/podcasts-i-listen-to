@@ -5,10 +5,6 @@ module.exports = {
     "./pages/*.js",
     "./styles/*.css",
   ],
-  future: {
-    purgeLayersByDefault: true,
-    removeDeprecatedGapUtilities: true,
-  },
   theme: {
     extend: {},
   },
