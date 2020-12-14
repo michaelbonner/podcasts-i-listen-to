@@ -450,7 +450,7 @@ function Home({ podcasts }) {
           <div className="bg-white px-6 lg:px-12 py-4 rounded-md lg:rounded-l-none">
             <div className="flex justify-between items-center">
               <div>
-                <h3 className="items-center text-2xl lg:text-3xl font-bold text-green-700 my-3 pr-8">
+                <h3 className="items-center text-2xl lg:text-3xl font-bold text-green-700 my-3 pr-8 tracking-wide">
                   Got a podcast I should check out?
                 </h3>
                 <p className="text-gray-700 pr-8">
@@ -459,7 +459,7 @@ function Home({ podcasts }) {
                 </p>
               </div>
               <svg
-                className="text-orange-300 stroke-current w-16 h-16 mt-2"
+                className="text-orange-200 stroke-current w-16 h-16 mt-2"
                 xmlns="http://www.w3.org/2000/svg"
                 width="512"
                 height="512"

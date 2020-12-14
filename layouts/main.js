@@ -123,7 +123,7 @@ function MainLayout({ children }) {
                 href="https://github.com/michaelbonner/podcasts-i-listen-to"
               >
                 <svg
-                  className="fill-current w-10 h-10 mx-2"
+                  className="fill-current w-8 h-8 mx-2"
                   xmlns="http://www.w3.org/2000/svg"
                   width="512"
                   height="512"
@@ -140,7 +140,7 @@ function MainLayout({ children }) {
                 href="https://www.instagram.com/michael__bonner/"
               >
                 <svg
-                  className="fill-current w-10 h-10 mx-2"
+                  className="fill-current w-8 h-8 mx-2"
                   xmlns="http://www.w3.org/2000/svg"
                   width="512"
                   height="512"
