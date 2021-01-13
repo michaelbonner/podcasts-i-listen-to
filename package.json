@@ -4,7 +4,7 @@
   "description": "Runs here: [https://podcasts.michaelbonner.dev/](https://podcasts.michaelbonner.dev/)",
   "main": "index.js",
   "dependencies": {
-    "@slack/webhook": "^5.0.4",
+    "@slack/webhook": "^6.0.0",
     "autoprefixer": "^10.2.1",
     "body-parser": "^1.19.0",
     "concurrently": "^5.3.0",
