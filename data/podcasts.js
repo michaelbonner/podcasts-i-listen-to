@@ -10,8 +10,7 @@ export default [
   {
     title: "30 for 30",
     sortTitle: "30 for 30",
-    url:
-      "https://podcasts.apple.com/us/podcast/30-for-30-podcasts/id1244784611",
+    url: "https://podcasts.apple.com/us/podcast/30-for-30-podcasts/id1244784611",
     image: "https://overcast.fm/art/thumb/606351",
     rating: 3,
     tags: ["Documentary", "Sports"],
@@ -19,8 +18,7 @@ export default [
   {
     title: "American History Tellers",
     sortTitle: "American History Tellers",
-    url:
-      "https://podcasts.apple.com/us/podcast/american-history-tellers/id1313596069",
+    url: "https://podcasts.apple.com/us/podcast/american-history-tellers/id1313596069",
     image: "https://overcast.fm/art/thumb/735194",
     rating: 4,
     tags: ["History"],
@@ -28,8 +26,7 @@ export default [
   {
     title: "Build Your SaaS &ndash; bootstrap in 2020",
     sortTitle: "Build Your SaaS &ndash; bootstrap in 2020",
-    url:
-      "https://podcasts.apple.com/us/podcast/build-your-saas-bootstrap-in-2020/id1357295850",
+    url: "https://podcasts.apple.com/us/podcast/build-your-saas-bootstrap-in-2020/id1357295850",
     image: "https://overcast.fm/art/thumb/788069",
     rating: 3,
     tags: ["Development"],
@@ -46,7 +43,7 @@ export default [
     title: "Cold",
     sortTitle: "Cold",
     url: "https://podcasts.apple.com/us/podcast/cold/id1441595858",
-    image: "https://overcast.fm/art/thumb/1005777",
+    image: "https://overcast.fm/art/thumb/2870360",
     rating: 4,
     tags: ["Documentary", "History"],
   },
@@ -85,8 +82,7 @@ export default [
   {
     title: "Egghead.io developer chats",
     sortTitle: "Egghead.io developer chats",
-    url:
-      "https://podcasts.apple.com/us/podcast/egghead-io-developer-chats/id1308497805",
+    url: "https://podcasts.apple.com/us/podcast/egghead-io-developer-chats/id1308497805",
     image: "https://overcast.fm/art/thumb/712338",
     rating: 3,
     tags: ["Development"],
@@ -102,8 +98,7 @@ export default [
   {
     title: "The FRONTLINE Dispatch",
     sortTitle: "FRONTLINE Dispatch",
-    url:
-      "https://podcasts.apple.com/us/podcast/the-frontline-dispatch/id1277250997",
+    url: "https://podcasts.apple.com/us/podcast/the-frontline-dispatch/id1277250997",
     image: "https://overcast.fm/art/thumb/650949",
     rating: 3,
     tags: ["Documentary"],
@@ -119,8 +114,7 @@ export default [
   {
     title: "The Happiness Lab with Dr. Laurie Santos",
     sortTitle: "Happiness Lab",
-    url:
-      "https://podcasts.apple.com/us/podcast/the-happiness-lab-with-dr-laurie-santos/id1474245040",
+    url: "https://podcasts.apple.com/us/podcast/the-happiness-lab-with-dr-laurie-santos/id1474245040",
     image: "https://overcast.fm/art/thumb/1269424",
     rating: 3,
     tags: ["Learn"],
@@ -144,8 +138,7 @@ export default [
   {
     title: "How I Built This with Guy Raz",
     sortTitle: "How I Built This with Guy Raz",
-    url:
-      "https://podcasts.apple.com/us/podcast/how-i-built-this-with-guy-raz/id1150510297",
+    url: "https://podcasts.apple.com/us/podcast/how-i-built-this-with-guy-raz/id1150510297",
     image: "https://overcast.fm/art/thumb/1618614",
     rating: 4,
     tags: ["Documentary"],
@@ -153,8 +146,7 @@ export default [
   {
     title: "The Indicator from Planet Money",
     sortTitle: "Indicator from Planet Money",
-    url:
-      "https://podcasts.apple.com/us/podcast/the-indicator-from-planet-money/id1320118593",
+    url: "https://podcasts.apple.com/us/podcast/the-indicator-from-planet-money/id1320118593",
     image: "https://overcast.fm/art/thumb/1618926",
     rating: 4,
     tags: ["News"],
@@ -170,8 +162,7 @@ export default [
   {
     title: "The Laracasts Snippet",
     sortTitle: "Laracasts Snippet",
-    url:
-      "https://podcasts.apple.com/us/podcast/the-laracasts-snippet/id1059530816",
+    url: "https://podcasts.apple.com/us/podcast/the-laracasts-snippet/id1059530816",
     image: "https://overcast.fm/art/thumb/365699",
     rating: 3,
     tags: ["Development"],
@@ -179,8 +170,7 @@ export default [
   {
     title: "Laravel News Podcast",
     sortTitle: "Laravel News Podcast",
-    url:
-      "https://podcasts.apple.com/us/podcast/laravel-news-podcast/id1051289963",
+    url: "https://podcasts.apple.com/us/podcast/laravel-news-podcast/id1051289963",
     image: "https://overcast.fm/art/thumb/355889",
     rating: 3,
     tags: ["Development"],
@@ -188,8 +178,7 @@ export default [
   {
     title: "The Laravel Podcast",
     sortTitle: "Laravel Podcast",
-    url:
-      "https://podcasts.apple.com/us/podcast/the-laravel-podcast/id653204183",
+    url: "https://podcasts.apple.com/us/podcast/the-laravel-podcast/id653204183",
     image: "https://overcast.fm/art/thumb/726869",
     rating: 4,
     tags: ["Development"],
@@ -197,8 +186,7 @@ export default [
   {
     title: "The Laravel Snippet",
     sortTitle: "Laravel Snippet",
-    url:
-      "https://podcasts.apple.com/us/podcast/the-laravel-snippet/id1451072164",
+    url: "https://podcasts.apple.com/us/podcast/the-laravel-snippet/id1451072164",
     image: "https://overcast.fm/art/thumb/1059089",
     rating: 4,
     tags: ["Development"],
@@ -206,8 +194,7 @@ export default [
   {
     title: "Making Sense with Sam Harris",
     sortTitle: "Making Sense with Sam Harris",
-    url:
-      "https://podcasts.apple.com/us/podcast/making-sense-with-sam-harris/id733163012",
+    url: "https://podcasts.apple.com/us/podcast/making-sense-with-sam-harris/id733163012",
     image: "https://overcast.fm/art/thumb/689825",
     rating: 5,
     tags: ["Learn"],
@@ -215,8 +202,7 @@ export default [
   {
     title: "Man In The Window: The Golden State Killer",
     sortTitle: "Man In The Window: The Golden State Killer",
-    url:
-      "https://podcasts.apple.com/us/podcast/man-in-the-window-the-golden-state-killer/id1465334342",
+    url: "https://podcasts.apple.com/us/podcast/man-in-the-window-the-golden-state-killer/id1465334342",
     image: "https://overcast.fm/art/thumb/1208698",
     rating: 4,
     tags: ["Documentary"],
@@ -232,8 +218,7 @@ export default [
   {
     title: "Radiolab Presents: More Perfect",
     sortTitle: "Radiolab Presents: More Perfect",
-    url:
-      "https://podcasts.apple.com/us/podcast/radiolab-presents-more-perfect/id1117202653",
+    url: "https://podcasts.apple.com/us/podcast/radiolab-presents-more-perfect/id1117202653",
     image: "https://overcast.fm/art/thumb/435523",
     rating: 4,
     tags: ["History"],
@@ -250,8 +235,7 @@ export default [
   {
     title: "Revisionist History",
     sortTitle: "Revisionist History",
-    url:
-      "https://podcasts.apple.com/us/podcast/revisionist-history/id1119389968",
+    url: "https://podcasts.apple.com/us/podcast/revisionist-history/id1119389968",
     image: "https://overcast.fm/art/thumb/859090",
     rating: 5,
     tags: ["Learn"],
@@ -299,8 +283,7 @@ export default [
   {
     title: "Syntax - Tasty Web Development Treats",
     sortTitle: "Syntax - Tasty Web Development Treats",
-    url:
-      "https://podcasts.apple.com/us/podcast/syntax-tasty-web-development-treats/id1253186678",
+    url: "https://podcasts.apple.com/us/podcast/syntax-tasty-web-development-treats/id1253186678",
     image: "https://overcast.fm/art/thumb/616590",
     rating: 5,
     tags: ["Development"],
