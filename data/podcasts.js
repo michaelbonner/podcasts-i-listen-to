@@ -223,7 +223,6 @@ export default [
     rating: 4,
     tags: ["History"],
   },
-
   {
     title: "React Podcast",
     sortTitle: "React Podcast",
