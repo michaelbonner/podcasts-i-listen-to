@@ -43,7 +43,7 @@ const postToSlack = async (text) => {
   }
 };
 
-export default async (req, res) => {
+const podcastSuggestion = async (req, res) => {
   res.setHeader("Content-Type", "application/json");
 
   if (!process.env.SLACK_WEBHOOK_URL) {
@@ -117,3 +117,5 @@ export default async (req, res) => {
   }
   return;
 };
+
+export default podcastSuggestion;

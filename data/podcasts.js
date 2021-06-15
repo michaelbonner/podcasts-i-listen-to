@@ -1,4 +1,4 @@
-export default [
+const podcasts = [
   {
     title: "1865",
     sortTitle: "1865",
@@ -304,3 +304,5 @@ export default [
     tags: ["History"],
   },
 ];
+
+export default podcasts;

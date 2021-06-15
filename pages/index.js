@@ -54,7 +54,7 @@ function Home({ podcasts }) {
         )
       )
     );
-  }, []);
+  }, [podcasts]);
 
   useEffect(() => {
     const filteredOnes = sortedPodcasts
@@ -379,7 +379,7 @@ function Home({ podcasts }) {
                       className="w-2/5 lg:w-1/4"
                       href={podcast.url}
                       target="_blank"
-                      rel="noopener"
+                      rel="noopener noreferrer"
                       style={{ marginBottom: "-6px" }}
                       title={`${podcast.title} Poster`}
                     >
@@ -394,7 +394,11 @@ function Home({ podcasts }) {
                     <div className="w-3/5 lg:w-3/4 px-6 flex flex-col justify-between">
                       <div>
                         <p className="text-xl font-bold truncate pt-6">
-                          <a href={podcast.url} rel="noopener" target="_blank">
+                          <a
+                            href={podcast.url}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
                             <span
                               dangerouslySetInnerHTML={{
                                 __html: podcast.title,
@@ -454,8 +458,8 @@ function Home({ podcasts }) {
                   Got a podcast I should check out?
                 </h3>
                 <p className="text-gray-700 pr-8">
-                  Let me know what you're listening to. I'm always looking for
-                  new podcasts.
+                  Let me know what you&apos;re listening to. I&apos;m always
+                  looking for new podcasts.
                 </p>
               </div>
               <svg
