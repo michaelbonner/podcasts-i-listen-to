@@ -232,12 +232,20 @@ const podcasts = [
     tags: ["Development"],
   },
   {
+    title: "Reveal",
+    sortTitle: "Reveal",
+    url: "https://podcasts.apple.com/us/podcast/reveal/id886009669",
+    image: "https://overcast.fm/art/thumb/114651",
+    rating: 4,
+    tags: ["History", "Learn"],
+  },
+  {
     title: "Revisionist History",
     sortTitle: "Revisionist History",
     url: "https://podcasts.apple.com/us/podcast/revisionist-history/id1119389968",
     image: "https://overcast.fm/art/thumb/859090",
     rating: 5,
-    tags: ["Learn"],
+    tags: ["History", "Learn"],
   },
   {
     title: "Rework",
