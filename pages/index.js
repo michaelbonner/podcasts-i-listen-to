@@ -376,11 +376,10 @@ function Home({ podcasts }) {
                 >
                   <div className="flex bg-white items-stretch rounded-lg shadow-lg w-full">
                     <a
-                      className="w-2/5 lg:w-1/4"
+                      className="w-2/5 lg:w-1/4 flex items-center"
                       href={podcast.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ marginBottom: "-6px" }}
                       title={`${podcast.title} Poster`}
                     >
                       <Image
