@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, memo } from "react";
 import Image from "next/image";
 import MainLayout from "layouts/main";
 import podcastsFileData from "data/podcasts";
@@ -18,6 +18,79 @@ const Star = ({ filled }) => {
     </svg>
   );
 };
+
+const PodcastCard = memo(function PodcastCard({
+  podcast,
+  tagFilter,
+  setTagFilter,
+}) {
+  return (
+    <div
+      key={podcast.itunesId}
+      className="flex bg-white items-center rounded-lg shadow-lg w-full"
+    >
+      <a
+        className="w-2/5 lg:w-1/4 flex items-center"
+        href={podcast.itunesData?.collectionViewUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={`${podcast.itunesData?.collectionName} Poster`}
+      >
+        <Image
+          className="rounded-lg rounded-r-none w-full h-full"
+          alt={`${podcast.itunesData?.collectionName} Poster`}
+          height={200}
+          src={podcast.itunesData?.artworkUrl600}
+          width={200}
+        />
+      </a>
+      <div className="w-3/5 lg:w-3/4 px-6 flex flex-col justify-between">
+        <div>
+          <p className="text-xl font-bold truncate pt-3">
+            <a
+              href={podcast.itunesData?.collectionViewUrl}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: podcast.itunesData?.collectionName,
+                }}
+              />
+            </a>
+          </p>
+        </div>
+        <div className="lg:flex lg:flex-row-reverse justify-between">
+          <p className="flex lg:justify-end my-2">
+            <Star filled={podcast.rating > 0} />
+            <Star filled={podcast.rating > 1} />
+            <Star filled={podcast.rating > 2} />
+            <Star filled={podcast.rating > 3} />
+            <Star filled={podcast.rating > 4} />
+          </p>
+          <div className="flex flex-wrap justify-start space-x-2 mt-4 lg:my-2">
+            {podcast.tags.map((tag) => (
+              <button
+                className={`inline-block ${
+                  tagFilter === tag
+                    ? "bg-green-200 text-green-700"
+                    : "bg-gray-200 text-gray-700"
+                } rounded px-2 py-1 text-xs font-semibold focus:outline-none`}
+                key={tag}
+                onClick={() =>
+                  tagFilter === tag ? setTagFilter("") : setTagFilter(tag)
+                }
+                type="button"
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+});
 
 function Home({ podcasts }) {
   const [ratingFilter, setRatingFilter] = useState(0);
@@ -378,76 +451,17 @@ function Home({ podcasts }) {
         )}
         {/* End filters */}
 
+        {/* Podcast grid */}
         <div className="lg:mx-auto xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72 px-4 grid gap-4 xl:gap-6 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mt-4">
           {filteredPodcasts.length ? (
             filteredPodcasts.map((podcast) => {
               return (
-                <div
+                <PodcastCard
                   key={podcast.itunesId}
-                  className="flex bg-white items-center rounded-lg shadow-lg w-full"
-                >
-                  <a
-                    className="w-2/5 lg:w-1/4 flex items-center"
-                    href={podcast.itunesData?.collectionViewUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={`${podcast.itunesData?.collectionName} Poster`}
-                  >
-                    <Image
-                      className="rounded-lg rounded-r-none w-full h-full"
-                      alt={`${podcast.itunesData?.collectionName} Poster`}
-                      height={200}
-                      src={podcast.itunesData?.artworkUrl600}
-                      width={200}
-                    />
-                  </a>
-                  <div className="w-3/5 lg:w-3/4 px-6 flex flex-col justify-between">
-                    <div>
-                      <p className="text-xl font-bold truncate pt-3">
-                        <a
-                          href={podcast.itunesData?.collectionViewUrl}
-                          rel="noopener noreferrer"
-                          target="_blank"
-                        >
-                          <span
-                            dangerouslySetInnerHTML={{
-                              __html: podcast.itunesData?.collectionName,
-                            }}
-                          />
-                        </a>
-                      </p>
-                    </div>
-                    <div className="lg:flex lg:flex-row-reverse justify-between">
-                      <p className="flex lg:justify-end my-2">
-                        <Star filled={podcast.rating > 0} />
-                        <Star filled={podcast.rating > 1} />
-                        <Star filled={podcast.rating > 2} />
-                        <Star filled={podcast.rating > 3} />
-                        <Star filled={podcast.rating > 4} />
-                      </p>
-                      <div className="flex flex-wrap justify-start space-x-2 mt-4 lg:my-2">
-                        {podcast.tags.map((tag) => (
-                          <button
-                            className={`inline-block ${
-                              tagFilter === tag
-                                ? "bg-green-200 text-green-700"
-                                : "bg-gray-200 text-gray-700"
-                            } rounded px-2 py-1 text-xs font-semibold focus:outline-none`}
-                            key={tag}
-                            onClick={() =>
-                              tagFilter === tag
-                                ? setTagFilter("")
-                                : setTagFilter(tag)
-                            }
-                            type="button"
-                          >
-                            {tag}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  podcast={podcast}
+                  setTagFilter={setTagFilter}
+                  tagFilter={tagFilter}
+                />
               );
             })
           ) : (
@@ -460,6 +474,9 @@ function Home({ podcasts }) {
             </div>
           )}
         </div>
+        {/* End podcast grid */}
+
+        {/* Form */}
         <div className="flex justify-between max-w-3xl mx-4 lg:mx-auto mt-16 mb-4 bg-gray-400 rounded-md shadow-lg">
           <div className="lg:w-16 callout-bar rounded-l-lg"></div>
           <div className="bg-white px-6 lg:px-12 py-4 rounded-md lg:rounded-l-none">
@@ -512,6 +529,7 @@ function Home({ podcasts }) {
             <ContactForm />
           </div>
         </div>
+        {/* End form */}
       </div>
     </MainLayout>
   );
