@@ -8,7 +8,6 @@ module.exports = {
   },
   images: {
     domains: [
-      "overcast.fm",
       "is1-ssl.mzstatic.com",
       "is2-ssl.mzstatic.com",
       "is3-ssl.mzstatic.com",

@@ -54,7 +54,6 @@ function MainLayout({ children }) {
           }}
         />
 
-        <link rel="preconnect" href="https://overcast.fm" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
       </Head>
