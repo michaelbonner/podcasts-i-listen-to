@@ -1,20 +1,4 @@
 {
-  "cSpell.words": [
-    "callout",
-    "dumont",
-    "freakonomics",
-    "fullhuman",
-    "invisibilia",
-    "laracasts",
-    "morty",
-    "ndash",
-    "purgecss",
-    "radiolab",
-    "semibold",
-    "tailwind",
-    "throughline",
-    "zeit"
-  ],
   "workbench.colorCustomizations": {
     "titleBar.activeForeground": "#ebf4ff",
     "titleBar.inactiveForeground": "#ebf4ffCC",
