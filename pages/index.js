@@ -383,22 +383,22 @@ function Home({ podcasts }) {
             filteredPodcasts.map((podcast) => {
               return (
                 <div
-                  key={podcast.title}
+                  key={podcast.itunesId}
                   className="w-full h-full p-4 overflow-x-hidden"
                 >
                   <div className="flex bg-white items-stretch rounded-lg shadow-lg w-full">
                     <a
                       className="w-2/5 lg:w-1/4 flex items-center"
-                      href={podcast.url}
+                      href={podcast.itunesData?.collectionViewUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      title={`${podcast.title} Poster`}
+                      title={`${podcast.itunesData?.collectionName} Poster`}
                     >
                       <Image
                         className="rounded-lg rounded-r-none w-full h-full"
-                        alt={`${podcast.title} Poster`}
+                        alt={`${podcast.itunesData?.collectionName} Poster`}
                         height={200}
-                        src={podcast.image}
+                        src={podcast.itunesData?.artworkUrl600}
                         width={200}
                       />
                     </a>
@@ -406,13 +406,13 @@ function Home({ podcasts }) {
                       <div>
                         <p className="text-xl font-bold truncate pt-6">
                           <a
-                            href={podcast.url}
+                            href={podcast.itunesData?.collectionViewUrl}
                             rel="noopener noreferrer"
                             target="_blank"
                           >
                             <span
                               dangerouslySetInnerHTML={{
-                                __html: podcast.title,
+                                __html: podcast.itunesData?.collectionName,
                               }}
                             />
                           </a>
@@ -518,9 +518,36 @@ function Home({ podcasts }) {
 }
 
 export async function getStaticProps() {
+  const itunesIds = podcastsFileData
+    .map((podcast) => podcast.itunesId)
+    .join(",");
+  const url = `https://itunes.apple.com/lookup?id=${itunesIds}`;
+  const itunesRequest = await fetch(url);
+  const itunesData = await itunesRequest.json();
+
+  const merged = podcastsFileData.map((podcastData) => {
+    const itunesPodcast = itunesData.results.find((itunesDatum) => {
+      return +itunesDatum.collectionId === +podcastData.itunesId;
+    });
+    if (itunesPodcast) {
+      podcastData.itunesData = itunesPodcast;
+    }
+    return podcastData;
+  });
+
   return {
     props: {
-      podcasts: podcastsFileData,
+      podcasts: podcastsFileData.map((podcastData) => {
+        const itunesPodcast = itunesData.results.find((itunesDatum) => {
+          return +itunesDatum.collectionId === +podcastData.itunesId;
+        });
+        if (itunesPodcast) {
+          podcastData.itunesData = itunesPodcast;
+        } else {
+          console.log(`no itunes data for ${podcastData.sortTitle}`);
+        }
+        return podcastData;
+      }),
     },
   };
 }
