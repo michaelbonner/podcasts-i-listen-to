@@ -77,8 +77,6 @@ function Home({ podcasts }) {
 
   useEffect(() => {
     let searchParams = new URL(document.location).searchParams;
-
-    console.log("search", searchParams.get("search"));
     if (searchParams.get("search")) {
       setToggleSearch(true);
       setSearch(searchParams.get("search"));
