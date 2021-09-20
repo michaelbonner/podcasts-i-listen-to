@@ -418,8 +418,15 @@ function Home({ podcasts }) {
                           </a>
                         </p>
                       </div>
-                      <div className="flex justify-between">
-                        <div className="flex justify-start space-x-2 my-2">
+                      <div className="lg:flex lg:flex-row-reverse justify-between">
+                        <p className="flex lg:justify-end my-2">
+                          <Star filled={podcast.rating > 0} />
+                          <Star filled={podcast.rating > 1} />
+                          <Star filled={podcast.rating > 2} />
+                          <Star filled={podcast.rating > 3} />
+                          <Star filled={podcast.rating > 4} />
+                        </p>
+                        <div className="flex justify-start space-x-2 mt-4 lg:my-2">
                           {podcast.tags.map((tag) => (
                             <button
                               className={`inline-block ${
@@ -439,13 +446,6 @@ function Home({ podcasts }) {
                             </button>
                           ))}
                         </div>
-                        <p className="flex justify-end my-2">
-                          <Star filled={podcast.rating > 0} />
-                          <Star filled={podcast.rating > 1} />
-                          <Star filled={podcast.rating > 2} />
-                          <Star filled={podcast.rating > 3} />
-                          <Star filled={podcast.rating > 4} />
-                        </p>
                       </div>
                     </div>
                   </div>
