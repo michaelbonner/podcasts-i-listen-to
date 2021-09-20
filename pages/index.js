@@ -75,6 +75,20 @@ function Home({ podcasts }) {
     searchField.current.focus();
   }, [toggleSearch]);
 
+  useEffect(() => {
+    let searchParams = new URL(document.location).searchParams;
+
+    console.log("search", searchParams.get("search"));
+    if (searchParams.get("search")) {
+      setToggleSearch(true);
+      setSearch(searchParams.get("search"));
+    }
+    if (searchParams.get("filter")) {
+      setToggleFilters(true);
+      setTags([searchParams.get("filter")]);
+    }
+  }, []);
+
   const onSearchKeyUp = (e) => {
     if (e.keyCode !== 27) {
       return;
