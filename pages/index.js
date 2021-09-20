@@ -102,7 +102,7 @@ function Home({ podcasts }) {
     <MainLayout>
       <div className="main-content pt-8 pb-16">
         {/* Filters */}
-        <div className="container mx-auto px-4 text-right flex flex-wrap justify-end">
+        <div className="mx-auto xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72 px-4 text-right flex flex-wrap justify-end">
           <div className="w-2/3 lg:w-auto pr-0 lg:pr-4">
             {toggleSearch ? (
               <div className="flex items-center">
@@ -291,7 +291,7 @@ function Home({ podcasts }) {
           </div>
         </div>
         {toggleFilters && (
-          <div className="flex flex-wrap container mx-auto justify-between mt-3">
+          <div className="flex flex-wrap mx-auto justify-between mt-3">
             <div className="w-full lg:w-1/2">
               <h3 className="font-semibold text-lg text-green-800 mt-6 lg:mt-0 mx-4">
                 Rating
@@ -378,7 +378,7 @@ function Home({ podcasts }) {
         )}
         {/* End filters */}
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 container mx-auto mt-4">
+        <div className="mx-auto xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mt-4">
           {filteredPodcasts.length ? (
             filteredPodcasts.map((podcast) => {
               return (
@@ -386,7 +386,7 @@ function Home({ podcasts }) {
                   key={podcast.itunesId}
                   className="w-full h-full p-4 overflow-x-hidden"
                 >
-                  <div className="flex bg-white items-stretch rounded-lg shadow-lg w-full">
+                  <div className="flex bg-white items-center rounded-lg shadow-lg w-full">
                     <a
                       className="w-2/5 lg:w-1/4 flex items-center"
                       href={podcast.itunesData?.collectionViewUrl}
@@ -404,7 +404,7 @@ function Home({ podcasts }) {
                     </a>
                     <div className="w-3/5 lg:w-3/4 px-6 flex flex-col justify-between">
                       <div>
-                        <p className="text-xl font-bold truncate pt-6">
+                        <p className="text-xl font-bold truncate pt-3">
                           <a
                             href={podcast.itunesData?.collectionViewUrl}
                             rel="noopener noreferrer"
@@ -417,14 +417,16 @@ function Home({ podcasts }) {
                             />
                           </a>
                         </p>
-                        <div className="mt-2 mb-1">
+                      </div>
+                      <div className="flex justify-between">
+                        <div className="flex justify-start space-x-2 my-2">
                           {podcast.tags.map((tag) => (
                             <button
                               className={`inline-block ${
                                 tagFilter === tag
                                   ? "bg-green-200 text-green-700"
                                   : "bg-gray-200 text-gray-700"
-                              } rounded px-3 py-1 text-xs font-semibold mr-2 focus:outline-none`}
+                              } rounded px-2 py-1 text-xs font-semibold focus:outline-none`}
                               key={tag}
                               onClick={() =>
                                 tagFilter === tag
@@ -437,14 +439,14 @@ function Home({ podcasts }) {
                             </button>
                           ))}
                         </div>
+                        <p className="flex justify-end my-2">
+                          <Star filled={podcast.rating > 0} />
+                          <Star filled={podcast.rating > 1} />
+                          <Star filled={podcast.rating > 2} />
+                          <Star filled={podcast.rating > 3} />
+                          <Star filled={podcast.rating > 4} />
+                        </p>
                       </div>
-                      <p className="w-1/2 flex my-2 pb-2">
-                        <Star filled={podcast.rating > 0} />
-                        <Star filled={podcast.rating > 1} />
-                        <Star filled={podcast.rating > 2} />
-                        <Star filled={podcast.rating > 3} />
-                        <Star filled={podcast.rating > 4} />
-                      </p>
                     </div>
                   </div>
                 </div>

@@ -58,7 +58,7 @@ function MainLayout({ children }) {
         <link rel="preconnect" href="https://www.googletagmanager.com" />
       </Head>
       <div className="text-green-100 py-12">
-        <div className="container mx-auto flex flex-wrap items-center justify-center lg:justify-between">
+        <div className="mx-auto xl:mx-4 2xl:mx-12 3xl:mx-24 4xl:mx-48 flex flex-wrap items-center justify-center lg:justify-between">
           <h1 className="px-2 pb-2 lg:pb-0 text-center text-5xl">
             The Podcasts I Listen To
           </h1>
@@ -97,7 +97,7 @@ function MainLayout({ children }) {
       )}
 
       <div className="text-green-100 px-4 lg:px-0 text-center lg:text-left">
-        <div className="container mx-auto text-center lg:flex lg:flex-wrap lg:justify-between lg:items-center text-gray-300 pt-12 pb-10">
+        <div className="mx-auto xl:mx-4 2xl:mx-12 3xl:mx-24 4xl:mx-48 text-center lg:flex lg:flex-wrap lg:justify-between lg:items-center text-gray-300 pt-12 pb-10">
           <div className="lg:flex lg:flex-wrap">
             <p className="pt-4 lg:pt-0 lg:pr-4 lg:mr-4">
               &copy; {new Date().getFullYear()}{" "}

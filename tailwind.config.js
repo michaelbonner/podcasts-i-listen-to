@@ -21,6 +21,10 @@ module.exports = {
           900: "#7C2D12",
         },
       },
+      screens: {
+        "3xl": "1800px",
+        "4xl": "2200px",
+      },
     },
   },
   variants: {},
