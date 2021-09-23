@@ -1,5 +1,5 @@
-const { IncomingWebhook } = require("@slack/webhook");
-const fetch = require("node-fetch");
+import { IncomingWebhook } from "@slack/webhook";
+import fetch from "node-fetch";
 
 const createRecommendationEntry = async (yourName, podcastName, podcastUrl) => {
   const query = `mutation CreateRecommendation($yourName: String!, $podcastName: String!, $podcastUrl: String!) {
