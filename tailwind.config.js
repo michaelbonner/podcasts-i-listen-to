@@ -1,5 +1,5 @@
 module.exports = {
-  purge: [
+  content: [
     "./components/*.js",
     "./layouts/*.js",
     "./pages/*.js",
@@ -27,6 +27,5 @@ module.exports = {
       },
     },
   },
-  variants: {},
   plugins: [],
 };
