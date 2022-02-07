@@ -1,12 +1,5 @@
 const podcasts = [
   {
-    sortTitle: "1865",
-    itunesId: 1467256065,
-    rating: 4,
-    tags: ["History"],
-    itunesData: {},
-  },
-  {
     sortTitle: "30 for 30",
     itunesId: 1244784611,
     rating: 3,
@@ -32,20 +25,6 @@ const podcasts = [
     itunesId: 1335814741,
     rating: 4,
     tags: ["Documentary", "History"],
-    itunesData: {},
-  },
-  {
-    sortTitle: "Cold",
-    itunesId: 1441595858,
-    rating: 4,
-    tags: ["Documentary", "History"],
-    itunesData: {},
-  },
-  {
-    sortTitle: "Constitutional",
-    itunesId: 1254001472,
-    rating: 3,
-    tags: ["History"],
     itunesData: {},
   },
   {
@@ -77,6 +56,20 @@ const podcasts = [
     itunesData: {},
   },
   {
+    sortTitle: "The Experiment",
+    itunesId: 1549704404,
+    rating: 3,
+    tags: ["Learn"],
+    itunesData: {},
+  },
+  {
+    sortTitle: "Fat Leonard",
+    itunesId: 1585848867,
+    rating: 3,
+    tags: ["Documentary"],
+    itunesData: {},
+  },
+  {
     sortTitle: "Freakonomics Radio",
     itunesId: 354668519,
     rating: 4,
@@ -88,20 +81,6 @@ const podcasts = [
     itunesId: 1277250997,
     rating: 3,
     tags: ["Documentary"],
-    itunesData: {},
-  },
-  {
-    sortTitle: "Full Stack Radio",
-    itunesId: 931714873,
-    rating: 4,
-    tags: ["Development"],
-    itunesData: {},
-  },
-  {
-    sortTitle: "Happiness Lab",
-    itunesId: 1474245040,
-    rating: 3,
-    tags: ["Learn"],
     itunesData: {},
   },
   {
@@ -182,6 +161,13 @@ const podcasts = [
     itunesData: {},
   },
   {
+    sortTitle: "Opening Arguments",
+    itunesId: 1147092464,
+    rating: 3,
+    tags: ["Learn"],
+    itunesData: {},
+  },
+  {
     sortTitle: "Planet Money",
     itunesId: 290783428,
     rating: 4,
@@ -193,13 +179,6 @@ const podcasts = [
     itunesId: 1117202653,
     rating: 4,
     tags: ["History"],
-    itunesData: {},
-  },
-  {
-    sortTitle: "React Podcast",
-    itunesId: 1341969432,
-    rating: 4,
-    tags: ["Development"],
     itunesData: {},
   },
   {
@@ -240,6 +219,13 @@ const podcasts = [
   {
     sortTitle: "Silicon Slopes",
     itunesId: 1262148655,
+    rating: 3,
+    tags: ["Learn"],
+    itunesData: {},
+  },
+  {
+    sortTitle: "A Slight Change of Plans",
+    itunesId: 1561860622,
     rating: 3,
     tags: ["Learn"],
     itunesData: {},
