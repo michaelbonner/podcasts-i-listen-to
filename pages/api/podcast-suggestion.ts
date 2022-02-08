@@ -1,7 +1,17 @@
 import { IncomingWebhook } from "@slack/webhook";
+import type { NextApiRequest, NextApiResponse } from "next";
 import fetch from "node-fetch";
 
-const createRecommendationEntry = async (yourName, podcastName, podcastUrl) => {
+type ReturnData = {
+  success: boolean;
+  data: string;
+};
+
+const createRecommendationEntry = async (
+  yourName: string,
+  podcastName: string,
+  podcastUrl: string
+): Promise<any> => {
   const query = `mutation CreateRecommendation($yourName: String!, $podcastName: String!, $podcastUrl: String!) {
     createRecommendation(data: {
       your_name: $yourName,
@@ -31,7 +41,7 @@ const createRecommendationEntry = async (yourName, podcastName, podcastUrl) => {
   return data;
 };
 
-const postToSlack = async (text) => {
+const postToSlack = async (text: string) => {
   try {
     const webhook = new IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
     return await webhook.send({
@@ -43,7 +53,10 @@ const postToSlack = async (text) => {
   }
 };
 
-const podcastSuggestion = async (req, res) => {
+const podcastSuggestion = async (
+  req: NextApiRequest,
+  res: NextApiResponse<ReturnData>
+) => {
   res.setHeader("Content-Type", "application/json");
 
   if (!process.env.SLACK_WEBHOOK_URL) {
@@ -117,5 +130,4 @@ const podcastSuggestion = async (req, res) => {
   }
   return;
 };
-
 export default podcastSuggestion;

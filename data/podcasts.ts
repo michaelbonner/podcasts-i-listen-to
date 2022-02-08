@@ -1,4 +1,6 @@
-const podcasts = [
+import { Podcast } from "../types/Podcast";
+
+const podcasts: Podcast[] = [
   {
     sortTitle: "30 for 30",
     itunesId: 1244784611,

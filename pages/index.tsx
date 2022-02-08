@@ -1,8 +1,10 @@
-import { useState, useEffect, useRef, memo } from "react";
+import { GetStaticProps } from "next";
 import Image from "next/image";
-import MainLayout from "layouts/main";
-import podcastsFileData from "data/podcasts";
-import ContactForm from "components/ContactForm";
+import { memo, useEffect, useRef, useState } from "react";
+import ContactForm from "../components/ContactForm";
+import podcasts from "../data/podcasts";
+import MainLayout from "../layouts/main";
+import { Podcast } from "../types/Podcast";
 
 const Star = ({ filled }) => {
   return (
@@ -23,6 +25,10 @@ const PodcastCard = memo(function PodcastCard({
   podcast,
   tagFilter,
   setTagFilter,
+}: {
+  podcast: Podcast;
+  tagFilter: string;
+  setTagFilter: (tag: string) => void;
 }) {
   return (
     <div
@@ -149,7 +155,7 @@ function Home({ podcasts }) {
   }, [toggleSearch]);
 
   useEffect(() => {
-    let searchParams = new URL(document.location).searchParams;
+    let searchParams = new URL(document.location.toString()).searchParams;
     if (searchParams.get("search")) {
       setToggleSearch(true);
       setSearch(searchParams.get("search"));
@@ -535,15 +541,13 @@ function Home({ podcasts }) {
   );
 }
 
-export async function getStaticProps() {
-  const itunesIds = podcastsFileData
-    .map((podcast) => podcast.itunesId)
-    .join(",");
+export const getStaticProps: GetStaticProps = async () => {
+  const itunesIds = podcasts.map((podcast) => podcast.itunesId).join(",");
   const url = `https://itunes.apple.com/lookup?id=${itunesIds}`;
   const itunesRequest = await fetch(url);
   const itunesData = await itunesRequest.json();
 
-  const merged = podcastsFileData.map((podcastData) => {
+  const merged = podcasts.map((podcastData) => {
     const itunesPodcast = itunesData.results.find((itunesDatum) => {
       return +itunesDatum.collectionId === +podcastData.itunesId;
     });
@@ -555,7 +559,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      podcasts: podcastsFileData.map((podcastData) => {
+      podcasts: podcasts.map((podcastData) => {
         const itunesPodcast = itunesData.results.find((itunesDatum) => {
           return +itunesDatum.collectionId === +podcastData.itunesId;
         });
@@ -568,6 +572,6 @@ export async function getStaticProps() {
       }),
     },
   };
-}
+};
 
 export default Home;

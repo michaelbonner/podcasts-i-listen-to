@@ -1,6 +1,7 @@
+/* eslint-disable @next/next/next-script-for-ga */
 import Head from "next/head";
-import useWindowSize from "components/useWindowSize";
-import { useState, useLayoutEffect } from "react";
+import { useLayoutEffect, useState } from "react";
+import useWindowSize from "../components/useWindowSize";
 
 function MainLayout({ children }) {
   const { width } = useWindowSize();

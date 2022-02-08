@@ -5,29 +5,31 @@
   "main": "index.js",
   "dependencies": {
     "@slack/webhook": "^6.0.0",
-    "autoprefixer": "^10.3.1",
     "body-parser": "^1.19.0",
     "concurrently": "^7.0.0",
     "dotenv": "^15.0.0",
     "express": "^4.17.1",
     "next": "^12.0.0",
     "node-fetch": "^3.0.0",
-    "postcss": "^8.3.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@types/react": "^17.0.39",
     "@zeit/next-css": "^1.0.1",
+    "autoprefixer": "^10.4.2",
     "eslint-config-next": "^12.0.0",
     "next-purgecss": "^4.0.0",
-    "tailwindcss": "^3.0.18"
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.19"
   },
   "scripts": {
     "build": "next build",
     "deploy": "npm run build && npm run export",
     "dev": "next",
     "export": "npm run build && next export",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
