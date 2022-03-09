@@ -235,13 +235,13 @@ function Home({ podcasts }) {
                 </div>
                 <div className="relative z-10 flex items-center bg-white rounded py-2 px-3 shadow">
                   <label
-                    className="block uppercase tracking-wide text-gray-700 text-xs font-bold mr-4 px-3"
+                    className="block uppercase tracking-wide text-sky-700 text-xs font-bold mr-4 px-3"
                     htmlFor="search"
                   >
                     Search
                   </label>
                   <input
-                    className="appearance-none block w-full lg:w-64 bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    className="appearance-none block w-full lg:w-64 bg-gray-100 text-sky-800 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-300"
                     name="search"
                     id="search"
                     onChange={(e) => setSearch(e.target.value)}
@@ -303,14 +303,16 @@ function Home({ podcasts }) {
             ) : (
               <div className="w-full lg:w-auto text-right flex justify-end">
                 <button
-                  className="flex items-center bg-white rounded p-4 shadow focus:outline-none focus:bg-gray-300 font-semibold text-gray-700 text-sm"
+                  className="flex items-center bg-white rounded p-4 shadow focus:outline-none hover:bg-gray-100 focus:bg-gray-300 font-semibold text-gray-700 text-sm transition-all"
                   onClick={() => {
                     setToggleSearch(!toggleSearch);
                   }}
                 >
                   Search
                   <svg
-                    className="w-5 h-5 ml-2 text-sky-500 stroke-current"
+                    className={`w-5 h-5 ml-2 transition-all ${
+                      toggleSearch ? `text-sky-500` : `text-gray-300`
+                    } stroke-current`}
                     xmlns="http://www.w3.org/2000/svg"
                     width="512"
                     height="512"
@@ -343,10 +345,10 @@ function Home({ podcasts }) {
           </div>
           <div className="w-1/3 lg:w-auto text-right flex justify-end">
             <button
-              className={`flex items-center ${
+              className={`flex items-center transition-all ${
                 toggleFilters || ratingFilter || tagFilter
-                  ? "bg-sky-500 text-sky-100"
-                  : "bg-white text-gray-700"
+                  ? "bg-gray-100 text-sky-700 hover:bg-gray-200"
+                  : "bg-white text-gray-700 hover:bg-gray-100"
               } rounded py-2 px-4 shadow focus:outline-none font-semibold text-sm`}
               onClick={() => setToggleFilters(!toggleFilters)}
             >
@@ -354,8 +356,8 @@ function Home({ podcasts }) {
               <svg
                 className={`w-5 h-5 ml-2 ${
                   toggleFilters || ratingFilter || tagFilter
-                    ? "text-sky-200"
-                    : "text-sky-500"
+                    ? "text-sky-400"
+                    : "text-gray-300"
                 } fill-current`}
                 xmlns="http://www.w3.org/2000/svg"
                 width="512"
