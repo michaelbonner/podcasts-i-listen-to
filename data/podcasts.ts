@@ -46,7 +46,7 @@ const podcasts: Podcast[] = [
   {
     sortTitle: "Dropout",
     itunesId: 1449500734,
-    rating: 3,
+    rating: 4,
     tags: ["Documentary"],
     itunesData: {},
   },
