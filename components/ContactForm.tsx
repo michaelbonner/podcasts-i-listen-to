@@ -43,7 +43,7 @@ const ContactForm = () => {
   if (submitState === "submitted") {
     return (
       <div className="my-4 pt-6 border-t">
-        <h3 className="text-green-700 font-bold text-xl">
+        <h3 className="text-sky-700 font-bold text-xl">
           Thank you for your recommendation!
         </h3>
       </div>
@@ -116,7 +116,7 @@ const ContactForm = () => {
         <div className="w-full flex justify-end px-3 mt-8">
           <button
             disabled={submitState === "submitting"}
-            className="shadow bg-green-600 hover:bg-green-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            className="shadow bg-sky-600 hover:bg-sky-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
             type="submit"
           >
             Send it

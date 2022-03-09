@@ -79,7 +79,7 @@ const PodcastCard = memo(function PodcastCard({
               <button
                 className={`inline-block ${
                   tagFilter === tag
-                    ? "bg-green-200 text-green-700"
+                    ? "bg-sky-200 text-sky-700"
                     : "bg-gray-200 text-gray-700"
                 } rounded px-2 py-1 text-xs font-semibold focus:outline-none`}
                 key={tag}
@@ -188,7 +188,7 @@ function Home({ podcasts }) {
                 <div className="z-0 relative flex items-center bg-orange-100 px-2 py-2 shadow rounded-l">
                   <button
                     onClick={() => setToggleSearch(false)}
-                    className="focus:outline-none active:bg-green-200 text-orange-500"
+                    className="focus:outline-none active:bg-sky-200 text-orange-500"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -310,7 +310,7 @@ function Home({ podcasts }) {
                 >
                   Search
                   <svg
-                    className="w-5 h-5 ml-2 text-green-500 stroke-current"
+                    className="w-5 h-5 ml-2 text-sky-500 stroke-current"
                     xmlns="http://www.w3.org/2000/svg"
                     width="512"
                     height="512"
@@ -345,7 +345,7 @@ function Home({ podcasts }) {
             <button
               className={`flex items-center ${
                 toggleFilters || ratingFilter || tagFilter
-                  ? "bg-green-500 text-green-100"
+                  ? "bg-sky-500 text-sky-100"
                   : "bg-white text-gray-700"
               } rounded py-2 px-4 shadow focus:outline-none font-semibold text-sm`}
               onClick={() => setToggleFilters(!toggleFilters)}
@@ -354,8 +354,8 @@ function Home({ podcasts }) {
               <svg
                 className={`w-5 h-5 ml-2 ${
                   toggleFilters || ratingFilter || tagFilter
-                    ? "text-green-200"
-                    : "text-green-500"
+                    ? "text-sky-200"
+                    : "text-sky-500"
                 } fill-current`}
                 xmlns="http://www.w3.org/2000/svg"
                 width="512"
@@ -372,7 +372,7 @@ function Home({ podcasts }) {
         {toggleFilters && (
           <div className="flex flex-wrap mx-auto justify-between mt-3">
             <div className="w-full lg:w-1/2">
-              <h3 className="font-semibold text-lg text-green-800 mt-6 lg:mt-0 mx-4">
+              <h3 className="font-semibold text-lg text-sky-800 mt-6 lg:mt-0 mx-4">
                 Rating
               </h3>
               <div className="flex flex-wrap justify-start items-center px-2 text-yellow-500 text-sm">
@@ -426,7 +426,7 @@ function Home({ podcasts }) {
               </div>
             </div>
             <div className="w-full lg:w-1/2">
-              <h3 className="font-semibold text-lg text-green-800 mt-6 lg:mt-0 mx-4">
+              <h3 className="font-semibold text-lg text-sky-800 mt-6 lg:mt-0 mx-4">
                 Tags
               </h3>
               <div className="flex flex-wrap items-center lg:justify-start lg:mt-0 px-2 text-yellow-500 text-sm">
@@ -488,7 +488,7 @@ function Home({ podcasts }) {
           <div className="bg-white px-6 lg:px-12 py-4 rounded-md lg:rounded-l-none">
             <div className="flex justify-between items-center">
               <div>
-                <h3 className="items-center text-2xl lg:text-3xl font-bold text-green-700 my-3 pr-8 tracking-wide">
+                <h3 className="items-center text-2xl lg:text-3xl font-bold text-sky-700 my-3 pr-8 tracking-wide">
                   Got a podcast I should check out?
                 </h3>
                 <p className="text-gray-700 pr-8">
