@@ -4,24 +4,24 @@
   "description": "Runs here: [https://podcasts.michaelbonner.dev/](https://podcasts.michaelbonner.dev/)",
   "main": "index.js",
   "dependencies": {
-    "@slack/webhook": "^6.0.0",
-    "body-parser": "^1.19.0",
+    "@slack/webhook": "^6.1.0",
+    "body-parser": "^1.19.2",
     "concurrently": "^7.0.0",
-    "dotenv": "^15.0.0",
-    "express": "^4.17.1",
-    "next": "^12.0.0",
-    "node-fetch": "^3.0.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "next": "^12.1.2",
+    "node-fetch": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@types/react": "^17.0.39",
+    "@types/react": "^17.0.43",
     "@zeit/next-css": "^1.0.1",
-    "autoprefixer": "^10.4.2",
-    "eslint-config-next": "^12.0.0",
+    "autoprefixer": "^10.4.4",
+    "eslint-config-next": "^12.1.2",
     "next-purgecss": "^4.0.0",
-    "postcss": "^8.4.6",
-    "tailwindcss": "^3.0.19"
+    "postcss": "^8.4.12",
+    "tailwindcss": "^3.0.23"
   },
   "scripts": {
     "build": "next build",
