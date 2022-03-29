@@ -30,6 +30,13 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
+    sortTitle: "Cold",
+    itunesId: 1441595858,
+    rating: 5,
+    tags: ["Documentary"],
+    itunesData: {},
+  },
+  {
     sortTitle: "Dirty John",
     itunesId: 1272970334,
     rating: 3,
@@ -51,14 +58,7 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
-    sortTitle: "Egghead.io developer chats",
-    itunesId: 1308497805,
-    rating: 3,
-    tags: ["Development"],
-    itunesData: {},
-  },
-  {
-    sortTitle: "The Experiment",
+    sortTitle: "Experiment",
     itunesId: 1549704404,
     rating: 3,
     tags: ["Learn"],
@@ -142,13 +142,6 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
-    sortTitle: "Laravel Snippet",
-    itunesId: 1451072164,
-    rating: 4,
-    tags: ["Development"],
-    itunesData: {},
-  },
-  {
     sortTitle: "Making Sense with Sam Harris",
     itunesId: 733163012,
     rating: 5,
@@ -174,6 +167,13 @@ const podcasts: Podcast[] = [
     itunesId: 290783428,
     rating: 4,
     tags: ["Documentary"],
+    itunesData: {},
+  },
+  {
+    sortTitle: "People I (Mostly) Admire",
+    itunesId: 1525936566,
+    rating: 4,
+    tags: ["Learn"],
     itunesData: {},
   },
   {
@@ -219,9 +219,9 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
-    sortTitle: "Silicon Slopes",
+    sortTitle: "Meat and Potatoes",
     itunesId: 1262148655,
-    rating: 3,
+    rating: 4,
     tags: ["Learn"],
     itunesData: {},
   },
