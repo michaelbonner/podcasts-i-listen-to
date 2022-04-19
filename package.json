@@ -5,23 +5,23 @@
   "main": "index.js",
   "dependencies": {
     "@slack/webhook": "^6.1.0",
-    "body-parser": "^1.19.2",
-    "concurrently": "^7.0.0",
+    "body-parser": "^1.20.0",
+    "concurrently": "^7.1.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "next": "^12.1.2",
+    "next": "^12.1.5",
     "node-fetch": "^3.2.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.43",
+    "@types/react": "^18.0.5",
     "@zeit/next-css": "^1.0.1",
     "autoprefixer": "^10.4.4",
-    "eslint-config-next": "^12.1.2",
+    "eslint-config-next": "^12.1.5",
     "next-purgecss": "^4.0.0",
     "postcss": "^8.4.12",
-    "tailwindcss": "^3.0.23"
+    "tailwindcss": "^3.0.24"
   },
   "scripts": {
     "build": "next build",
