@@ -1,7 +1,9 @@
+import { Tag } from "./Tag";
+
 export type Podcast = {
   sortTitle: string;
   itunesId: number;
   rating: number;
-  tags: string[];
+  tags: Tag[];
   itunesData: any;
 };
