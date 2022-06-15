@@ -267,6 +267,13 @@ const podcasts: Podcast[] = [
     tags: ["History"],
     itunesData: {},
   },
+  {
+    sortTitle: "The Trojan Horse Affair",
+    itunesId: 1606918193,
+    rating: 5,
+    tags: ["Documentary"],
+    itunesData: {},
+  },
 ];
 
 export default podcasts;
