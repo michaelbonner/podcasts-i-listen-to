@@ -16,7 +16,7 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
-    sortTitle: "Build Your SaaS &ndash; bootstrap in 2021",
+    sortTitle: "Build Your SaaS",
     itunesId: 1357295850,
     rating: 3,
     tags: ["Development"],
@@ -156,6 +156,13 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
+    sortTitle: "Meat and Potatoes",
+    itunesId: 1262148655,
+    rating: 4,
+    tags: ["Learn"],
+    itunesData: {},
+  },
+  {
     sortTitle: "Opening Arguments",
     itunesId: 1147092464,
     rating: 3,
@@ -219,13 +226,6 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
-    sortTitle: "Meat and Potatoes",
-    itunesId: 1262148655,
-    rating: 4,
-    tags: ["Learn"],
-    itunesData: {},
-  },
-  {
     sortTitle: "A Slight Change of Plans",
     itunesId: 1561860622,
     rating: 3,
@@ -237,6 +237,13 @@ const podcasts: Podcast[] = [
     itunesId: 1315040130,
     rating: 4,
     tags: ["Documentary", "History"],
+    itunesData: {},
+  },
+  {
+    sortTitle: "Smashing Podcast",
+    itunesId: 1485403438,
+    rating: 4,
+    tags: ["Development"],
     itunesData: {},
   },
   {
