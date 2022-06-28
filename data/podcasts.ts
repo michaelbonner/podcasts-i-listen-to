@@ -156,6 +156,13 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
+    sortTitle: "Masters of Scale",
+    itunesId: 1227971746,
+    rating: 4,
+    tags: ["Learn"],
+    itunesData: {},
+  },
+  {
     sortTitle: "Meat and Potatoes",
     itunesId: 1262148655,
     rating: 4,
