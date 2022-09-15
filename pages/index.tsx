@@ -4,9 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import podcasts from "../data/podcasts";
 import MainLayout from "../layouts/main";
 
-const ContactForm = dynamic(() => import("../components/ContactForm"), {
-  suspense: true,
-});
+const ContactForm = dynamic(() => import("../components/ContactForm"));
 const PodcastCard = dynamic(() =>
   import("components/PodcastCard").then((mod) => mod.PodcastCard)
 );
