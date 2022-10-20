@@ -2,13 +2,6 @@ import { Podcast } from "../types/Podcast";
 
 const podcasts: Podcast[] = [
   {
-    sortTitle: "30 for 30",
-    itunesId: 1244784611,
-    rating: 3,
-    tags: ["Documentary", "Sports"],
-    itunesData: {},
-  },
-  {
     sortTitle: "American History Tellers",
     itunesId: 1313596069,
     rating: 4,
@@ -62,13 +55,6 @@ const podcasts: Podcast[] = [
     itunesId: 1549704404,
     rating: 3,
     tags: ["Learn"],
-    itunesData: {},
-  },
-  {
-    sortTitle: "Fat Leonard",
-    itunesId: 1585848867,
-    rating: 3,
-    tags: ["Documentary"],
     itunesData: {},
   },
   {
@@ -166,13 +152,6 @@ const podcasts: Podcast[] = [
     sortTitle: "Meat and Potatoes",
     itunesId: 1262148655,
     rating: 4,
-    tags: ["Learn"],
-    itunesData: {},
-  },
-  {
-    sortTitle: "Opening Arguments",
-    itunesId: 1147092464,
-    rating: 3,
     tags: ["Learn"],
     itunesData: {},
   },
