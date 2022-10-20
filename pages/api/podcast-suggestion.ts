@@ -1,6 +1,7 @@
 import { IncomingWebhook } from "@slack/webhook";
 import type { NextApiRequest, NextApiResponse } from "next";
 import fetch from "node-fetch";
+import { verify } from "hcaptcha";
 
 type ReturnData = {
   success: boolean;
@@ -53,7 +54,7 @@ const postToSlack = async (text: string) => {
   }
 };
 
-const podcastSuggestion = async (
+const handler = async (
   req: NextApiRequest,
   res: NextApiResponse<ReturnData>
 ) => {
@@ -105,6 +106,21 @@ const podcastSuggestion = async (
     return;
   }
 
+  // hcaptcha
+
+  const hcaptchaVerification = await verify(
+    process.env.HCAPTCHA_SECRET,
+    req.body.token
+  );
+
+  // if the hcaptcha fails, assume it's a bot and give them a fail
+  if (hcaptchaVerification.success !== true) {
+    res.statusCode = 400;
+    res.end(
+      JSON.stringify({ success: false, data: "Could not send notification" })
+    );
+  }
+
   const saveIt = await createRecommendationEntry(
     req.body.your_name,
     req.body.podcast_name,
@@ -130,4 +146,4 @@ const podcastSuggestion = async (
   }
   return;
 };
-export default podcastSuggestion;
+export default handler;

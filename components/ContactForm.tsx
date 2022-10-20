@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
+import { useRef, useState } from "react";
 
 const ContactForm = () => {
   const [submitState, setSubmitState] = useState("initial");
@@ -7,6 +8,16 @@ const ContactForm = () => {
   const [yourName, setYourName] = useState("");
   const [podcastName, setPodcastName] = useState("");
   const [podcastUrl, setPodcastUrl] = useState("");
+  const [token, setToken] = useState("");
+  const captchaRef = useRef(null);
+
+  const onLoad = () => {
+    // this reaches out to the hCaptcha JS API and runs the
+    // execute function on it. you can use other functions as
+    // documented here:
+    // https://docs.hcaptcha.com/configuration#jsapi
+    captchaRef.current.execute();
+  };
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -23,6 +34,7 @@ const ContactForm = () => {
           your_name: yourName,
           podcast_name: podcastName,
           podcast_url: podcastUrl,
+          token,
         }),
       });
       const response = await submit.json();
@@ -113,14 +125,26 @@ const ContactForm = () => {
             value={podcastUrl}
           />
         </div>
-        <div className="w-full flex justify-end px-3 mt-8">
-          <button
-            disabled={submitState === "submitting"}
-            className="shadow bg-sky-600 hover:bg-sky-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-            type="submit"
-          >
-            Send it
-          </button>
+        <div className="w-full flex justify-end items-end px-3 mt-8 gap-8">
+          <div>
+            <HCaptcha
+              sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
+              onLoad={onLoad}
+              onVerify={setToken}
+              ref={captchaRef}
+            />
+          </div>
+          <div>
+            <button
+              disabled={submitState === "submitting" || !token}
+              className={`shadow bg-sky-600 hover:bg-sky-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded transition-all ${
+                (submitState === "submitting" || !token) && `opacity-70`
+              }`}
+              type="submit"
+            >
+              Send it
+            </button>
+          </div>
         </div>
       </div>
     </form>
