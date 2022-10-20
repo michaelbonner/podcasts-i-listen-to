@@ -9,15 +9,6 @@ const ContactForm = () => {
   const [podcastName, setPodcastName] = useState("");
   const [podcastUrl, setPodcastUrl] = useState("");
   const [token, setToken] = useState("");
-  const captchaRef = useRef(null);
-
-  const onLoad = () => {
-    // this reaches out to the hCaptcha JS API and runs the
-    // execute function on it. you can use other functions as
-    // documented here:
-    // https://docs.hcaptcha.com/configuration#jsapi
-    captchaRef.current.execute();
-  };
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -129,9 +120,7 @@ const ContactForm = () => {
           <div>
             <HCaptcha
               sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
-              onLoad={onLoad}
-              onVerify={setToken}
-              ref={captchaRef}
+              onVerify={(t) => setToken(t)}
             />
           </div>
           <div>
