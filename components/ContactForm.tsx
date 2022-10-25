@@ -116,7 +116,7 @@ const ContactForm = () => {
             value={podcastUrl}
           />
         </div>
-        <div className="w-full flex justify-end items-end px-3 mt-8 gap-8">
+        <div className="w-full flex flex-wrap justify-end items-end px-3 mt-8 gap-8">
           <div>
             <HCaptcha
               sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
