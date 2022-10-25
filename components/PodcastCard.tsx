@@ -1,4 +1,4 @@
-import Image from "next/future/image";
+import Image from "next/image";
 import { FC, memo } from "react";
 import { Podcast } from "types/Podcast";
 import { Star } from "./Star";
