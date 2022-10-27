@@ -1,5 +1,5 @@
 import HCaptcha from "@hcaptcha/react-hcaptcha";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 const ContactForm = () => {
   const [submitState, setSubmitState] = useState("initial");

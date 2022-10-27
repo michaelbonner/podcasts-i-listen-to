@@ -1,10 +1,12 @@
 import { GetStaticProps } from "next";
 import dynamic from "next/dynamic";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import podcasts from "../data/podcasts";
 import MainLayout from "../layouts/main";
 
-const ContactForm = dynamic(() => import("../components/ContactForm"));
+const ContactForm = dynamic(() => import("../components/ContactForm"), {
+  suspense: true,
+});
 const PodcastCard = dynamic(() =>
   import("components/PodcastCard").then((mod) => mod.PodcastCard)
 );
@@ -446,7 +448,9 @@ function Home({ podcasts }) {
                 />
               </svg>
             </div>
-            <ContactForm />
+            <Suspense fallback={`Loading...`}>
+              <ContactForm />
+            </Suspense>
           </div>
         </div>
         {/* End form */}
