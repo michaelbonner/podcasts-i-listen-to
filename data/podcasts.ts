@@ -51,13 +51,6 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
-    sortTitle: "Experiment",
-    itunesId: 1549704404,
-    rating: 3,
-    tags: ["Learn"],
-    itunesData: {},
-  },
-  {
     sortTitle: "Freakonomics Radio",
     itunesId: 354668519,
     rating: 4,
@@ -142,13 +135,6 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
-    sortTitle: "Masters of Scale",
-    itunesId: 1227971746,
-    rating: 4,
-    tags: ["Learn"],
-    itunesData: {},
-  },
-  {
     sortTitle: "Meat and Potatoes",
     itunesId: 1262148655,
     rating: 4,
@@ -172,7 +158,7 @@ const podcasts: Podcast[] = [
   {
     sortTitle: "Radiolab Presents: More Perfect",
     itunesId: 1117202653,
-    rating: 4,
+    rating: 5,
     tags: ["History"],
     itunesData: {},
   },
@@ -191,13 +177,6 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
-    sortTitle: "Rework",
-    itunesId: 1264193508,
-    rating: 3,
-    tags: ["Learn", "Development"],
-    itunesData: {},
-  },
-  {
     sortTitle: "Science Vs",
     itunesId: 1051557000,
     rating: 4,
@@ -212,24 +191,10 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
-    sortTitle: "A Slight Change of Plans",
-    itunesId: 1561860622,
-    rating: 3,
-    tags: ["Learn"],
-    itunesData: {},
-  },
-  {
     sortTitle: "Slow Burn",
     itunesId: 1315040130,
     rating: 4,
     tags: ["Documentary", "History"],
-    itunesData: {},
-  },
-  {
-    sortTitle: "Smashing Podcast",
-    itunesId: 1485403438,
-    rating: 4,
-    tags: ["Development"],
     itunesData: {},
   },
   {
