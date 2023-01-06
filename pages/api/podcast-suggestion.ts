@@ -131,10 +131,7 @@ const handler = async (
   }
 
   // captcha
-
   const captchaVerification = await verifyTurnstileToken(req.body.token);
-
-  console.log("captchaVerification", captchaVerification);
 
   // if the captcha fails, assume it's a bot and give them a fail
   if (captchaVerification.success !== true) {
