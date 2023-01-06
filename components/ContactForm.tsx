@@ -121,6 +121,9 @@ const ContactForm = () => {
             <Turnstile
               siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
               onSuccess={(token) => setToken(token)}
+              options={{
+                theme: "light",
+              }}
             />
           </div>
           <div>
