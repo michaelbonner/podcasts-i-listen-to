@@ -4,6 +4,7 @@
   "description": "Runs here: [https://podcasts.michaelbonner.dev/](https://podcasts.michaelbonner.dev/)",
   "main": "index.js",
   "dependencies": {
+    "@marsidev/react-turnstile": "^0.0.5",
     "@slack/webhook": "^6.1.0",
     "body-parser": "^1.20.0",
     "concurrently": "^7.1.0",
