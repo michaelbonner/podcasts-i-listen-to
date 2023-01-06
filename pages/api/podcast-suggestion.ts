@@ -1,7 +1,31 @@
 import { IncomingWebhook } from "@slack/webhook";
 import type { NextApiRequest, NextApiResponse } from "next";
 import fetch from "node-fetch";
-import { verify } from "hcaptcha";
+
+type TurnstileResponse = {
+  success: boolean;
+};
+const verifyTurnstileToken = async (
+  token: string
+): Promise<TurnstileResponse> => {
+  const body = `secret=${encodeURIComponent(
+    process.env.TURNSTILE_SECRET
+  )}&response=${encodeURIComponent(token)}`;
+
+  const res = await fetch(
+    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+    {
+      method: "POST",
+      body,
+      headers: {
+        "content-type": "application/x-www-form-urlencoded",
+      },
+    }
+  );
+
+  const data = (await res.json()) as TurnstileResponse;
+  return data;
+};
 
 type ReturnData = {
   success: boolean;
@@ -106,17 +130,16 @@ const handler = async (
     return;
   }
 
-  // hcaptcha
+  // captcha
 
-  const hcaptchaVerification = await verify(
-    process.env.HCAPTCHA_SECRET,
-    req.body.token
-  );
+  const captchaVerification = await verifyTurnstileToken(req.body.token);
 
-  // if the hcaptcha fails, assume it's a bot and give them a fail
-  if (hcaptchaVerification.success !== true) {
+  console.log("captchaVerification", captchaVerification);
+
+  // if the captcha fails, assume it's a bot and give them a fail
+  if (captchaVerification.success !== true) {
     res.statusCode = 400;
-    res.end(
+    return res.end(
       JSON.stringify({ success: false, data: "Could not send notification" })
     );
   }
