@@ -1,4 +1,4 @@
-import HCaptcha from "@hcaptcha/react-hcaptcha";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { useState } from "react";
 
 const ContactForm = () => {
@@ -118,9 +118,9 @@ const ContactForm = () => {
         </div>
         <div className="w-full flex flex-wrap justify-end items-end px-3 mt-8 gap-8">
           <div>
-            <HCaptcha
-              sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
-              onVerify={(t) => setToken(t)}
+            <Turnstile
+              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+              onSuccess={(token) => setToken(token)}
             />
           </div>
           <div>
