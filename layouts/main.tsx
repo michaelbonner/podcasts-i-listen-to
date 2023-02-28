@@ -101,7 +101,7 @@ function MainLayout({ children }) {
       <div className="text-sky-100 px-4 lg:px-0 text-center lg:text-left">
         <div className="mx-auto xl:mx-4 2xl:mx-12 3xl:mx-24 4xl:mx-48 text-center lg:flex lg:flex-wrap lg:justify-between lg:items-center text-sky-50 pt-12 pb-10">
           <div className="lg:flex lg:flex-wrap">
-            <p className="pt-4 lg:pt-0 lg:pr-4 lg:mr-4">
+            <p className="pl-4 pt-4 lg:pt-0 lg:pr-4 lg:mr-4">
               &copy; {new Date().getFullYear()}{" "}
               <a
                 className="font-semibold hover:underline"
