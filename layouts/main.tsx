@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/next-script-for-ga */
 import Head from "next/head";
+import Script from "next/script";
 import { useEffect, useState } from "react";
 import useWindowSize from "../components/useWindowSize";
 
@@ -17,6 +18,17 @@ function MainLayout({ children }) {
 
   return (
     <>
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-WKV6C4B');`,
+        }}
+        id="gtm"
+      />
+
       <Head>
         <meta charSet="utf-8" />
         <title>Podcasts I Listen To</title>
@@ -38,16 +50,6 @@ function MainLayout({ children }) {
         <meta
           property="og:image"
           content="https://podcasts.michaelbonner.dev/og-image.jpg"
-        />
-
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-WKV6C4B');`,
-          }}
         />
 
         <noscript
