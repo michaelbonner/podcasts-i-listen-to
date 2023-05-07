@@ -54,7 +54,14 @@ const ContactForm = () => {
   }
 
   return (
-    <form action="/api/podcast-suggestion" method="POST" onSubmit={onSubmit}>
+    <form
+      action="/api/podcast-suggestion"
+      className={`transition-opacity ${
+        submitState === "submitting" && "opacity-50"
+      }`}
+      method="POST"
+      onSubmit={onSubmit}
+    >
       {submitState === "error" && (
         <div className="mt-4 bg-orange-100 border border-orange-500 text-orange-700 rounded py-2 px-4">
           <p>{errorMessage}</p>
