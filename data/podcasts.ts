@@ -23,6 +23,13 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
+    sortTitle: "City Cast Salt Lake",
+    itunesId: 1599782608,
+    rating: 4,
+    tags: ["News"],
+    itunesData: {},
+  },
+  {
     sortTitle: "Cold",
     itunesId: 1441595858,
     rating: 5,
