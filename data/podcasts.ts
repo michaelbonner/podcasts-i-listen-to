@@ -149,6 +149,13 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
+    sortTitle: "Ologies with Alie Ward",
+    itunesId: 1278815517,
+    rating: 4,
+    tags: ["Learn"],
+    itunesData: {},
+  },
+  {
     sortTitle: "Planet Money",
     itunesId: 290783428,
     rating: 4,
