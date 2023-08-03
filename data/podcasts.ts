@@ -37,6 +37,13 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
+    sortTitle: "devtools.fm",
+    itunesId: 1566647758,
+    rating: 5,
+    tags: ["Development"],
+    itunesData: {},
+  },
+  {
     sortTitle: "Dirty John",
     itunesId: 1272970334,
     rating: 3,
