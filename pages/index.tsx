@@ -95,8 +95,8 @@ function Home({ podcasts }) {
     <MainLayout>
       <div className="main-content pt-8 pb-16">
         {/* Filters */}
-        <div className="mx-auto xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72 px-4 text-right flex flex-wrap justify-end">
-          <div className="w-2/3 lg:w-auto pr-0 lg:pr-4">
+        <div className="mx-auto xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72 px-4 text-right flex flex-wrap gap-3 justify-end">
+          <div>
             {toggleSearch ? (
               <div className="flex items-center">
                 <div className="z-0 relative flex items-center bg-orange-100 px-2 py-2 shadow rounded-l">
@@ -217,14 +217,14 @@ function Home({ podcasts }) {
             ) : (
               <div className="w-full lg:w-auto text-right flex justify-end">
                 <button
-                  className="flex items-center bg-white rounded p-4 shadow focus:outline-none hover:bg-gray-100 focus:bg-gray-300 font-semibold text-gray-700 text-sm transition-all"
+                  className="flex items-center gap-2 bg-white rounded p-4 shadow focus:outline-none hover:bg-gray-100 focus:bg-gray-300 font-semibold text-gray-700 text-sm transition-all"
                   onClick={() => {
                     setToggleSearch(!toggleSearch);
                   }}
                 >
-                  Search
+                  <span>Search</span>
                   <svg
-                    className={`w-5 h-5 ml-2 transition-all ${
+                    className={`w-5 h-5 transition-all ${
                       toggleSearch ? `text-sky-500` : `text-gray-300`
                     } stroke-current`}
                     xmlns="http://www.w3.org/2000/svg"
@@ -257,18 +257,18 @@ function Home({ podcasts }) {
               </div>
             )}
           </div>
-          <div className="w-1/3 lg:w-auto text-right flex justify-end">
+          <div className="text-right flex justify-end">
             <button
-              className={`flex items-center transition-all ${
+              className={`flex items-center gap-2 transition-all ${
                 toggleFilters || ratingFilter || tagFilter
                   ? "bg-gray-100 text-sky-700 hover:bg-gray-200"
                   : "bg-white text-gray-700 hover:bg-gray-100"
               } rounded py-2 px-4 shadow focus:outline-none font-semibold text-sm`}
               onClick={() => setToggleFilters(!toggleFilters)}
             >
-              Filters
+              <span>Filters</span>
               <svg
-                className={`w-5 h-5 ml-2 ${
+                className={`w-5 h-5 ${
                   toggleFilters || ratingFilter || tagFilter
                     ? "text-sky-400"
                     : "text-gray-300"
@@ -286,9 +286,9 @@ function Home({ podcasts }) {
           </div>
         </div>
         {toggleFilters && (
-          <div className="flex flex-wrap mx-auto justify-between mt-3">
-            <div className="w-full lg:w-1/2">
-              <h3 className="font-semibold text-lg text-sky-800 mt-6 lg:mt-0 mx-4">
+          <div className="mx-auto xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72 px-4 text-right flex flex-wrap lg:justify-end mt-2 mb-8 gap-4 lg:gap-12">
+            <div>
+              <h3 className="font-semibold text-lg text-sky-800 mt-6 lg:mt-0 mx-4 text-left">
                 Rating
               </h3>
               <div className="flex flex-wrap justify-start items-center px-2 text-yellow-500 text-sm">
@@ -300,18 +300,6 @@ function Home({ podcasts }) {
                   } `}
                 >
                   All
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setRatingFilter(3)}
-                  className={`flex flex-wrap items-center mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-none ${
-                    ratingFilter === 3 ? "bg-yellow-200" : "bg-white"
-                  } `}
-                >
-                  <Star filled={true} />
-                  <Star filled={true} />
-                  <Star filled={true} />
-                  <span className="font-black pl-1">+</span>
                 </button>
                 <button
                   type="button"
@@ -341,8 +329,8 @@ function Home({ podcasts }) {
                 </button>
               </div>
             </div>
-            <div className="w-full lg:w-1/2">
-              <h3 className="font-semibold text-lg text-sky-800 mt-6 lg:mt-0 mx-4">
+            <div>
+              <h3 className="font-semibold text-lg text-sky-800 mt-6 lg:mt-0 mx-4 text-left">
                 Tags
               </h3>
               <div className="flex flex-wrap items-center lg:justify-start lg:mt-0 px-2 text-yellow-500 text-sm">
@@ -374,7 +362,7 @@ function Home({ podcasts }) {
         {/* End filters */}
 
         {/* Podcast grid */}
-        <div className="lg:mx-auto xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72 px-4 grid gap-4 xl:gap-6 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mt-4">
+        <div className="lg:mx-auto xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72 px-4 grid gap-4 xl:gap-6 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mt-8">
           {filteredPodcasts.length ? (
             filteredPodcasts.map((podcast) => {
               return (
