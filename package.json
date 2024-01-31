@@ -4,11 +4,11 @@
   "description": "Runs here: [https://podcasts.michaelbonner.dev/](https://podcasts.michaelbonner.dev/)",
   "main": "index.js",
   "dependencies": {
-    "@marsidev/react-turnstile": "^0.4.0",
+    "@marsidev/react-turnstile": "^0.5.1",
     "@slack/webhook": "^7.0.1",
     "body-parser": "^1.20.2",
-    "dotenv": "^16.3.1",
-    "next": "^14.0.3",
+    "dotenv": "^16.4.1",
+    "next": "^14.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -18,7 +18,7 @@
     "autoprefixer": "^10.4.16",
     "concurrently": "^8.2.2",
     "eslint": "^8.54.0",
-    "eslint-config-next": "^14.0.3",
+    "eslint-config-next": "^14.1.0",
     "next-purgecss": "^4.0.0",
     "postcss": "^8.4.31",
     "prettier-plugin-organize-imports": "^3.2.4",
