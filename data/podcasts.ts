@@ -39,7 +39,7 @@ const podcasts: Podcast[] = [
   {
     sortTitle: "devtools.fm",
     itunesId: 1566647758,
-    rating: 5,
+    rating: 4,
     tags: ["Development"],
     itunesData: {},
   },
