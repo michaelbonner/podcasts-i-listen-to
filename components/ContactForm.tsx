@@ -31,6 +31,8 @@ const ContactForm = () => {
       const response = await submit.json();
       if (response.success) {
         setSubmitState("submitted");
+        setPodcastName("");
+        setPodcastUrl("");
       } else {
         setErrorMessage(response.data);
         setSubmitState("error");
@@ -42,16 +44,6 @@ const ContactForm = () => {
       setSubmitState("error");
     }
   };
-
-  if (submitState === "submitted") {
-    return (
-      <div className="my-4 pt-6 border-t">
-        <h3 className="text-sky-700 font-bold text-xl">
-          Thank you for your recommendation!
-        </h3>
-      </div>
-    );
-  }
 
   return (
     <form
@@ -123,6 +115,13 @@ const ContactForm = () => {
             value={podcastUrl}
           />
         </div>
+        {submitState === "submitted" && (
+          <div className="my-4 pt-6 border-t">
+            <h3 className="text-sky-700 font-bold text-xl">
+              Thank you for your recommendation!
+            </h3>
+          </div>
+        )}
         <div className="w-full flex flex-wrap justify-end items-end px-3 mt-8 gap-8">
           <div>
             <Turnstile

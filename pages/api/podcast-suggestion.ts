@@ -1,5 +1,10 @@
 import { IncomingWebhook } from "@slack/webhook";
+import { Client, fql } from "fauna";
 import type { NextApiRequest, NextApiResponse } from "next";
+
+const client = new Client({
+  secret: process.env.PODCASTS_FAUNA_DB_SECRET,
+});
 
 type TurnstileResponse = {
   success: boolean;
@@ -36,33 +41,20 @@ const createRecommendationEntry = async (
   podcastName: string,
   podcastUrl: string
 ): Promise<any> => {
-  const query = `mutation CreateRecommendation($yourName: String!, $podcastName: String!, $podcastUrl: String!) {
-    createRecommendation(data: {
-      your_name: $yourName,
-      podcast_name: $podcastName,
-      podcast_url: $podcastUrl,
-    }) {
-      _id
-      _ts
-      your_name
-    }
-  }`;
+  try {
+    const query = fql`
+    Recommendation.create({
+      your_name: ${yourName},
+      podcast_name: ${podcastName},
+      podcast_url: ${podcastUrl},
+    })`;
 
-  const res = await fetch(process.env.FAUNA_DB_ENDPOINT, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${process.env.FAUNA_DB_SECRET}`,
-      "Content-type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({
-      query,
-      variables: { yourName, podcastName, podcastUrl },
-    }),
-  });
-  const data = await res.json();
-
-  return data;
+    const response = await client.query(query);
+    return response;
+  } catch (error) {
+    console.error("error", error);
+    return false;
+  }
 };
 
 const postToSlack = async (text: string) => {
@@ -72,7 +64,7 @@ const postToSlack = async (text: string) => {
       text,
     });
   } catch (error) {
-    console.log("error", error);
+    console.error("error", error);
     return false;
   }
 };

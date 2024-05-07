@@ -4,8 +4,7 @@ module.exports = {
   swcMinify: true,
   env: {
     SLACK_WEBHOOK_URL: process.env.SLACK_WEBHOOK_URL,
-    FAUNA_DB_SECRET: process.env.FAUNA_DB_SECRET,
-    FAUNA_DB_ENDPOINT: "https://graphql.fauna.com/graphql",
+    PODCASTS_FAUNA_DB_SECRET: process.env.PODCASTS_FAUNA_DB_SECRET,
   },
   images: {
     remotePatterns: [
