@@ -79,13 +79,6 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
-    sortTitle: "HBR IdeaCast",
-    itunesId: 152022135,
-    rating: 3,
-    tags: ["Learn"],
-    itunesData: {},
-  },
-  {
     sortTitle: "Hidden Brain",
     itunesId: 1028908750,
     rating: 5,
