@@ -10,7 +10,7 @@ const ContactForm = () => {
   const [podcastUrl, setPodcastUrl] = useState("");
   const [token, setToken] = useState("");
 
-  const onSubmit = async (e) => {
+  const onSubmit = async (e: any) => {
     e.preventDefault();
 
     setSubmitState("submitting");

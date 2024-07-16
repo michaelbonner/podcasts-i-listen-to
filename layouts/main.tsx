@@ -51,6 +51,7 @@ function MainLayout({ children }) {
           property="og:image"
           content="https://podcasts.michaelbonner.dev/og-image.jpg"
         />
+        <meta name="theme-color" content="#075985" />
 
         <noscript
           dangerouslySetInnerHTML={{
