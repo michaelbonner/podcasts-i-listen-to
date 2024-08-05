@@ -4,27 +4,27 @@
   "description": "Runs here: [https://podcasts.michaelbonner.dev/](https://podcasts.michaelbonner.dev/)",
   "main": "index.js",
   "dependencies": {
-    "@marsidev/react-turnstile": "^0.7.1",
-    "@slack/webhook": "^7.0.1",
+    "@marsidev/react-turnstile": "^0.7.2",
+    "@slack/webhook": "^7.0.2",
     "body-parser": "^1.20.2",
-    "dotenv": "^16.4.1",
-    "fauna": "^2.0.1",
-    "next": "^14.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "dotenv": "^16.4.5",
+    "fauna": "^2.2.0",
+    "next": "^14.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.39",
+    "@types/react": "^18.3.3",
     "@zeit/next-css": "^1.0.1",
-    "autoprefixer": "^10.4.16",
+    "autoprefixer": "^10.4.20",
     "concurrently": "^8.2.2",
-    "eslint": "^8.54.0",
-    "eslint-config-next": "^14.1.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.5",
     "next-purgecss": "^4.0.0",
-    "postcss": "^8.4.31",
+    "postcss": "^8.4.40",
     "prettier-plugin-organize-imports": "^4.0.0",
-    "tailwindcss": "^3.4.4",
-    "typescript": "^5.3.2"
+    "tailwindcss": "^3.4.7",
+    "typescript": "^5.5.4"
   },
   "scripts": {
     "build": "next build",
