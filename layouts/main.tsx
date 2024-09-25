@@ -1,19 +1,14 @@
 /* eslint-disable @next/next/next-script-for-ga */
 import Head from "next/head";
 import Script from "next/script";
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 import useWindowSize from "../components/useWindowSize";
 
 function MainLayout({ children }) {
   const { width } = useWindowSize();
-  const [showWideMonitor, setShowWideMonitor] = useState(false);
 
-  useEffect(() => {
-    if (width > 3000) {
-      setShowWideMonitor(true);
-    } else {
-      setShowWideMonitor(false);
-    }
+  const showWideMonitor = useMemo(() => {
+    return width > 3000;
   }, [width]);
 
   return (

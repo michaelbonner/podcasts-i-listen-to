@@ -1,20 +1,20 @@
+import { PodcastCard } from "components/PodcastCard";
 import { GetStaticProps } from "next";
 import dynamic from "next/dynamic";
 import { Suspense, useEffect, useRef, useState } from "react";
+import { Podcast } from "types/Podcast";
+import { Tag } from "types/Tag";
 import podcasts from "../data/podcasts";
 import MainLayout from "../layouts/main";
+import { Star } from "components/Star";
 
 const ContactForm = dynamic(() => import("../components/ContactForm"), {
   suspense: true,
 });
-const PodcastCard = dynamic(() =>
-  import("components/PodcastCard").then((mod) => mod.PodcastCard)
-);
-const Star = dynamic(() => import("components/Star").then((mod) => mod.Star));
 
-function Home({ podcasts }) {
+function Home({ podcasts }: { podcasts: Podcast[] }) {
   const [ratingFilter, setRatingFilter] = useState(0);
-  const [tagFilter, setTagFilter] = useState("");
+  const [tagFilter, setTagFilter] = useState<Tag | null>(null);
   const [sortedPodcasts, setSortedPodcasts] = useState(podcasts);
   const [filteredPodcasts, setFilteredPodcasts] = useState(podcasts);
   const [tags, setTags] = useState([]);
@@ -336,9 +336,9 @@ function Home({ podcasts }) {
               <div className="flex flex-wrap items-center lg:justify-start lg:mt-0 px-2 text-yellow-500 text-sm">
                 <button
                   type="button"
-                  onClick={() => setTagFilter("")}
+                  onClick={() => setTagFilter(null)}
                   className={`flex flex-wrap items-center mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-none font-bold ${
-                    tagFilter === "" ? "bg-yellow-200" : "bg-white"
+                    tagFilter === null ? "bg-yellow-200" : "bg-white"
                   } `}
                 >
                   All
@@ -362,7 +362,7 @@ function Home({ podcasts }) {
         {/* End filters */}
 
         {/* Podcast grid */}
-        <div className="lg:mx-auto xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72 px-4 grid gap-4 xl:gap-6 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mt-8">
+        <div className="lg:mx-auto xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72 px-4 grid gap-4 xl:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 mt-8">
           {filteredPodcasts.length ? (
             filteredPodcasts.map((podcast) => {
               return (
@@ -452,16 +452,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const url = `https://itunes.apple.com/lookup?id=${itunesIds}`;
   const itunesRequest = await fetch(url);
   const itunesData = await itunesRequest.json();
-
-  const merged = podcasts.map((podcastData) => {
-    const itunesPodcast = itunesData.results.find((itunesDatum) => {
-      return +itunesDatum.collectionId === +podcastData.itunesId;
-    });
-    if (itunesPodcast) {
-      podcastData.itunesData = itunesPodcast;
-    }
-    return podcastData;
-  });
 
   return {
     props: {

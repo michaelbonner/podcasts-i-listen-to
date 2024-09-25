@@ -93,13 +93,6 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
-    sortTitle: "Indicator from Planet Money",
-    itunesId: 1320118593,
-    rating: 4,
-    tags: ["News"],
-    itunesData: {},
-  },
-  {
     sortTitle: "Invisibilia",
     itunesId: 953290300,
     rating: 4,
@@ -156,13 +149,6 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
-    sortTitle: "Planet Money",
-    itunesId: 290783428,
-    rating: 4,
-    tags: ["Documentary"],
-    itunesData: {},
-  },
-  {
     sortTitle: "People I (Mostly) Admire",
     itunesId: 1525936566,
     rating: 4,
@@ -170,17 +156,10 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
-    sortTitle: "Radiolab Presents: More Perfect",
+    sortTitle: "More Perfect",
     itunesId: 1117202653,
     rating: 5,
     tags: ["History"],
-    itunesData: {},
-  },
-  {
-    sortTitle: "Reveal",
-    itunesId: 886009669,
-    rating: 4,
-    tags: ["History", "Learn"],
     itunesData: {},
   },
   {
