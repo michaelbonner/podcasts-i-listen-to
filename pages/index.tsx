@@ -101,7 +101,10 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
               <div className="flex items-center">
                 <div className="z-0 relative flex items-center bg-orange-100 px-2 py-2 shadow rounded-l">
                   <button
-                    onClick={() => setToggleSearch(false)}
+                    onClick={() => {
+                      setToggleSearch(false);
+                      setSearch("");
+                    }}
                     className="focus:outline-none active:bg-sky-200 text-orange-500"
                   >
                     <svg
@@ -363,7 +366,7 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
 
         {/* Podcast grid */}
         <div className="lg:mx-auto xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72 px-4 grid gap-4 xl:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 mt-8">
-          {filteredPodcasts.length ? (
+          {filteredPodcasts.length > 0 &&
             filteredPodcasts.map((podcast) => {
               return (
                 <PodcastCard
@@ -373,17 +376,21 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
                   tagFilter={tagFilter}
                 />
               );
-            })
-          ) : (
-            <div className="w-full h-full md:w-1/2 p-4 mx-auto">
-              <div className="flex justify-center bg-white items-center rounded-lg shadow-lg w-full h-32 px-4 py-3">
-                <p className="text-xl font-semibold">
-                  No podcasts match that filter
-                </p>
-              </div>
-            </div>
-          )}
+            })}
         </div>
+        {filteredPodcasts.length === 0 && (
+          <div className="w-full max-w-lg p-4 mx-auto">
+            <div className="grid gap-2 bg-white items-center rounded-lg w-full px-8 py-6">
+              <h2 className="text-xl font-semibold">
+                No podcasts match that filter 🥺
+              </h2>
+              <p>
+                Maybe suggest that podcast to me? I&apos;m always looking for
+                new ones. Use the form below.
+              </p>
+            </div>
+          </div>
+        )}
         {/* End podcast grid */}
 
         {/* Form */}
