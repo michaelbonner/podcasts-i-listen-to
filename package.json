@@ -18,7 +18,6 @@
     "@zeit/next-css": "^1.0.1",
     "autoprefixer": "^10.4.20",
     "concurrently": "^9.0.1",
-    "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.8",
     "next-purgecss": "^4.0.0",
     "postcss": "^8.4.45",
