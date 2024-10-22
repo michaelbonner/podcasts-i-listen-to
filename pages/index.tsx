@@ -8,9 +8,7 @@ import podcasts from "../data/podcasts";
 import MainLayout from "../layouts/main";
 import { Star } from "components/Star";
 
-const ContactForm = dynamic(() => import("../components/ContactForm"), {
-  suspense: true,
-});
+const ContactForm = dynamic(() => import("../components/ContactForm"));
 
 function Home({ podcasts }: { podcasts: Podcast[] }) {
   const [ratingFilter, setRatingFilter] = useState(0);
