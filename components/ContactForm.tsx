@@ -60,22 +60,22 @@ const ContactForm = () => {
       onSubmit={onSubmit}
     >
       {submitState === "error" && (
-        <div className="mt-4 bg-orange-100 border border-orange-500 text-orange-700 rounded py-2 px-4">
+        <div className="py-2 px-4 mt-4 text-orange-700 bg-orange-100 rounded border border-orange-500">
           <p>{errorMessage}</p>
         </div>
       )}
-      <div className="flex flex-wrap -mx-3 mb-6 mt-2 px-2 lg:pl-8 lg:pr-4">
-        <div className="w-full grid lg:grid-cols-2 gap-2">
-          <div className="w-full px-3 mt-6">
+      <div className="flex flex-wrap px-2 -mx-3 mt-2 mb-6 lg:pr-4 lg:pl-8">
+        <div className="grid gap-2 w-full lg:grid-cols-2">
+          <div className="px-3 mt-6 w-full">
             <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
               htmlFor="your-name"
             >
               Your Name
             </label>
             <input
               autoComplete="name"
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="block py-3 px-4 w-full leading-tight text-gray-700 bg-gray-200 rounded border border-gray-200 appearance-none focus:bg-white focus:border-gray-500 focus:outline-none"
               id="your-name"
               name="your_name"
               onChange={(e) =>
@@ -90,15 +90,15 @@ const ContactForm = () => {
               value={formData.your_name}
             />
           </div>
-          <div className="w-full px-3 mt-6">
+          <div className="px-3 mt-6 w-full">
             <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
               htmlFor="podcast-name"
             >
               Podcast Name
             </label>
             <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="block py-3 px-4 w-full leading-tight text-gray-700 bg-gray-200 rounded border border-gray-200 appearance-none focus:bg-white focus:border-gray-500 focus:outline-none"
               id="podcast-name"
               name="podcast_name"
               onChange={(e) =>
@@ -114,15 +114,15 @@ const ContactForm = () => {
             />
           </div>
         </div>
-        <div className="w-full px-3 mt-6">
+        <div className="px-3 mt-6 w-full">
           <label
-            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
             htmlFor="podcast-url"
           >
             Podcast URL
           </label>
           <input
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            className="block py-3 px-4 w-full leading-tight text-gray-700 bg-gray-200 rounded border border-gray-200 appearance-none focus:bg-white focus:border-gray-500 focus:outline-none"
             id="podcast-url"
             name="podcast_url"
             onChange={(e) =>
@@ -138,13 +138,13 @@ const ContactForm = () => {
           />
         </div>
         {submitState === "submitted" && (
-          <div className="my-4 pt-6 border-t w-full px-4">
-            <h3 className="text-sky-700 font-bold text-xl">
+          <div className="px-4 pt-6 my-4 w-full border-t">
+            <h3 className="text-xl font-bold text-sky-700">
               Thank you for your recommendation!
             </h3>
           </div>
         )}
-        <div className="w-full flex flex-wrap justify-between items-end px-3 mt-8 gap-8">
+        <div className="flex flex-wrap gap-8 justify-between items-end px-3 mt-8 w-full">
           <Turnstile
             siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
             onSuccess={(token) => setToken(token)}

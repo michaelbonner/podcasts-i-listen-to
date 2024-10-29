@@ -57,22 +57,22 @@ function MainLayout({ children }) {
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
       </Head>
-      <div className="text-sky-100 py-12">
-        <div className="mx-auto xl:mx-4 flex flex-wrap items-center justify-center gap-4 lg:gap-x-8">
-          <h1 className="text-center text-3xl lg:text-5xl">
+      <div className="py-12 text-sky-100">
+        <div className="flex flex-wrap gap-4 justify-center items-center mx-auto lg:gap-x-8 xl:mx-4">
+          <h1 className="text-3xl text-center lg:text-5xl">
             Some Podcasts I Listen To
           </h1>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            className="icon-microphone w-8 h-8 lg:w-12 lg:h-12 ml-4"
+            className="ml-4 w-8 h-8 lg:w-12 lg:h-12 icon-microphone"
           >
             <path
-              className="secondary text-sky-100 fill-current"
+              className="fill-current secondary text-sky-100"
               d="M12 1a4 4 0 0 1 4 4v6a4 4 0 1 1-8 0V5a4 4 0 0 1 4-4z"
             />
             <path
-              className="primary text-sky-200 fill-current"
+              className="fill-current primary text-sky-200"
               d="M13 18.94V21h3a1 1 0 0 1 0 2H8a1 1 0 0 1 0-2h3v-2.06A8 8 0 0 1 4 11a1 1 0 0 1 2 0 6 6 0 1 0 12 0 1 1 0 0 1 2 0 8 8 0 0 1-7 7.94z"
             />
           </svg>
@@ -81,7 +81,7 @@ function MainLayout({ children }) {
       {children}
 
       {showWideMonitor && (
-        <div className="fixed right-0 bottom-0 mb-16 mr-16 bg-sky-700 shadow-lg rounded-lg">
+        <div className="fixed right-0 bottom-0 mr-16 mb-16 rounded-lg shadow-lg bg-sky-700">
           <video
             autoPlay={true}
             className="rounded-t-lg shadow"
@@ -90,16 +90,16 @@ function MainLayout({ children }) {
             playsInline={true}
             src="/rick-and-morty-i-like-what-you-got.mp4"
           />
-          <p className="px-4 py-5 font-semibold text-sky-100 text-2xl text-center">
+          <p className="py-5 px-4 text-2xl font-semibold text-center text-sky-100">
             Wow you have a wide monitor &#129299;
           </p>
         </div>
       )}
 
-      <div className="text-sky-100 px-4 lg:px-0 text-center lg:text-left">
-        <div className="mx-auto xl:mx-4 2xl:mx-12 3xl:mx-24 4xl:mx-48 text-center lg:flex lg:flex-wrap lg:justify-between lg:items-center text-sky-50 pt-12 pb-10">
+      <div className="px-4 text-center lg:px-0 lg:text-left text-sky-100">
+        <div className="pt-12 pb-10 mx-auto text-center lg:flex lg:flex-wrap lg:justify-between lg:items-center xl:mx-4 2xl:mx-12 3xl:mx-24 4xl:mx-48 text-sky-50">
           <div className="lg:flex lg:flex-wrap">
-            <p className="pl-4 pt-4 lg:pt-0 lg:pr-4 lg:mr-4">
+            <p className="pt-4 pl-4 lg:pt-0 lg:pr-4 lg:mr-4">
               &copy; {new Date().getFullYear()}{" "}
               <a
                 className="font-semibold hover:underline"
@@ -124,7 +124,7 @@ function MainLayout({ children }) {
                 href="https://github.com/michaelbonner/podcasts-i-listen-to"
               >
                 <svg
-                  className="fill-current w-8 h-8 mx-2"
+                  className="mx-2 w-8 h-8 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   width="512"
                   height="512"
@@ -141,7 +141,7 @@ function MainLayout({ children }) {
                 href="https://www.instagram.com/michael__bonner/"
               >
                 <svg
-                  className="fill-current w-8 h-8 mx-2"
+                  className="mx-2 w-8 h-8 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   width="512"
                   height="512"

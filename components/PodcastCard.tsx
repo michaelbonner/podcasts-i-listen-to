@@ -18,7 +18,7 @@ export const PodcastCard: FC<Props> = memo(function PodcastCard({
   return (
     <div
       key={podcast.itunesId}
-      className="grid grid-cols-3 lg:grid-cols-3 items-start gap-6 sm:gap-4 lg:gap-6 bg-white rounded-lg shadow-lg w-full"
+      className="grid grid-cols-3 gap-6 items-start w-full bg-white rounded-lg shadow-lg sm:gap-4 lg:grid-cols-3 lg:gap-6"
     >
       <a
         className="w-full h-full"
@@ -28,14 +28,14 @@ export const PodcastCard: FC<Props> = memo(function PodcastCard({
         title={`${podcast.itunesData?.collectionName} Poster`}
       >
         <Image
-          className="rounded-lg rounded-r-none w-full h-full border-r border-gray-200 object-cover"
+          className="object-cover w-full h-full rounded-lg rounded-r-none border-r border-gray-200"
           alt={`${podcast.itunesData?.collectionName} Poster`}
           height={200}
           src={podcast.itunesData?.artworkUrl600}
           width={200}
         />
       </a>
-      <div className="pr-6 py-4 lg:pt-4 flex flex-col justify-between h-full w-full flex-2 col-span-2">
+      <div className="flex flex-col col-span-2 justify-between py-4 pr-6 w-full h-full lg:pt-4 flex-2">
         <div>
           <p className="text-xl font-bold truncate">
             <a
@@ -51,8 +51,8 @@ export const PodcastCard: FC<Props> = memo(function PodcastCard({
             </a>
           </p>
         </div>
-        <div className="flex-col lg:flex lg:mt-1 flex-1 gap-2 lg:flex-row-reverse justify-between">
-          <p className="flex lg:justify-end my-3">
+        <div className="flex-col flex-1 gap-2 justify-between lg:flex lg:flex-row-reverse lg:mt-1">
+          <p className="flex my-3 lg:justify-end">
             <Star filled={podcast.rating > 0} />
             <Star filled={podcast.rating > 1} />
             <Star filled={podcast.rating > 2} />
@@ -60,7 +60,7 @@ export const PodcastCard: FC<Props> = memo(function PodcastCard({
             <Star filled={podcast.rating > 4} />
           </p>
           <div>
-            <div className="flex flex-wrap justify-start gap-x-2 gap-y-1 mt-4 lg:my-2">
+            <div className="flex flex-wrap gap-y-1 gap-x-2 justify-start mt-4 lg:my-2">
               {podcast.tags.map((tag) => (
                 <button
                   className={`inline-block ${

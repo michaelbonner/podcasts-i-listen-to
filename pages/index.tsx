@@ -91,26 +91,26 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
 
   return (
     <MainLayout>
-      <div className="main-content pt-8 pb-16">
+      <div className="pt-8 pb-16 main-content">
         {/* Filters */}
-        <div className="mx-auto xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72 px-4 text-right flex flex-wrap gap-3 justify-end">
+        <div className="flex flex-wrap gap-3 justify-end px-4 mx-auto text-right xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72">
           <div>
             {toggleSearch ? (
               <div className="flex items-center">
-                <div className="z-0 relative flex items-center bg-orange-100 px-2 py-2 shadow rounded-l">
+                <div className="flex relative z-0 items-center py-2 px-2 bg-orange-100 rounded-l shadow">
                   <button
                     onClick={() => {
                       setToggleSearch(false);
                       setSearch("");
                     }}
-                    className="focus:outline-none active:bg-sky-200 text-orange-500"
+                    className="text-orange-500 focus:outline-none active:bg-sky-200"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="512"
                       height="512"
                       viewBox="0 0 512 512"
-                      className="stroke-current w-5 h-5"
+                      className="w-5 h-5 stroke-current"
                     >
                       <title>Close</title>
                       <path
@@ -148,15 +148,15 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
                     </svg>
                   </button>
                 </div>
-                <div className="relative z-10 flex items-center bg-white rounded py-2 px-3 shadow">
+                <div className="flex relative z-10 items-center py-2 px-3 bg-white rounded shadow">
                   <label
-                    className="block uppercase tracking-wide text-sky-700 text-xs font-bold mr-4 px-3"
+                    className="block px-3 mr-4 text-xs font-bold tracking-wide uppercase text-sky-700"
                     htmlFor="search"
                   >
                     Search
                   </label>
                   <input
-                    className="appearance-none block w-full lg:w-64 bg-gray-100 text-sky-800 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-300"
+                    className="block py-2 px-4 w-full leading-tight bg-gray-100 rounded border border-gray-200 appearance-none lg:w-64 focus:bg-white focus:border-gray-300 focus:outline-none text-sky-800"
                     name="search"
                     id="search"
                     onChange={(e) => setSearch(e.target.value)}
@@ -175,7 +175,7 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
                         width="512"
                         height="512"
                         viewBox="0 0 512 512"
-                        className="stroke-current text-gray-700 w-5 h-5"
+                        className="w-5 h-5 text-gray-700 stroke-current"
                       >
                         <title>Close</title>
                         <path
@@ -216,9 +216,9 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
                 </div>
               </div>
             ) : (
-              <div className="w-full lg:w-auto text-right flex justify-end">
+              <div className="flex justify-end w-full text-right lg:w-auto">
                 <button
-                  className="flex items-center gap-2 bg-white rounded p-4 shadow focus:outline-none hover:bg-gray-100 focus:bg-gray-300 font-semibold text-gray-700 text-sm transition-all"
+                  className="flex gap-2 items-center p-4 text-sm font-semibold text-gray-700 bg-white rounded shadow transition-all hover:bg-gray-100 focus:bg-gray-300 focus:outline-none"
                   onClick={() => {
                     setToggleSearch(!toggleSearch);
                   }}
@@ -258,7 +258,7 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
               </div>
             )}
           </div>
-          <div className="text-right flex justify-end">
+          <div className="flex justify-end text-right">
             <button
               className={`flex items-center gap-2 transition-all ${
                 toggleFilters || ratingFilter || tagFilter
@@ -287,12 +287,12 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
           </div>
         </div>
         {toggleFilters && (
-          <div className="mx-auto xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72 px-4 text-right flex flex-wrap lg:justify-end mt-2 mb-8 gap-4 lg:gap-12">
+          <div className="flex flex-wrap gap-4 px-4 mx-auto mt-2 mb-8 text-right lg:gap-12 lg:justify-end xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72">
             <div>
-              <h3 className="font-semibold text-lg text-sky-800 mt-6 lg:mt-0 mx-4 text-left">
+              <h3 className="mx-4 mt-6 text-lg font-semibold text-left lg:mt-0 text-sky-800">
                 Rating
               </h3>
-              <div className="flex flex-wrap justify-start items-center px-2 text-yellow-500 text-sm">
+              <div className="flex flex-wrap justify-start items-center px-2 text-sm text-yellow-500">
                 <button
                   type="button"
                   onClick={() => setRatingFilter(0)}
@@ -313,7 +313,7 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
                   <Star filled={true} />
                   <Star filled={true} />
                   <Star filled={true} />
-                  <span className="font-black pl-1">+</span>
+                  <span className="pl-1 font-black">+</span>
                 </button>
                 <button
                   type="button"
@@ -331,10 +331,10 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
               </div>
             </div>
             <div>
-              <h3 className="font-semibold text-lg text-sky-800 mt-6 lg:mt-0 mx-4 text-left">
+              <h3 className="mx-4 mt-6 text-lg font-semibold text-left lg:mt-0 text-sky-800">
                 Tags
               </h3>
-              <div className="flex flex-wrap items-center lg:justify-start lg:mt-0 px-2 text-yellow-500 text-sm">
+              <div className="flex flex-wrap items-center px-2 text-sm text-yellow-500 lg:justify-start lg:mt-0">
                 <button
                   type="button"
                   onClick={() => setTagFilter(null)}
@@ -363,7 +363,7 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
         {/* End filters */}
 
         {/* Podcast grid */}
-        <div className="lg:mx-auto xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72 px-4 grid gap-4 xl:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 mt-8">
+        <div className="grid grid-cols-1 gap-4 px-4 mt-8 sm:grid-cols-2 lg:grid-cols-3 lg:mx-auto xl:gap-6 xl:mx-12 2xl:grid-cols-4 2xl:mx-24 3xl:mx-36 4xl:mx-72">
           {filteredPodcasts.length > 0 &&
             filteredPodcasts.map((podcast) => {
               return (
@@ -377,8 +377,8 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
             })}
         </div>
         {filteredPodcasts.length === 0 && (
-          <div className="w-full max-w-lg p-4 mx-auto">
-            <div className="grid gap-2 bg-white items-center rounded-lg w-full px-8 py-6">
+          <div className="p-4 mx-auto w-full max-w-lg">
+            <div className="grid gap-2 items-center py-6 px-8 w-full bg-white rounded-lg">
               <h2 className="text-xl font-semibold">
                 No podcasts match that filter 🥺
               </h2>
@@ -392,21 +392,21 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
         {/* End podcast grid */}
 
         {/* Form */}
-        <div className="flex justify-between max-w-3xl mx-4 lg:mx-auto mt-16 mb-4 bg-gray-400 rounded-md shadow-lg">
-          <div className="lg:w-16 callout-bar rounded-l-lg"></div>
-          <div className="bg-white px-6 lg:px-12 py-4 rounded-md lg:rounded-l-none">
+        <div className="flex justify-between mx-4 mt-16 mb-4 max-w-3xl bg-gray-400 rounded-md shadow-lg lg:mx-auto">
+          <div className="rounded-l-lg lg:w-16 callout-bar"></div>
+          <div className="py-4 px-6 bg-white rounded-md lg:px-12 lg:rounded-l-none">
             <div className="flex justify-between items-center">
               <div>
-                <h3 className="items-center text-2xl lg:text-3xl font-bold text-sky-700 my-3 pr-8 tracking-wide">
+                <h3 className="items-center pr-8 my-3 text-2xl font-bold tracking-wide lg:text-3xl text-sky-700">
                   Got a podcast I should check out?
                 </h3>
-                <p className="text-gray-700 pr-8">
+                <p className="pr-8 text-gray-700">
                   Let me know what you&apos;re listening to. I&apos;m always
                   looking for new podcasts.
                 </p>
               </div>
               <svg
-                className="text-orange-200 stroke-current w-16 h-16 mt-2"
+                className="mt-2 w-16 h-16 text-orange-200 stroke-current"
                 xmlns="http://www.w3.org/2000/svg"
                 width="512"
                 height="512"
