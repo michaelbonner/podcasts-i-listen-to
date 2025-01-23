@@ -97,13 +97,13 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
           <div>
             {toggleSearch ? (
               <div className="flex items-center">
-                <div className="flex relative z-0 items-center py-2 px-2 bg-orange-100 rounded-l shadow">
+                <div className="flex relative z-0 items-center py-2 px-2 bg-orange-100 rounded-l shadow-sm">
                   <button
                     onClick={() => {
                       setToggleSearch(false);
                       setSearch("");
                     }}
-                    className="text-orange-500 focus:outline-none active:bg-sky-200"
+                    className="text-orange-500 focus:outline-hidden active:bg-sky-200"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -148,7 +148,7 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
                     </svg>
                   </button>
                 </div>
-                <div className="flex relative z-10 items-center py-2 px-3 bg-white rounded shadow">
+                <div className="flex relative z-10 items-center py-2 px-3 bg-white rounded-sm shadow-sm">
                   <label
                     className="block px-3 mr-4 text-xs font-bold tracking-wide uppercase text-sky-700"
                     htmlFor="search"
@@ -156,7 +156,7 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
                     Search
                   </label>
                   <input
-                    className="block py-2 px-4 w-full leading-tight bg-gray-100 rounded border border-gray-200 appearance-none lg:w-64 focus:bg-white focus:border-gray-300 focus:outline-none text-sky-800"
+                    className="block py-2 px-4 w-full leading-tight bg-gray-100 rounded-sm border border-gray-200 appearance-none lg:w-64 focus:bg-white focus:border-gray-300 focus:outline-hidden text-sky-800"
                     name="search"
                     id="search"
                     onChange={(e) => setSearch(e.target.value)}
@@ -218,7 +218,7 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
             ) : (
               <div className="flex justify-end w-full text-right lg:w-auto">
                 <button
-                  className="flex gap-2 items-center p-4 text-sm font-semibold text-gray-700 bg-white rounded shadow transition-all hover:bg-gray-100 focus:bg-gray-300 focus:outline-none"
+                  className="flex gap-2 items-center p-4 text-sm font-semibold text-gray-700 bg-white rounded-sm shadow-sm transition-all hover:bg-gray-100 focus:bg-gray-300 focus:outline-hidden"
                   onClick={() => {
                     setToggleSearch(!toggleSearch);
                   }}
@@ -264,7 +264,7 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
                 toggleFilters || ratingFilter || tagFilter
                   ? "bg-gray-100 text-sky-700 hover:bg-gray-200"
                   : "bg-white text-gray-700 hover:bg-gray-100"
-              } rounded py-2 px-4 shadow focus:outline-none font-semibold text-sm`}
+              } rounded py-2 px-4 shadow focus:outline-hidden font-semibold text-sm`}
               onClick={() => setToggleFilters(!toggleFilters)}
             >
               <span>Filters</span>
@@ -296,7 +296,7 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
                 <button
                   type="button"
                   onClick={() => setRatingFilter(0)}
-                  className={`flex flex-wrap items-center mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-none font-bold ${
+                  className={`flex flex-wrap items-center mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-hidden font-bold ${
                     ratingFilter === 0 ? "bg-yellow-200" : "bg-white"
                   } `}
                 >
@@ -305,7 +305,7 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
                 <button
                   type="button"
                   onClick={() => setRatingFilter(4)}
-                  className={`flex flex-wrap items-center mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-none ${
+                  className={`flex flex-wrap items-center mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-hidden ${
                     ratingFilter === 4 ? "bg-yellow-200" : "bg-white"
                   } `}
                 >
@@ -318,7 +318,7 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
                 <button
                   type="button"
                   onClick={() => setRatingFilter(5)}
-                  className={`flex flex-wrap items-center mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-none ${
+                  className={`flex flex-wrap items-center mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-hidden ${
                     ratingFilter === 5 ? "bg-yellow-200" : "bg-white"
                   } `}
                 >
@@ -338,7 +338,7 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
                 <button
                   type="button"
                   onClick={() => setTagFilter(null)}
-                  className={`flex flex-wrap items-center mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-none font-bold ${
+                  className={`flex flex-wrap items-center mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-hidden font-bold ${
                     tagFilter === null ? "bg-yellow-200" : "bg-white"
                   } `}
                 >
@@ -346,7 +346,7 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
                 </button>
                 {tags.map((tag) => (
                   <button
-                    className={`flex flex-wrap items-center mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-none font-bold ${
+                    className={`flex flex-wrap items-center mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-hidden font-bold ${
                       tagFilter === tag ? "bg-yellow-200" : "bg-white"
                     } `}
                     key={tag}

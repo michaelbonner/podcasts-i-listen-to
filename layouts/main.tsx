@@ -84,7 +84,7 @@ function MainLayout({ children }) {
         <div className="fixed right-0 bottom-0 mr-16 mb-16 rounded-lg shadow-lg bg-sky-700">
           <video
             autoPlay={true}
-            className="rounded-t-lg shadow"
+            className="rounded-t-lg shadow-sm"
             loop={true}
             muted={true}
             playsInline={true}
