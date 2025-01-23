@@ -60,7 +60,7 @@ const ContactForm = () => {
       onSubmit={onSubmit}
     >
       {submitState === "error" && (
-        <div className="py-2 px-4 mt-4 text-orange-700 bg-orange-100 rounded border border-orange-500">
+        <div className="py-2 px-4 mt-4 text-orange-700 bg-orange-100 rounded-sm border border-orange-500">
           <p>{errorMessage}</p>
         </div>
       )}
@@ -75,7 +75,7 @@ const ContactForm = () => {
             </label>
             <input
               autoComplete="name"
-              className="block py-3 px-4 w-full leading-tight text-gray-700 bg-gray-200 rounded border border-gray-200 appearance-none focus:bg-white focus:border-gray-500 focus:outline-none"
+              className="block py-3 px-4 w-full leading-tight text-gray-700 bg-gray-200 rounded-sm border border-gray-200 appearance-none focus:bg-white focus:border-gray-500 focus:outline-hidden"
               id="your-name"
               name="your_name"
               onChange={(e) =>
@@ -98,7 +98,7 @@ const ContactForm = () => {
               Podcast Name
             </label>
             <input
-              className="block py-3 px-4 w-full leading-tight text-gray-700 bg-gray-200 rounded border border-gray-200 appearance-none focus:bg-white focus:border-gray-500 focus:outline-none"
+              className="block py-3 px-4 w-full leading-tight text-gray-700 bg-gray-200 rounded-sm border border-gray-200 appearance-none focus:bg-white focus:border-gray-500 focus:outline-hidden"
               id="podcast-name"
               name="podcast_name"
               onChange={(e) =>
@@ -122,7 +122,7 @@ const ContactForm = () => {
             Podcast URL
           </label>
           <input
-            className="block py-3 px-4 w-full leading-tight text-gray-700 bg-gray-200 rounded border border-gray-200 appearance-none focus:bg-white focus:border-gray-500 focus:outline-none"
+            className="block py-3 px-4 w-full leading-tight text-gray-700 bg-gray-200 rounded-sm border border-gray-200 appearance-none focus:bg-white focus:border-gray-500 focus:outline-hidden"
             id="podcast-url"
             name="podcast_url"
             onChange={(e) =>
@@ -155,7 +155,7 @@ const ContactForm = () => {
           <div className="pb-1.5">
             <button
               disabled={submitState === "submitting" || !token}
-              className={`shadow bg-sky-600 hover:bg-sky-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded transition-all ${
+              className={`shadow bg-sky-600 hover:bg-sky-500 focus:shadow-outline focus:outline-hidden text-white font-bold py-2 px-4 rounded transition-all ${
                 (submitState === "submitting" || !token) && `opacity-70`
               }`}
               type="submit"

@@ -67,7 +67,7 @@ export const PodcastCard: FC<Props> = memo(function PodcastCard({
                     tagFilter === tag
                       ? "bg-sky-200 text-sky-700"
                       : "bg-gray-200 text-gray-700"
-                  } rounded px-1.5 py-1 text-xs font-semibold focus:outline-none`}
+                  } rounded px-1.5 py-1 text-xs font-semibold focus:outline-hidden`}
                   key={tag}
                   onClick={() =>
                     tagFilter === tag ? setTagFilter(null) : setTagFilter(tag)
