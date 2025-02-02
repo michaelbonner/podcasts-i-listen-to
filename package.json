@@ -8,22 +8,22 @@
     "@slack/webhook": "^7.0.4",
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.7",
-    "fauna": "^2.4.0",
-    "next": "^15.1.0",
+    "fauna": "^2.4.1",
+    "next": "^15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.0.0",
-    "@types/react": "^19.0.1",
+    "@tailwindcss/postcss": "^4.0.3",
+    "@types/react": "^19.0.8",
     "@zeit/next-css": "^1.0.1",
-    "concurrently": "^9.1.0",
-    "eslint-config-next": "^15.1.0",
+    "concurrently": "^9.1.2",
+    "eslint-config-next": "^15.1.6",
     "next-purgecss": "^4.0.0",
-    "postcss": "^8.4.49",
+    "postcss": "^8.5.1",
     "prettier-plugin-organize-imports": "^4.1.0",
-    "tailwindcss": "^4.0.0",
-    "typescript": "^5.7.2"
+    "tailwindcss": "^4.0.3",
+    "typescript": "^5.7.3"
   },
   "scripts": {
     "build": "next build",
@@ -31,7 +31,9 @@
     "dev": "next",
     "export": "npm run build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "out": "bun outdated",
+    "up": "bun update"
   },
   "repository": {
     "type": "git",
