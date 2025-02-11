@@ -9,20 +9,20 @@
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.7",
     "fauna": "^2.5.0",
-    "next": "^15.1.6",
+    "next": "^15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.0.5",
+    "@tailwindcss/postcss": "^4.0.6",
     "@types/react": "^19.0.8",
     "@zeit/next-css": "^1.0.1",
     "concurrently": "^9.1.2",
-    "eslint-config-next": "^15.1.6",
+    "eslint-config-next": "^15.1.7",
     "next-purgecss": "^4.0.0",
-    "postcss": "^8.5.1",
+    "postcss": "^8.5.2",
     "prettier-plugin-organize-imports": "^4.1.0",
-    "tailwindcss": "^4.0.5",
+    "tailwindcss": "^4.0.6",
     "typescript": "^5.7.3"
   },
   "scripts": {
