@@ -6,7 +6,6 @@
   "dependencies": {
     "@marsidev/react-turnstile": "^1.1.0",
     "@slack/webhook": "^7.0.5",
-    "body-parser": "^1.20.3",
     "dotenv": "^16.4.7",
     "fauna": "^2.5.0",
     "next": "^15.2.2",
@@ -16,12 +15,8 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.14",
     "@types/react": "^19.0.10",
-    "@zeit/next-css": "^1.0.1",
-    "concurrently": "^9.1.2",
     "eslint-config-next": "^15.2.2",
-    "next-purgecss": "^4.0.0",
     "postcss": "^8.5.3",
-    "prettier-plugin-organize-imports": "^4.1.0",
     "tailwindcss": "^4.0.14",
     "typescript": "^5.8.2"
   },
