@@ -44,13 +44,6 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
-    sortTitle: "Dirty John",
-    itunesId: 1272970334,
-    rating: 3,
-    tags: ["Documentary"],
-    itunesData: {},
-  },
-  {
     sortTitle: "Dr. Death",
     itunesId: 1421573955,
     rating: 4,
