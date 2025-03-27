@@ -1,10 +1,5 @@
 import { IncomingWebhook } from "@slack/webhook";
-import { Client, fql } from "fauna";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-const client = new Client({
-  secret: process.env.PODCASTS_FAUNA_DB_SECRET,
-});
 
 type TurnstileResponse = {
   success: boolean;
@@ -34,27 +29,6 @@ const verifyTurnstileToken = async (
 type ReturnData = {
   success: boolean;
   data: string;
-};
-
-const createRecommendationEntry = async (
-  yourName: string,
-  podcastName: string,
-  podcastUrl: string
-): Promise<any> => {
-  try {
-    const query = fql`
-    Recommendation.create({
-      your_name: ${yourName},
-      podcast_name: ${podcastName},
-      podcast_url: ${podcastUrl},
-    })`;
-
-    const response = await client.query(query);
-    return response;
-  } catch (error) {
-    console.error("error", error);
-    return false;
-  }
 };
 
 const postToSlack = async (text: string) => {
@@ -132,23 +106,16 @@ const handler = async (
     );
   }
 
-  const saveIt = await createRecommendationEntry(
-    req.body.your_name,
-    req.body.podcast_name,
-    req.body.podcast_url
-  );
-
   const postIt = await postToSlack(
     `${req.body.your_name} thinks you should check out <${req.body.podcast_url}|${req.body.podcast_name}>`
   );
 
-  if (postIt && !saveIt.errors) {
+  if (postIt) {
     res.statusCode = 200;
     res.end(
       JSON.stringify({ success: true, data: "Saved and sent notification" })
     );
   } else {
-    console.log("saveIt", saveIt);
     console.log("postIt", postIt);
     res.statusCode = 400;
     res.end(

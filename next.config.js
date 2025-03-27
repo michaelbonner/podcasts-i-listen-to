@@ -3,7 +3,6 @@ require("dotenv").config();
 module.exports = {
   env: {
     SLACK_WEBHOOK_URL: process.env.SLACK_WEBHOOK_URL,
-    PODCASTS_FAUNA_DB_SECRET: process.env.PODCASTS_FAUNA_DB_SECRET,
   },
   images: {
     remotePatterns: [
