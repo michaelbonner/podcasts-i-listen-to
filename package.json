@@ -4,7 +4,7 @@
   "description": "Runs here: [https://podcasts.michaelbonner.dev/](https://podcasts.michaelbonner.dev/)",
   "main": "index.js",
   "dependencies": {
-    "@marsidev/react-turnstile": "^1.1.0",
+    "@marsidev/react-turnstile": "^1.2.0",
     "@slack/webhook": "^7.0.5",
     "next": "^15.4.5",
     "react": "^19.1.1",
@@ -16,7 +16,7 @@
     "eslint-config-next": "^15.4.5",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "scripts": {
     "build": "next build",
