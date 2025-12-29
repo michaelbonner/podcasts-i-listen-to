@@ -4,7 +4,7 @@
   "description": "Runs here: [https://podcasts.michaelbonner.dev/](https://podcasts.michaelbonner.dev/)",
   "main": "index.js",
   "dependencies": {
-    "@marsidev/react-turnstile": "^1.4.0",
+    "@marsidev/react-turnstile": "^1.4.1",
     "@slack/webhook": "^7.0.6",
     "next": "^16.1.1",
     "react": "^19.2.3",
