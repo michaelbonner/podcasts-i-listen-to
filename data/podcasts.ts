@@ -9,13 +9,6 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
-    sortTitle: "Build Your SaaS",
-    itunesId: 1357295850,
-    rating: 3,
-    tags: ["Development"],
-    itunesData: {},
-  },
-  {
     sortTitle: "Business Wars",
     itunesId: 1335814741,
     rating: 4,
