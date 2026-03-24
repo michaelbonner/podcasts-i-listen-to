@@ -1,12 +1,12 @@
-import { PodcastCard } from "components/PodcastCard";
+import { PodcastCard } from "../components/PodcastCard";
 import { GetStaticProps } from "next";
 import dynamic from "next/dynamic";
 import { Suspense, useEffect, useRef, useState } from "react";
-import { Podcast } from "types/Podcast";
-import { Tag } from "types/Tag";
+import { Podcast } from "../types/Podcast";
+import { Tag } from "../types/Tag";
 import podcasts from "../data/podcasts";
 import MainLayout from "../layouts/main";
-import { Star } from "components/Star";
+import { Star } from "../components/Star";
 
 const ContactForm = dynamic(() => import("../components/ContactForm"));
 

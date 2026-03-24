@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { FC, memo } from "react";
-import { Podcast } from "types/Podcast";
+import { Podcast } from "../types/Podcast";
 import { Star } from "./Star";
-import { Tag } from "types/Tag";
+import { Tag } from "../types/Tag";
 
 type Props = {
   podcast: Podcast;
