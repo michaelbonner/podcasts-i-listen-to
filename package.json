@@ -5,17 +5,17 @@
   "main": "index.js",
   "dependencies": {
     "@marsidev/react-turnstile": "^1.4.2",
-    "@slack/webhook": "^7.0.7",
-    "next": "^16.1.6",
+    "@slack/webhook": "^7.0.8",
+    "next": "^16.2.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.2.1",
+    "@tailwindcss/postcss": "^4.2.2",
     "@types/react": "^19.2.14",
-    "eslint-config-next": "^16.1.6",
+    "eslint-config-next": "^16.2.1",
     "postcss": "^8.5.8",
-    "tailwindcss": "^4.2.1",
+    "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3"
   },
   "scripts": {
