@@ -72,13 +72,6 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
-    sortTitle: "How I Built This with Guy Raz",
-    itunesId: 1150510297,
-    rating: 4,
-    tags: ["Documentary"],
-    itunesData: {},
-  },
-  {
     sortTitle: "Invisibilia",
     itunesId: 953290300,
     rating: 4,
