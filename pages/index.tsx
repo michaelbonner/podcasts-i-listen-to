@@ -1,7 +1,7 @@
 import { PodcastCard } from "../components/PodcastCard";
 import { GetStaticProps } from "next";
 import dynamic from "next/dynamic";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Podcast } from "../types/Podcast";
 import { Tag } from "../types/Tag";
 import podcasts from "../data/podcasts";
@@ -13,17 +13,24 @@ const ContactForm = dynamic(() => import("../components/ContactForm"));
 function Home({ podcasts }: { podcasts: Podcast[] }) {
   const [ratingFilter, setRatingFilter] = useState(0);
   const [tagFilter, setTagFilter] = useState<Tag | null>(null);
-  const [sortedPodcasts, setSortedPodcasts] = useState(podcasts);
-  const [filteredPodcasts, setFilteredPodcasts] = useState(podcasts);
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState<Tag[]>(() =>
+    Array.from(
+      new Set(
+        podcasts
+          .map((podcast) => podcast.tags)
+          .flat()
+          .sort()
+      )
+    )
+  );
   const [toggleFilters, setToggleFilters] = useState(false);
   const [search, setSearch] = useState("");
   const [toggleSearch, setToggleSearch] = useState(false);
   const searchField = useRef(null);
 
-  useEffect(() => {
-    setSortedPodcasts(
-      podcasts.sort((a, b) => {
+  const sortedPodcasts = useMemo(
+    () =>
+      [...podcasts].sort((a, b) => {
         const titleA = a.sortTitle.toUpperCase();
         const titleB = b.sortTitle.toUpperCase();
 
@@ -33,31 +40,22 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
           return -1;
         }
         return 0;
-      })
-    );
-    setTags(
-      Array.from(
-        new Set(
-          podcasts
-            .map((podcast) => podcast.tags)
-            .flat()
-            .sort()
-        )
-      )
-    );
-  }, [podcasts]);
+      }),
+    [podcasts]
+  );
 
-  useEffect(() => {
-    const filteredOnes = sortedPodcasts
-      .filter(
-        (podcast) =>
-          !search ||
-          podcast.sortTitle.toLowerCase().includes(search.toLowerCase())
-      )
-      .filter((podcast) => podcast.rating >= ratingFilter)
-      .filter((podcast) => !tagFilter || podcast.tags.includes(tagFilter));
-    setFilteredPodcasts(filteredOnes);
-  }, [ratingFilter, search, sortedPodcasts, tagFilter]);
+  const filteredPodcasts = useMemo(
+    () =>
+      sortedPodcasts
+        .filter(
+          (podcast) =>
+            !search ||
+            podcast.sortTitle.toLowerCase().includes(search.toLowerCase())
+        )
+        .filter((podcast) => podcast.rating >= ratingFilter)
+        .filter((podcast) => !tagFilter || podcast.tags.includes(tagFilter)),
+    [ratingFilter, search, sortedPodcasts, tagFilter]
+  );
 
   useEffect(() => {
     if (!toggleSearch) {
@@ -67,14 +65,14 @@ function Home({ podcasts }: { podcasts: Podcast[] }) {
   }, [toggleSearch]);
 
   useEffect(() => {
-    let searchParams = new URL(document.location.toString()).searchParams;
+    const searchParams = new URL(document.location.toString()).searchParams;
     if (searchParams.get("search")) {
-      setToggleSearch(true);
+      setToggleSearch(true); // eslint-disable-line react-hooks/set-state-in-effect
       setSearch(searchParams.get("search"));
     }
     if (searchParams.get("filter")) {
       setToggleFilters(true);
-      setTags([searchParams.get("filter")]);
+      setTags([searchParams.get("filter") as Tag]);
     }
   }, []);
 

@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/next-script-for-ga */
 import Head from "next/head";
 import Script from "next/script";
 import { useMemo } from "react";
