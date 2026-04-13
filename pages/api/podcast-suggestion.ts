@@ -1,4 +1,3 @@
-import { IncomingWebhook } from "@slack/webhook";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type TurnstileResponse = {
@@ -31,12 +30,21 @@ type ReturnData = {
   data: string;
 };
 
-const postToSlack = async (text: string) => {
+const postToTelegram = async (text: string) => {
   try {
-    const webhook = new IncomingWebhook(process.env.SLACK_WEBHOOK_URL);
-    return await webhook.send({
-      text,
-    });
+    const res = await fetch(
+      `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          chat_id: process.env.TELEGRAM_CHAT_ID,
+          text,
+          parse_mode: "HTML",
+        }),
+      }
+    );
+    return res.ok;
   } catch (error) {
     console.error("error", error);
     return false;
@@ -49,7 +57,7 @@ const handler = async (
 ) => {
   res.setHeader("Content-Type", "application/json");
 
-  if (!process.env.SLACK_WEBHOOK_URL) {
+  if (!process.env.TELEGRAM_BOT_TOKEN || !process.env.TELEGRAM_CHAT_ID) {
     res.statusCode = 400;
     res.end(
       JSON.stringify({
@@ -106,8 +114,8 @@ const handler = async (
     );
   }
 
-  const postIt = await postToSlack(
-    `${req.body.your_name} thinks you should check out <${req.body.podcast_url}|${req.body.podcast_name}>`
+  const postIt = await postToTelegram(
+    `${req.body.your_name} thinks you should check out <a href="${req.body.podcast_url}">${req.body.podcast_name}</a>`
   );
 
   if (postIt) {
