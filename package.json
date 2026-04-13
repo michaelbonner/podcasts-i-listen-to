@@ -12,6 +12,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.2",
     "@types/react": "^19.2.14",
+    "eslint": "^9.39.2",
     "eslint-config-next": "^16.2.3",
     "postcss": "^8.5.9",
     "tailwindcss": "^4.2.2",
@@ -23,7 +24,7 @@
     "dev": "next",
     "export": "npm run build && next export",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "out": "bun outdated",
     "up": "bun update"
   },
