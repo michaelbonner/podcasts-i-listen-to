@@ -1,14 +1,5 @@
-import nextConfig from "eslint-config-next";
+import nextConfig from "eslint-config-next/core-web-vitals";
 
-const config = [
-  ...nextConfig,
-  {
-    languageOptions: {
-      parserOptions: {
-        warnOnUnsupportedTypeScriptVersion: false,
-      },
-    },
-  },
-];
+const config = [...nextConfig];
 
 export default config;
