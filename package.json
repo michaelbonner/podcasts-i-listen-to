@@ -2,7 +2,27 @@
   "name": "podcasts-i-listen-to",
   "version": "1.0.0",
   "description": "Runs here: [https://podcasts.michaelbonner.dev/](https://podcasts.michaelbonner.dev/)",
+  "keywords": [],
+  "homepage": "https://github.com/michaelbonner/podcasts-i-listen-to#readme",
+  "bugs": {
+    "url": "https://github.com/michaelbonner/podcasts-i-listen-to/issues"
+  },
+  "license": "ISC",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelbonner/podcasts-i-listen-to.git"
+  },
   "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "out": "bun outdated",
+    "up": "bun update",
+    "lint": "vp check"
+  },
   "dependencies": {
     "@astrojs/vercel": "^10.0.6",
     "astro": "^6.2.2"
@@ -11,24 +31,5 @@
     "@tailwindcss/vite": "^4.2.4",
     "tailwindcss": "^4.2.4",
     "typescript": "^6.0.3"
-  },
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "out": "bun outdated",
-    "up": "bun update"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/michaelbonner/podcasts-i-listen-to.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/michaelbonner/podcasts-i-listen-to/issues"
-  },
-  "homepage": "https://github.com/michaelbonner/podcasts-i-listen-to#readme"
+  }
 }

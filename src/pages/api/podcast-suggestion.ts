@@ -6,23 +6,18 @@ type TurnstileResponse = {
   success: boolean;
 };
 
-const verifyTurnstileToken = async (
-  token: string
-): Promise<TurnstileResponse> => {
+const verifyTurnstileToken = async (token: string): Promise<TurnstileResponse> => {
   const body = `secret=${encodeURIComponent(
-    import.meta.env.TURNSTILE_SECRET
+    import.meta.env.TURNSTILE_SECRET,
   )}&response=${encodeURIComponent(token)}`;
 
-  const res = await fetch(
-    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-    {
-      method: "POST",
-      body,
-      headers: {
-        "content-type": "application/x-www-form-urlencoded",
-      },
-    }
-  );
+  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+    method: "POST",
+    body,
+    headers: {
+      "content-type": "application/x-www-form-urlencoded",
+    },
+  });
 
   return (await res.json()) as TurnstileResponse;
 };
@@ -39,7 +34,7 @@ const postToTelegram = async (text: string) => {
           text,
           parse_mode: "HTML",
         }),
-      }
+      },
     );
     return res.ok;
   } catch (error) {
@@ -55,16 +50,13 @@ const json = (data: unknown, status = 200) =>
   });
 
 export const POST: APIRoute = async ({ request }) => {
-  if (
-    !import.meta.env.TELEGRAM_BOT_TOKEN ||
-    !import.meta.env.TELEGRAM_CHAT_ID
-  ) {
+  if (!import.meta.env.TELEGRAM_BOT_TOKEN || !import.meta.env.TELEGRAM_CHAT_ID) {
     return json(
       {
         success: false,
         data: "The server is not configured correctly to accept this request. Please let me know.",
       },
-      400
+      400,
     );
   }
 
@@ -88,7 +80,7 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   const sent = await postToTelegram(
-    `${body.your_name} thinks you should check out <a href="${body.podcast_url}">${body.podcast_name}</a>`
+    `${body.your_name} thinks you should check out <a href="${body.podcast_url}">${body.podcast_name}</a>`,
   );
 
   if (sent) {
