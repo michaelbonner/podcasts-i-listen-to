@@ -50,11 +50,13 @@ const artwork200Jpg = artworkUrl.replace("600x600bb.jpg", "200x200bb.jpg");
     </p>
 
     <div class="flex-col flex-1 gap-2 justify-between lg:mt-1">
-      <div class="flex flex-wrap gap-y-1 gap-x-2 justify-start mt-4 lg:my-2">
+      <div
+        class="flex flex-wrap gap-y-1 gap-x-2 justify-start mt-2 lg:mt-4 lg:my-2"
+      >
         {
           podcast.tags.map((tag) => (
             <button
-              class="inline-block bg-gray-200 text-gray-700 rounded px-1.5 py-1 text-xs font-semibold focus:outline-hidden"
+              class="inline-block bg-gray-200 text-gray-700 rounded px-1.5 py-2 lg:py-1 text-xs font-semibold focus:outline-hidden"
               data-card-tag={tag}
               type="button"
             >
