@@ -1,0 +1,30 @@
+---
+
+---
+
+<div
+  data-wide-monitor
+  class="hidden fixed right-0 bottom-0 mr-16 mb-16 rounded-lg shadow-lg bg-sky-700"
+>
+  <video
+    autoplay
+    class="rounded-t-lg shadow-sm"
+    loop
+    muted
+    playsinline
+    src="/rick-and-morty-i-like-what-you-got.mp4"></video>
+  <p class="py-5 px-4 text-2xl font-semibold text-center text-sky-100">
+    Wow you have a wide monitor &#129299;
+  </p>
+</div>
+
+<script>
+  const el = document.querySelector<HTMLElement>("[data-wide-monitor]");
+  if (el) {
+    const update = () => {
+      el.classList.toggle("hidden", window.innerWidth <= 3000);
+    };
+    update();
+    window.addEventListener("resize", update);
+  }
+</script>

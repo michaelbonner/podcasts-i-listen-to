@@ -1,0 +1,191 @@
+---
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+---
+
+<form
+  action="/api/podcast-suggestion"
+  class="transition-opacity"
+  data-contact-form
+  method="POST"
+>
+  <div
+    data-error
+    class="hidden py-2 px-4 mt-4 text-orange-700 bg-orange-100 rounded-sm border border-orange-500"
+  >
+    <p data-error-message></p>
+  </div>
+  <div class="flex flex-wrap px-2 -mx-3 mt-2 mb-6 lg:pr-4 lg:pl-8">
+    <div class="grid gap-2 w-full lg:grid-cols-2">
+      <div class="px-3 mt-6 w-full">
+        <label
+          class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+          for="your-name"
+        >
+          Your Name
+        </label>
+        <input
+          autocomplete="name"
+          class="block py-3 px-4 w-full leading-tight text-gray-700 bg-gray-200 rounded-sm border border-gray-200 appearance-none focus:bg-white focus:border-gray-500 focus:outline-hidden"
+          id="your-name"
+          name="your_name"
+          required
+          type="text"
+        />
+      </div>
+      <div class="px-3 mt-6 w-full">
+        <label
+          class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+          for="podcast-name"
+        >
+          Podcast Name
+        </label>
+        <input
+          class="block py-3 px-4 w-full leading-tight text-gray-700 bg-gray-200 rounded-sm border border-gray-200 appearance-none focus:bg-white focus:border-gray-500 focus:outline-hidden"
+          id="podcast-name"
+          name="podcast_name"
+          required
+          type="text"
+        />
+      </div>
+    </div>
+    <div class="px-3 mt-6 w-full">
+      <label
+        class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+        for="podcast-url"
+      >
+        Podcast URL
+      </label>
+      <input
+        class="block py-3 px-4 w-full leading-tight text-gray-700 bg-gray-200 rounded-sm border border-gray-200 appearance-none focus:bg-white focus:border-gray-500 focus:outline-hidden"
+        id="podcast-url"
+        name="podcast_url"
+        placeholder="https://"
+        required
+        type="url"
+      />
+    </div>
+    <div
+      data-success
+      class="hidden px-4 pt-6 my-4 w-full border-t"
+    >
+      <h3 class="text-xl font-bold text-sky-700">
+        Thank you for your recommendation!
+      </h3>
+    </div>
+    <div
+      class="flex flex-wrap gap-8 justify-between items-end px-3 mt-8 w-full"
+    >
+      <div
+        class="cf-turnstile"
+        data-sitekey={siteKey}
+        data-callback="onTurnstileSuccess"
+        data-expired-callback="onTurnstileExpired"
+        data-theme="light"
+      >
+      </div>
+      <div class="pb-1.5">
+        <button
+          data-submit-btn
+          disabled
+          class="opacity-70 shadow bg-sky-600 hover:bg-sky-500 focus:shadow-outline focus:outline-hidden text-white font-bold py-2 px-4 rounded transition-all"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<script
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+  async
+  defer></script>
+
+<script>
+  declare global {
+    interface Window {
+      onTurnstileSuccess?: (token: string) => void;
+      onTurnstileExpired?: () => void;
+    }
+  }
+
+  const form = document.querySelector<HTMLFormElement>("[data-contact-form]");
+  if (form) {
+    const submitBtn = form.querySelector<HTMLButtonElement>("[data-submit-btn]")!;
+    const errorBox = form.querySelector<HTMLElement>("[data-error]")!;
+    const errorMessage = form.querySelector<HTMLElement>("[data-error-message]")!;
+    const successBox = form.querySelector<HTMLElement>("[data-success]")!;
+    const yourName = form.querySelector<HTMLInputElement>("#your-name")!;
+    const podcastName = form.querySelector<HTMLInputElement>("#podcast-name")!;
+    const podcastUrl = form.querySelector<HTMLInputElement>("#podcast-url")!;
+
+    let token = "";
+    let submitting = false;
+
+    const updateSubmitState = () => {
+      const disabled = submitting || !token;
+      submitBtn.disabled = disabled;
+      submitBtn.classList.toggle("opacity-70", disabled);
+      form.classList.toggle("opacity-50", submitting);
+    };
+
+    window.onTurnstileSuccess = (newToken: string) => {
+      token = newToken;
+      updateSubmitState();
+    };
+
+    window.onTurnstileExpired = () => {
+      token = "";
+      updateSubmitState();
+    };
+
+    const showError = (message: string) => {
+      errorMessage.textContent = message;
+      errorBox.classList.remove("hidden");
+    };
+
+    const hideError = () => {
+      errorBox.classList.add("hidden");
+    };
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      hideError();
+      submitting = true;
+      updateSubmitState();
+
+      try {
+        const submit = await fetch(form.action, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            your_name: yourName.value,
+            podcast_name: podcastName.value,
+            podcast_url: podcastUrl.value,
+            token,
+          }),
+        });
+        const response = await submit.json();
+        if (response.success) {
+          yourName.value = "";
+          podcastName.value = "";
+          podcastUrl.value = "";
+          successBox.classList.remove("hidden");
+        } else {
+          showError(response.data);
+        }
+      } catch (error) {
+        console.error("submit error", error);
+        showError(
+          "There was a problem connecting to the API. Please let me know so I can get it fixed."
+        );
+      } finally {
+        submitting = false;
+        updateSubmitState();
+      }
+    });
+
+    updateSubmitState();
+  }
+</script>

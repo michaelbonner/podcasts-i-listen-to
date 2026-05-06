@@ -1,6 +1,6 @@
 ---
 import "../styles/index.css";
-import WideMonitor from "../components/WideMonitor";
+import WideMonitor from "../components/WideMonitor.astro";
 
 interface Props {
   title?: string;
@@ -83,7 +83,7 @@ const description =
       <slot />
     </main>
 
-    <WideMonitor client:idle />
+    <WideMonitor />
 
     <div class="px-4 text-center lg:px-0 lg:text-left text-sky-100">
       <div

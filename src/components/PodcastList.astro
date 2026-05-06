@@ -1,0 +1,462 @@
+---
+import PodcastCard from "./PodcastCard.astro";
+import Star from "./Star.astro";
+import type { Podcast } from "../types/Podcast";
+import type { Tag } from "../types/Tag";
+
+interface Props {
+  podcasts: Podcast[];
+}
+
+const { podcasts } = Astro.props;
+
+const sortedPodcasts = [...podcasts].sort((a, b) => {
+  const titleA = a.sortTitle.toUpperCase();
+  const titleB = b.sortTitle.toUpperCase();
+  if (titleA > titleB) return 1;
+  if (titleA < titleB) return -1;
+  return 0;
+});
+
+const tags: Tag[] = Array.from(
+  new Set(
+    podcasts
+      .map((podcast) => podcast.tags)
+      .flat()
+      .sort()
+  )
+);
+---
+
+<div data-podcast-list>
+  {/* Filters */}
+  <div
+    class="flex flex-wrap gap-3 justify-end px-4 mx-auto text-right xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72"
+  >
+    <div>
+      <div data-search-closed class="flex justify-end w-full text-right lg:w-auto">
+        <button
+          type="button"
+          data-search-open-btn
+          class="flex gap-2 items-center p-4 text-sm font-semibold text-gray-700 bg-white rounded-sm shadow-sm transition-all hover:bg-gray-100 focus:bg-gray-300 focus:outline-hidden"
+        >
+          <span>Search</span>
+          <svg
+            class="w-5 h-5 transition-all text-gray-300 stroke-current"
+            xmlns="http://www.w3.org/2000/svg"
+            width="512"
+            height="512"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M221.09,64A157.09,157.09,0,1,0,378.18,221.09,157.1,157.1,0,0,0,221.09,64Z"
+              style="fill: none; stroke-miterlimit: 10; stroke-width: 32px;"
+            ></path>
+            <line
+              x1="338.29"
+              y1="338.29"
+              x2="448"
+              y2="448"
+              style="fill: none; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 32px;"
+            ></line>
+          </svg>
+        </button>
+      </div>
+      <div data-search-open class="hidden items-center">
+        <div
+          class="flex relative z-0 items-center py-2 px-2 bg-orange-100 rounded-l shadow-sm"
+        >
+          <button
+            type="button"
+            data-search-close-btn
+            class="text-orange-500 focus:outline-hidden active:bg-sky-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="512"
+              height="512"
+              viewBox="0 0 512 512"
+              class="w-5 h-5 stroke-current"
+            >
+              <title>Close</title>
+              <path
+                d="M448,256c0-106-86-192-192-192S64,150,64,256s86,192,192,192S448,362,448,256Z"
+                style="fill: none; stroke-miterlimit: 10; stroke-width: 32px;"
+              ></path>
+              <line
+                x1="320"
+                y1="320"
+                x2="192"
+                y2="192"
+                style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 32px;"
+              ></line>
+              <line
+                x1="192"
+                y1="320"
+                x2="320"
+                y2="192"
+                style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 32px;"
+              ></line>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="flex relative z-10 items-center py-2 px-3 bg-white rounded-sm shadow-sm"
+        >
+          <label
+            class="block px-3 mr-4 text-xs font-bold tracking-wide uppercase text-sky-700"
+            for="search"
+          >
+            Search
+          </label>
+          <input
+            class="block py-2 px-4 w-full leading-tight bg-gray-100 rounded-sm border border-gray-200 appearance-none lg:w-64 focus:bg-white focus:border-gray-300 focus:outline-hidden text-sky-800"
+            name="search"
+            id="search"
+            data-search-input
+            type="text"
+          />
+          <button
+            type="button"
+            data-search-clear-btn
+            class="hidden absolute flex items-center right-0 mr-3 px-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="512"
+              height="512"
+              viewBox="0 0 512 512"
+              class="w-5 h-5 text-gray-700 stroke-current"
+            >
+              <title>Close</title>
+              <path
+                d="M448,256c0-106-86-192-192-192S64,150,64,256s86,192,192,192S448,362,448,256Z"
+                style="fill: none; stroke-miterlimit: 10; stroke-width: 32px;"
+              ></path>
+              <line
+                x1="320"
+                y1="320"
+                x2="192"
+                y2="192"
+                style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 32px;"
+              ></line>
+              <line
+                x1="192"
+                y1="320"
+                x2="320"
+                y2="192"
+                style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 32px;"
+              ></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-end text-right">
+      <button
+        type="button"
+        data-filters-toggle
+        class="flex items-center gap-2 transition-all bg-white text-gray-700 hover:bg-gray-100 rounded py-2 px-4 shadow focus:outline-hidden font-semibold text-sm"
+      >
+        <span>Filters</span>
+        <svg
+          data-filters-icon
+          class="w-5 h-5 text-gray-300 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          width="512"
+          height="512"
+          viewBox="0 0 512 512"
+        >
+          <path d="M472,168H40a24,24,0,0,1,0-48H472a24,24,0,0,1,0,48Z"></path>
+          <path d="M392,280H120a24,24,0,0,1,0-48H392a24,24,0,0,1,0,48Z"></path>
+          <path d="M296,392H216a24,24,0,0,1,0-48h80a24,24,0,0,1,0,48Z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    data-filters-panel
+    class="hidden flex-wrap gap-4 px-4 mx-auto mt-2 mb-8 text-right lg:gap-12 lg:justify-end xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72"
+  >
+    <div>
+      <h2
+        class="mx-4 mt-6 text-lg font-semibold text-left lg:mt-0 text-sky-800"
+      >
+        Rating
+      </h2>
+      <div
+        class="flex flex-wrap justify-start items-center px-2 text-sm text-yellow-500"
+      >
+        <button
+          type="button"
+          data-rating-filter="0"
+          class="flex flex-wrap items-center mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-hidden font-bold bg-yellow-200"
+        >
+          All
+        </button>
+        <button
+          type="button"
+          data-rating-filter="4"
+          class="flex flex-wrap items-center mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-hidden bg-white"
+        >
+          <Star filled={true} />
+          <Star filled={true} />
+          <Star filled={true} />
+          <Star filled={true} />
+          <span class="pl-1 font-black">+</span>
+        </button>
+        <button
+          type="button"
+          data-rating-filter="5"
+          class="flex flex-wrap items-center mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-hidden bg-white"
+        >
+          <Star filled={true} />
+          <Star filled={true} />
+          <Star filled={true} />
+          <Star filled={true} />
+          <Star filled={true} />
+        </button>
+      </div>
+    </div>
+    <div>
+      <h2
+        class="mx-4 mt-6 text-lg font-semibold text-left lg:mt-0 text-sky-800"
+      >
+        Tags
+      </h2>
+      <div
+        data-tag-filters
+        class="flex flex-wrap items-center px-2 text-sm text-yellow-500 lg:justify-start lg:mt-0"
+      >
+        <button
+          type="button"
+          data-tag-filter=""
+          class="flex flex-wrap items-center mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-hidden font-bold bg-yellow-200"
+        >
+          All
+        </button>
+        {
+          tags.map((tag) => (
+            <button
+              type="button"
+              data-tag-filter={tag}
+              class="flex flex-wrap items-center mt-4 mx-2 py-2 px-4 rounded shadow-md focus:outline-hidden font-bold bg-white"
+            >
+              {tag}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+  {/* End filters */}
+
+  {/* Podcast grid */}
+  <div
+    data-podcast-grid
+    class="grid grid-cols-1 gap-4 px-4 mt-8 sm:grid-cols-2 lg:grid-cols-3 lg:mx-auto xl:gap-6 xl:mx-12 2xl:grid-cols-4 2xl:mx-24 3xl:mx-36 4xl:mx-72"
+  >
+    {sortedPodcasts.map((podcast) => <PodcastCard podcast={podcast} />)}
+  </div>
+  <div data-empty-state class="hidden p-4 mx-auto w-full max-w-lg">
+    <div class="grid gap-2 items-center py-6 px-8 w-full bg-white rounded-lg">
+      <h2 class="text-xl font-semibold">No podcasts match that filter 🥺</h2>
+      <p>
+        Maybe suggest that podcast to me? I&apos;m always looking for new ones.
+        Use the form below.
+      </p>
+    </div>
+  </div>
+  {/* End podcast grid */}
+</div>
+
+<script>
+  const root = document.querySelector<HTMLElement>("[data-podcast-list]");
+  if (root) {
+    const grid = root.querySelector<HTMLElement>("[data-podcast-grid]")!;
+    const cards = Array.from(
+      grid.querySelectorAll<HTMLElement>("[data-podcast-card]")
+    );
+    const emptyState = root.querySelector<HTMLElement>("[data-empty-state]")!;
+    const searchClosed = root.querySelector<HTMLElement>("[data-search-closed]")!;
+    const searchOpen = root.querySelector<HTMLElement>("[data-search-open]")!;
+    const searchInput = root.querySelector<HTMLInputElement>("[data-search-input]")!;
+    const searchOpenBtn = root.querySelector<HTMLElement>("[data-search-open-btn]")!;
+    const searchCloseBtn = root.querySelector<HTMLElement>("[data-search-close-btn]")!;
+    const searchClearBtn = root.querySelector<HTMLElement>("[data-search-clear-btn]")!;
+    const filtersToggleBtn = root.querySelector<HTMLElement>("[data-filters-toggle]")!;
+    const filtersIcon = root.querySelector<HTMLElement>("[data-filters-icon]")!;
+    const filtersPanel = root.querySelector<HTMLElement>("[data-filters-panel]")!;
+    const tagFilterButtons = Array.from(
+      root.querySelectorAll<HTMLElement>("[data-tag-filter]")
+    );
+    const ratingButtons = Array.from(
+      root.querySelectorAll<HTMLElement>("[data-rating-filter]")
+    );
+
+    let ratingFilter = 0;
+    let tagFilter: string | null = null;
+    let search = "";
+    let filtersOpen = false;
+    let searchOpenState = false;
+
+    const applyFilters = () => {
+      let visibleCount = 0;
+      for (const card of cards) {
+        const sortTitle = (
+          card.getAttribute("data-sort-title") || ""
+        ).toLowerCase();
+        const rating = parseInt(card.getAttribute("data-rating") || "0", 10);
+        const cardTags = (card.getAttribute("data-tags") || "")
+          .split("|")
+          .filter(Boolean);
+        const visible =
+          (!search || sortTitle.includes(search.toLowerCase())) &&
+          rating >= ratingFilter &&
+          (!tagFilter || cardTags.includes(tagFilter));
+        card.style.display = visible ? "" : "none";
+        if (visible) visibleCount++;
+      }
+      emptyState.classList.toggle("hidden", visibleCount > 0);
+    };
+
+    const updateRatingButtons = () => {
+      for (const btn of ratingButtons) {
+        const value = parseInt(btn.getAttribute("data-rating-filter") || "0", 10);
+        const active = value === ratingFilter;
+        btn.classList.toggle("bg-yellow-200", active);
+        btn.classList.toggle("bg-white", !active);
+      }
+    };
+
+    const updateTagButtons = () => {
+      for (const btn of tagFilterButtons) {
+        const raw = btn.getAttribute("data-tag-filter");
+        const value = raw === "" ? null : raw;
+        const active = value === tagFilter;
+        btn.classList.toggle("bg-yellow-200", active);
+        btn.classList.toggle("bg-white", !active);
+      }
+      const cardTagPills = root.querySelectorAll<HTMLElement>("[data-card-tag]");
+      cardTagPills.forEach((pill) => {
+        const value = pill.getAttribute("data-card-tag");
+        const active = value === tagFilter;
+        pill.classList.toggle("bg-sky-200", active);
+        pill.classList.toggle("text-sky-700", active);
+        pill.classList.toggle("bg-gray-200", !active);
+        pill.classList.toggle("text-gray-700", !active);
+      });
+    };
+
+    const updateFiltersToggleAppearance = () => {
+      const active = filtersOpen || ratingFilter > 0 || tagFilter !== null;
+      filtersToggleBtn.classList.toggle("bg-gray-100", active);
+      filtersToggleBtn.classList.toggle("text-sky-700", active);
+      filtersToggleBtn.classList.toggle("hover:bg-gray-200", active);
+      filtersToggleBtn.classList.toggle("bg-white", !active);
+      filtersToggleBtn.classList.toggle("text-gray-700", !active);
+      filtersToggleBtn.classList.toggle("hover:bg-gray-100", !active);
+      filtersIcon.classList.toggle("text-sky-400", active);
+      filtersIcon.classList.toggle("text-gray-300", !active);
+    };
+
+    const setFiltersOpen = (open: boolean) => {
+      filtersOpen = open;
+      filtersPanel.classList.toggle("hidden", !open);
+      filtersPanel.classList.toggle("flex", open);
+      updateFiltersToggleAppearance();
+    };
+
+    const setSearchOpen = (open: boolean) => {
+      searchOpenState = open;
+      searchClosed.classList.toggle("hidden", open);
+      searchOpen.classList.toggle("hidden", !open);
+      searchOpen.classList.toggle("flex", open);
+      if (open) {
+        searchInput.focus();
+      }
+    };
+
+    const setSearch = (value: string) => {
+      search = value;
+      if (searchInput.value !== value) searchInput.value = value;
+      searchClearBtn.classList.toggle("hidden", value.length === 0);
+      searchClearBtn.classList.toggle("flex", value.length > 0);
+      applyFilters();
+    };
+
+    const setRatingFilter = (value: number) => {
+      ratingFilter = value;
+      updateRatingButtons();
+      updateFiltersToggleAppearance();
+      applyFilters();
+    };
+
+    const setTagFilter = (value: string | null) => {
+      tagFilter = value;
+      updateTagButtons();
+      updateFiltersToggleAppearance();
+      applyFilters();
+    };
+
+    searchOpenBtn.addEventListener("click", () => setSearchOpen(true));
+    searchCloseBtn.addEventListener("click", () => {
+      setSearchOpen(false);
+      setSearch("");
+    });
+    searchClearBtn.addEventListener("click", () => setSearch(""));
+    searchInput.addEventListener("input", (e) => {
+      setSearch((e.target as HTMLInputElement).value);
+    });
+    searchInput.addEventListener("keyup", (e) => {
+      if (e.key !== "Escape") return;
+      if (search !== "") {
+        setSearch("");
+      } else {
+        setSearchOpen(false);
+      }
+    });
+
+    filtersToggleBtn.addEventListener("click", () => setFiltersOpen(!filtersOpen));
+
+    for (const btn of ratingButtons) {
+      btn.addEventListener("click", () => {
+        const value = parseInt(btn.getAttribute("data-rating-filter") || "0", 10);
+        setRatingFilter(value);
+      });
+    }
+
+    for (const btn of tagFilterButtons) {
+      btn.addEventListener("click", () => {
+        const raw = btn.getAttribute("data-tag-filter");
+        setTagFilter(raw === "" ? null : raw);
+      });
+    }
+
+    root.querySelectorAll<HTMLElement>("[data-card-tag]").forEach((pill) => {
+      pill.addEventListener("click", () => {
+        const value = pill.getAttribute("data-card-tag");
+        setTagFilter(tagFilter === value ? null : value);
+      });
+    });
+
+    const params = new URL(document.location.toString()).searchParams;
+    const searchParam = params.get("search");
+    if (searchParam) {
+      setSearchOpen(true);
+      setSearch(searchParam);
+    }
+    const filterParam = params.get("filter");
+    if (filterParam) {
+      setFiltersOpen(true);
+      for (const btn of tagFilterButtons) {
+        const raw = btn.getAttribute("data-tag-filter");
+        if (raw !== "" && raw !== filterParam) {
+          btn.style.display = "none";
+        }
+      }
+    }
+
+    applyFilters();
+  }
+</script>
