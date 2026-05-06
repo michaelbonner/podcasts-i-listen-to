@@ -114,13 +114,6 @@ const podcasts: Podcast[] = [
     itunesData: {},
   },
   {
-    sortTitle: "Meat and Potatoes",
-    itunesId: 1262148655,
-    rating: 4,
-    tags: ["Learn"],
-    itunesData: {},
-  },
-  {
     sortTitle: "Ologies with Alie Ward",
     itunesId: 1278815517,
     rating: 4,
