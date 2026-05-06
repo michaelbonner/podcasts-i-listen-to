@@ -4,9 +4,10 @@ import WideMonitor from "../components/WideMonitor.astro";
 
 interface Props {
   title?: string;
+  lcpImage?: { webp: string; jpg: string; origin: string };
 }
 
-const { title = "Podcasts I Listen To" } = Astro.props;
+const { title = "Podcasts I Listen To", lcpImage } = Astro.props;
 const description =
   "The podcasts that Michael Bonner listens to. Just an easy way to share with my friends.";
 ---
@@ -31,6 +32,21 @@ const description =
       content="https://podcasts.michaelbonner.dev/og-image.jpg"
     />
     <meta name="theme-color" content="#075985" />
+
+    {
+      lcpImage && (
+        <>
+          <link rel="preconnect" href={lcpImage.origin} crossorigin />
+          <link
+            rel="preload"
+            as="image"
+            href={lcpImage.webp}
+            type="image/webp"
+            fetchpriority="high"
+          />
+        </>
+      )
+    }
 
     <link rel="preconnect" href="https://www.google-analytics.com" />
     <link rel="preconnect" href="https://www.googletagmanager.com" />

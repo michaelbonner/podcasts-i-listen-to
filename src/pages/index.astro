@@ -24,11 +24,28 @@ const enrichedPodcasts = podcasts.map((podcastData) => {
   }
   return podcastData;
 });
+
+const sortedPodcasts = [...enrichedPodcasts].sort((a, b) => {
+  const titleA = a.sortTitle.toUpperCase();
+  const titleB = b.sortTitle.toUpperCase();
+  if (titleA > titleB) return 1;
+  if (titleA < titleB) return -1;
+  return 0;
+});
+
+const lcpArtworkUrl = sortedPodcasts[0]?.itunesData?.artworkUrl600 ?? "";
+const lcpImage = lcpArtworkUrl
+  ? {
+      webp: lcpArtworkUrl.replace("600x600bb.jpg", "200x200bb.webp"),
+      jpg: lcpArtworkUrl.replace("600x600bb.jpg", "200x200bb.jpg"),
+      origin: new URL(lcpArtworkUrl).origin,
+    }
+  : undefined;
 ---
 
-<MainLayout>
+<MainLayout lcpImage={lcpImage}>
   <div class="pt-8 pb-16 main-content">
-    <PodcastList podcasts={enrichedPodcasts} />
+    <PodcastList podcasts={sortedPodcasts} />
 
     <div
       class="flex justify-between mx-4 mt-16 mb-4 max-w-3xl bg-gray-400 rounded-md shadow-lg lg:mx-auto"

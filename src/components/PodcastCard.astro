@@ -4,9 +4,10 @@ import Star from "./Star.astro";
 
 interface Props {
   podcast: Podcast;
+  eager?: boolean;
 }
 
-const { podcast } = Astro.props;
+const { podcast, eager = false } = Astro.props;
 
 const artworkUrl = podcast.itunesData?.artworkUrl600 ?? "";
 const artwork200Webp = artworkUrl.replace("600x600bb.jpg", "200x200bb.webp");
@@ -33,7 +34,9 @@ const artwork200Jpg = artworkUrl.replace("600x600bb.jpg", "200x200bb.jpg");
         class="object-cover w-full h-full rounded-lg rounded-r-none border-r border-gray-200"
         alt={`${podcast.itunesData?.collectionName} Poster`}
         height={200}
-        loading="lazy"
+        loading={eager ? "eager" : "lazy"}
+        fetchpriority={eager ? "high" : "auto"}
+        decoding={eager ? "sync" : "async"}
         src={artwork200Jpg}
         width={200}
       />
