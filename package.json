@@ -4,12 +4,12 @@
   "description": "Runs here: [https://podcasts.michaelbonner.dev/](https://podcasts.michaelbonner.dev/)",
   "type": "module",
   "dependencies": {
-    "@astrojs/react": "^4.4.0",
-    "@astrojs/vercel": "^8.2.7",
+    "@astrojs/react": "^5.0.4",
+    "@astrojs/vercel": "^10.0.6",
     "@marsidev/react-turnstile": "^1.5.2",
-    "astro": "^5.15.0",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "astro": "^6.2.2",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.4",
