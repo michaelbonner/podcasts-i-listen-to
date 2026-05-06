@@ -1,4 +1,4 @@
-import { Podcast } from "../types/Podcast";
+import type { Podcast } from "../types/Podcast";
 
 const podcasts: Podcast[] = [
   {
