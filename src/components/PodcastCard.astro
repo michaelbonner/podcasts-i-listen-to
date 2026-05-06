@@ -9,10 +9,8 @@ interface Props {
 const { podcast } = Astro.props;
 
 const artworkUrl = podcast.itunesData?.artworkUrl600 ?? "";
-const srcSet200Webp = artworkUrl.replace("600x600bb.jpg", "200x200bb.webp");
-const srcSet400Webp = artworkUrl.replace("600x600bb.jpg", "400x400bb.webp");
-const srcSet200Jpg = artworkUrl.replace("600x600bb.jpg", "200x200bb.jpg");
-const srcSet400Jpg = artworkUrl.replace("600x600bb.jpg", "400x400bb.jpg");
+const artwork200Webp = artworkUrl.replace("600x600bb.jpg", "200x200bb.webp");
+const artwork200Jpg = artworkUrl.replace("600x600bb.jpg", "200x200bb.jpg");
 ---
 
 <div
@@ -30,17 +28,13 @@ const srcSet400Jpg = artworkUrl.replace("600x600bb.jpg", "400x400bb.jpg");
     title={`${podcast.itunesData?.collectionName} Poster`}
   >
     <picture>
-      <source
-        type="image/webp"
-        srcset={`${srcSet200Webp} 1x, ${srcSet400Webp} 2x`}
-      />
+      <source type="image/webp" srcset={artwork200Webp} />
       <img
         class="object-cover w-full h-full rounded-lg rounded-r-none border-r border-gray-200"
         alt={`${podcast.itunesData?.collectionName} Poster`}
         height={200}
         loading="lazy"
-        src={srcSet200Jpg}
-        srcset={`${srcSet200Jpg} 1x, ${srcSet400Jpg} 2x`}
+        src={artwork200Jpg}
         width={200}
       />
     </picture>
