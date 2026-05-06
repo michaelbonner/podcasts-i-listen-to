@@ -64,10 +64,7 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         type="url"
       />
     </div>
-    <div
-      data-success
-      class="hidden px-4 pt-6 my-4 w-full border-t"
-    >
+    <div data-success class="hidden px-4 pt-6 my-4 w-full border-t">
       <h3 class="text-xl font-bold text-sky-700">
         Thank you for your recommendation!
       </h3>
@@ -87,7 +84,7 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         <button
           data-submit-btn
           disabled
-          class="opacity-70 shadow bg-sky-600 hover:bg-sky-500 focus:shadow-outline focus:outline-hidden text-white font-bold py-2 px-4 rounded transition-all"
+          class="opacity-100 shadow bg-sky-600 hover:bg-sky-500 focus:shadow-outline focus:outline-hidden text-white font-bold py-2 px-4 rounded transition-all"
           type="submit"
         >
           Submit
@@ -97,10 +94,8 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
   </div>
 </form>
 
-<script
-  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-  async
-  defer></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer
+></script>
 
 <script>
   declare global {
@@ -112,9 +107,12 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 
   const form = document.querySelector<HTMLFormElement>("[data-contact-form]");
   if (form) {
-    const submitBtn = form.querySelector<HTMLButtonElement>("[data-submit-btn]")!;
+    const submitBtn =
+      form.querySelector<HTMLButtonElement>("[data-submit-btn]")!;
     const errorBox = form.querySelector<HTMLElement>("[data-error]")!;
-    const errorMessage = form.querySelector<HTMLElement>("[data-error-message]")!;
+    const errorMessage = form.querySelector<HTMLElement>(
+      "[data-error-message]",
+    )!;
     const successBox = form.querySelector<HTMLElement>("[data-success]")!;
     const yourName = form.querySelector<HTMLInputElement>("#your-name")!;
     const podcastName = form.querySelector<HTMLInputElement>("#podcast-name")!;
@@ -126,7 +124,7 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     const updateSubmitState = () => {
       const disabled = submitting || !token;
       submitBtn.disabled = disabled;
-      submitBtn.classList.toggle("opacity-70", disabled);
+      submitBtn.classList.toggle("opacity-100", disabled);
       form.classList.toggle("opacity-50", submitting);
     };
 
@@ -178,7 +176,7 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
       } catch (error) {
         console.error("submit error", error);
         showError(
-          "There was a problem connecting to the API. Please let me know so I can get it fixed."
+          "There was a problem connecting to the API. Please let me know so I can get it fixed.",
         );
       } finally {
         submitting = false;
