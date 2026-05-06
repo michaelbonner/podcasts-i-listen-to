@@ -278,9 +278,9 @@ const PodcastList = ({ podcasts }: Props) => {
       {toggleFilters && (
         <div className="flex flex-wrap gap-4 px-4 mx-auto mt-2 mb-8 text-right lg:gap-12 lg:justify-end xl:mx-12 2xl:mx-24 3xl:mx-36 4xl:mx-72">
           <div>
-            <h3 className="mx-4 mt-6 text-lg font-semibold text-left lg:mt-0 text-sky-800">
+            <h2 className="mx-4 mt-6 text-lg font-semibold text-left lg:mt-0 text-sky-800">
               Rating
-            </h3>
+            </h2>
             <div className="flex flex-wrap justify-start items-center px-2 text-sm text-yellow-500">
               <button
                 type="button"
@@ -320,9 +320,9 @@ const PodcastList = ({ podcasts }: Props) => {
             </div>
           </div>
           <div>
-            <h3 className="mx-4 mt-6 text-lg font-semibold text-left lg:mt-0 text-sky-800">
+            <h2 className="mx-4 mt-6 text-lg font-semibold text-left lg:mt-0 text-sky-800">
               Tags
-            </h3>
+            </h2>
             <div className="flex flex-wrap items-center px-2 text-sm text-yellow-500 lg:justify-start lg:mt-0">
               <button
                 type="button"
