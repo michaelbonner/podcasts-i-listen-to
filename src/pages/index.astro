@@ -1,0 +1,75 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import PodcastList from "../components/PodcastList";
+import ContactForm from "../components/ContactForm";
+import podcasts from "../data/podcasts";
+
+export const prerender = true;
+
+const itunesIds = podcasts.map((p) => p.itunesId).join(",");
+const itunesRequest = await fetch(
+  `https://itunes.apple.com/lookup?id=${itunesIds}`
+);
+const itunesData = await itunesRequest.json();
+
+const enrichedPodcasts = podcasts.map((podcastData) => {
+  const itunesPodcast = itunesData.results.find(
+    (itunesDatum: { collectionId: number | string }) =>
+      +itunesDatum.collectionId === +podcastData.itunesId
+  );
+  if (itunesPodcast) {
+    podcastData.itunesData = itunesPodcast;
+  } else {
+    console.log(`no itunes data for ${podcastData.sortTitle}`);
+  }
+  return podcastData;
+});
+---
+
+<MainLayout>
+  <div class="pt-8 pb-16 main-content">
+    <PodcastList client:load podcasts={enrichedPodcasts} />
+
+    <div
+      class="flex justify-between mx-4 mt-16 mb-4 max-w-3xl bg-gray-400 rounded-md shadow-lg lg:mx-auto"
+    >
+      <div class="rounded-l-lg lg:w-16 callout-bar"></div>
+      <div class="py-4 px-6 bg-white rounded-md lg:px-12 lg:rounded-l-none">
+        <div class="flex justify-between items-center">
+          <div>
+            <h3
+              class="items-center pr-8 my-3 text-2xl font-bold tracking-wide lg:text-3xl text-sky-700"
+            >
+              Got a podcast I should check out?
+            </h3>
+            <p class="pr-8 text-gray-700">
+              Let me know what you&apos;re listening to. I&apos;m always looking
+              for new podcasts.
+            </p>
+          </div>
+          <svg
+            class="mt-2 w-16 h-16 text-orange-200 stroke-current"
+            xmlns="http://www.w3.org/2000/svg"
+            width="512"
+            height="512"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M335.72,330.76C381.73,299.5,416,251.34,416,192a160,160,0,0,0-320,0V398.57C96,442.83,131.74,480,176,480h0c44.26,0,66.83-25.94,77.29-40C268.06,420.19,295,358.44,335.72,330.76Z"
+              style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 32px;"
+            ></path>
+            <path
+              d="M160,304V184c0-48.4,43.2-88,96-88h0c52.8,0,96,39.6,96,88"
+              style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 32px;"
+            ></path>
+            <path
+              d="M160,239c25-18,79.82-15,79.82-15,26,0,41.17,29.42,26,50.6,0,0-36.86,42.4-41.86,61.4"
+              style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 32px;"
+            ></path>
+          </svg>
+        </div>
+        <ContactForm client:idle />
+      </div>
+    </div>
+  </div>
+</MainLayout>
