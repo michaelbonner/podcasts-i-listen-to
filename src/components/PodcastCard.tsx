@@ -1,13 +1,13 @@
-import Image from "next/image";
-import { FC, memo } from "react";
-import { Podcast } from "../types/Podcast";
+import { memo } from "react";
+import type { FC } from "react";
+import type { Podcast } from "../types/Podcast";
 import { Star } from "./Star";
-import { Tag } from "../types/Tag";
+import type { Tag } from "../types/Tag";
 
 type Props = {
   podcast: Podcast;
   tagFilter: Tag | null;
-  setTagFilter: (tag: Tag) => void;
+  setTagFilter: (tag: Tag | null) => void;
 };
 
 export const PodcastCard: FC<Props> = memo(function PodcastCard({
@@ -27,10 +27,11 @@ export const PodcastCard: FC<Props> = memo(function PodcastCard({
         rel="noopener noreferrer"
         title={`${podcast.itunesData?.collectionName} Poster`}
       >
-        <Image
+        <img
           className="object-cover w-full h-full rounded-lg rounded-r-none border-r border-gray-200"
           alt={`${podcast.itunesData?.collectionName} Poster`}
           height={200}
+          loading="lazy"
           src={podcast.itunesData?.artworkUrl600}
           width={200}
         />

@@ -13,13 +13,13 @@ const ContactForm = () => {
 
   const [token, setToken] = useState("");
 
-  const onSubmit = async (e: any) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setSubmitState("submitting");
 
     try {
-      const submit = await fetch(e.target.action, {
+      const submit = await fetch(e.currentTarget.action, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -146,7 +146,7 @@ const ContactForm = () => {
         )}
         <div className="flex flex-wrap gap-8 justify-between items-end px-3 mt-8 w-full">
           <Turnstile
-            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+            siteKey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY}
             onSuccess={(token) => setToken(token)}
             options={{
               theme: "light",
