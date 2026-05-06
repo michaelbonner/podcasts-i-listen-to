@@ -27,14 +27,36 @@ export const PodcastCard: FC<Props> = memo(function PodcastCard({
         rel="noopener noreferrer"
         title={`${podcast.itunesData?.collectionName} Poster`}
       >
-        <img
-          className="object-cover w-full h-full rounded-lg rounded-r-none border-r border-gray-200"
-          alt={`${podcast.itunesData?.collectionName} Poster`}
-          height={200}
-          loading="lazy"
-          src={podcast.itunesData?.artworkUrl600}
-          width={200}
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcSet={`${podcast.itunesData?.artworkUrl600?.replace(
+              "600x600bb.jpg",
+              "200x200bb.webp"
+            )} 1x, ${podcast.itunesData?.artworkUrl600?.replace(
+              "600x600bb.jpg",
+              "400x400bb.webp"
+            )} 2x`}
+          />
+          <img
+            className="object-cover w-full h-full rounded-lg rounded-r-none border-r border-gray-200"
+            alt={`${podcast.itunesData?.collectionName} Poster`}
+            height={200}
+            loading="lazy"
+            src={podcast.itunesData?.artworkUrl600?.replace(
+              "600x600bb.jpg",
+              "200x200bb.jpg"
+            )}
+            srcSet={`${podcast.itunesData?.artworkUrl600?.replace(
+              "600x600bb.jpg",
+              "200x200bb.jpg"
+            )} 1x, ${podcast.itunesData?.artworkUrl600?.replace(
+              "600x600bb.jpg",
+              "400x400bb.jpg"
+            )} 2x`}
+            width={200}
+          />
+        </picture>
       </a>
       <div className="flex flex-col col-span-2 justify-between py-4 pr-6 w-full h-full lg:pt-4 flex-2">
         <div>
