@@ -1,7 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import PodcastList from "../components/PodcastList";
-import ContactForm from "../components/ContactForm";
+import PodcastList from "../components/PodcastList.astro";
+import ContactForm from "../components/ContactForm.astro";
 import podcasts from "../data/podcasts";
 
 export const prerender = true;
@@ -28,7 +28,7 @@ const enrichedPodcasts = podcasts.map((podcastData) => {
 
 <MainLayout>
   <div class="pt-8 pb-16 main-content">
-    <PodcastList client:load podcasts={enrichedPodcasts} />
+    <PodcastList podcasts={enrichedPodcasts} />
 
     <div
       class="flex justify-between mx-4 mt-16 mb-4 max-w-3xl bg-gray-400 rounded-md shadow-lg lg:mx-auto"
@@ -68,7 +68,7 @@ const enrichedPodcasts = podcasts.map((podcastData) => {
             ></path>
           </svg>
         </div>
-        <ContactForm client:idle />
+        <ContactForm />
       </div>
     </div>
   </div>
