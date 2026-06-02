@@ -24,8 +24,8 @@
     "lint": "vp check"
   },
   "dependencies": {
-    "@astrojs/vercel": "^10.0.7",
-    "astro": "^6.3.8"
+    "@astrojs/vercel": "^10.0.8",
+    "astro": "^6.4.3"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.0",
