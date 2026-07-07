@@ -5,13 +5,13 @@
     "": {
       "name": "podcasts-i-listen-to",
       "dependencies": {
-        "@astrojs/vercel": "latest",
-        "astro": "latest",
+        "@astrojs/vercel": "^11.0.2",
+        "astro": "^7.0.6",
       },
       "devDependencies": {
-        "@tailwindcss/vite": "latest",
-        "tailwindcss": "latest",
-        "typescript": "latest",
+        "@tailwindcss/vite": "^4.3.2",
+        "tailwindcss": "^4.3.2",
+        "typescript": "^6.0.3",
       },
     },
   },
