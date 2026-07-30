@@ -24,12 +24,12 @@
     "lint": "vp check"
   },
   "dependencies": {
-    "@astrojs/vercel": "^11.0.3",
-    "astro": "^7.1.0"
+    "@astrojs/vercel": "^11.0.4",
+    "astro": "^7.1.6"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "tailwindcss": "^4.3.3",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
   }
 }
