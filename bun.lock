@@ -5,8 +5,8 @@
     "": {
       "name": "podcasts-i-listen-to",
       "dependencies": {
-        "@astrojs/vercel": "^11.0.4",
-        "astro": "^7.1.6",
+        "@astrojs/vercel": "^11.0.5",
+        "astro": "^7.2.0",
       },
       "devDependencies": {
         "@tailwindcss/vite": "^4.3.3",
