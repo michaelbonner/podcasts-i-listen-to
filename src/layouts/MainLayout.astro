@@ -31,7 +31,11 @@ const description =
       property="og:image"
       content="https://podcasts.michaelbonner.dev/og-image.jpg"
     />
-    <meta name="theme-color" content="#075985" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="preconnect" href="https://rsms.me" crossorigin />
+    <link rel="preload" as="style" href="https://rsms.me/inter/inter.css" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
     {
       lcpImage && (
@@ -64,7 +68,7 @@ const description =
       })(window, document, "script", "dataLayer", "GTM-WKV6C4B");
     </script>
   </head>
-  <body class="m-0 font-sans text-sky-900">
+  <body class="bg-white font-sans text-zinc-900 antialiased">
     <noscript
       ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-WKV6C4BX"
@@ -73,106 +77,109 @@ const description =
         style="display:none;visibility:hidden;"></iframe></noscript
     >
 
-    <div class="py-12 text-sky-100">
-      <div
-        class="flex flex-wrap gap-4 justify-center items-center mx-auto lg:gap-x-8 xl:mx-4"
-      >
-        <h1 class="text-3xl text-center lg:text-5xl">
-          Some Podcasts I Listen To
-        </h1>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          class="ml-4 w-8 h-8 lg:w-12 lg:h-12 icon-microphone"
+    <div class="isolate">
+      <header>
+        <div
+          class="mx-auto max-w-7xl px-4 pt-14 pb-12 sm:px-6 sm:pt-20 lg:px-8"
         >
-          <path
-            class="fill-current secondary text-sky-100"
-            d="M12 1a4 4 0 0 1 4 4v6a4 4 0 1 1-8 0V5a4 4 0 0 1 4-4z"></path>
-          <path
-            class="fill-current primary text-sky-200"
-            d="M13 18.94V21h3a1 1 0 0 1 0 2H8a1 1 0 0 1 0-2h3v-2.06A8 8 0 0 1 4 11a1 1 0 0 1 2 0 6 6 0 1 0 12 0 1 1 0 0 1 2 0 8 8 0 0 1-7 7.94z"
-          ></path>
-        </svg>
-      </div>
-    </div>
-
-    <main>
-      <slot />
-    </main>
-
-    <WideMonitor />
-
-    <div class="px-4 text-center lg:px-0 lg:text-left text-sky-100">
-      <div
-        class="pt-12 pb-10 mx-auto text-center lg:flex lg:flex-wrap lg:justify-between lg:items-center xl:mx-4 2xl:mx-12 3xl:mx-24 4xl:mx-48 text-sky-50"
-      >
-        <div class="lg:flex lg:flex-wrap">
-          <p class="pt-4 pl-4 lg:pt-0 lg:pr-4 lg:mr-4">
-            &copy; 2019-{new Date().getFullYear()}{" "}
-            <a
-              class="font-semibold hover:underline"
-              href="https://michaelbonner.dev/"
+          <div class="flex items-center gap-2.5">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              class="size-6 shrink-0 stroke-sky-600"
             >
-              Michael Bonner
-            </a>
-          </p>
-          <p class="pt-4 lg:pt-0 lg:pr-4 lg:mr-4">
-            <a
-              class="font-semibold hover:underline"
-              href="https://bootpackdigital.com/"
-            >
-              Need a custom website or app? Hire the Utah app pros at Bootpack
-              Digital
-            </a>
+              <path
+                d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+            <p class="text-sm font-semibold text-sky-700">
+              Michael Bonner&rsquo;s listening list
+            </p>
+          </div>
+          <h1
+            class="mt-4 max-w-[35ch] text-balance text-4xl font-semibold tracking-tight text-zinc-900 sm:max-w-[30ch] sm:text-5xl"
+          >
+            Some Podcasts I Listen To
+          </h1>
+          <p
+            class="mt-4 max-w-[56ch] text-pretty text-base/7 text-zinc-600"
+          >
+            Everything here is something I actually listen to, rated and
+            tagged. Search or filter the list &mdash; and if I&rsquo;m missing
+            something good, send it my way.
           </p>
         </div>
-        <div class="flex flex-wrap justify-center lg:justify-end">
-          <p class="pt-4 lg:pt-0">
-            <a
-              class="font-semibold hover:underline"
-              href="https://github.com/michaelbonner/podcasts-i-listen-to"
-            >
-              <svg
-                class="mx-2 w-8 h-8 fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                width="512"
-                height="512"
-                viewBox="0 0 512 512"
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <WideMonitor />
+
+      <footer class="border-t border-zinc-950/10">
+        <div
+          class="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-10 text-center sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:text-left lg:px-8"
+        >
+          <div class="flex flex-col gap-2 sm:flex-row sm:gap-8">
+            <p class="text-sm text-zinc-500">
+              &copy; 2019-{new Date().getFullYear()}
+              <a
+                class="font-normal text-zinc-600 hover:text-zinc-900"
+                href="https://michaelbonner.dev/">
+                Michael Bonner
+              </a>
+            </p>
+            <p class="text-sm text-zinc-500">
+              <a
+                class="font-normal text-zinc-600 hover:text-zinc-900"
+                href="https://bootpackdigital.com/">
+                Need a custom website or app? Hire the Utah app pros at
+                Bootpack Digital
+              </a>
+            </p>
+          </div>
+          <div class="flex justify-center gap-4 sm:justify-end">
+            <p>
+              <a href="https://github.com/michaelbonner/podcasts-i-listen-to">
+                <svg
+                  class="size-5 fill-zinc-600 hover:fill-zinc-900"
+                  viewBox="0 0 512 512"
+                >
+                  <title>GitHub</title>
+                  <path
+                    d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z"
+                  ></path>
+                </svg>
+              </a>
+            </p>
+            <p>
+              <a
+                href="https://www.instagram.com/michael__bonner/"
+                aria-label="Instagram"
               >
-                <title>GitHub</title>
-                <path
-                  d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z"
-                ></path>
-              </svg>
-            </a>
-          </p>
-          <p class="pt-4 lg:pt-0">
-            <a
-              class="font-semibold hover:underline"
-              href="https://www.instagram.com/michael__bonner/"
-            >
-              <svg
-                class="mx-2 w-8 h-8 fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                width="512"
-                height="512"
-                viewBox="0 0 512 512"
-              >
-                <title>Instagram</title>
-                <path
-                  d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"
-                ></path>
-                <path
-                  d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z"
-                ></path>
-                <path
-                  d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z"
-                ></path>
-              </svg>
-            </a>
-          </p>
+                <svg
+                  class="size-5 fill-zinc-600 hover:fill-zinc-900"
+                  viewBox="0 0 512 512"
+                >
+                  <title>Instagram</title>
+                  <path
+                    d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"
+                  ></path>
+                  <path
+                    d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z"
+                  ></path>
+                  <path
+                    d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z"
+                  ></path>
+                </svg>
+              </a>
+            </p>
+          </div>
         </div>
-      </div>
+      </footer>
     </div>
   </body>
 </html>
