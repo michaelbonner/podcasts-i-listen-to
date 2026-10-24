@@ -1,0 +1,16 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import ErrorMessage from "../components/ErrorMessage.astro";
+
+// Astro passes the thrown error as `Astro.props.error`. It is deliberately not
+// rendered here; the details stay in the server logs.
+---
+
+<MainLayout title="Something Went Wrong | Podcasts I Listen To" noindex>
+  <ErrorMessage eyebrow="500 - Server error" heading="We lost the signal">
+    <p>
+      Something went wrong on our end. Please try again in a moment, or head
+      back to the full list of podcasts.
+    </p>
+  </ErrorMessage>
+</MainLayout>

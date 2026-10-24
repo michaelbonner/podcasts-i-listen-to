@@ -1,0 +1,13 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import ErrorMessage from "../components/ErrorMessage.astro";
+---
+
+<MainLayout title="Page Not Found | Podcasts I Listen To" noindex>
+  <ErrorMessage eyebrow="404 - Page not found" heading="Dead air">
+    <p>
+      There&apos;s no episode at this address. The link may be old, or the URL
+      may have a typo.
+    </p>
+  </ErrorMessage>
+</MainLayout>
