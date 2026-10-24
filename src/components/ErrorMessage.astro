@@ -1,0 +1,31 @@
+---
+interface Props {
+  eyebrow: string;
+  heading: string;
+}
+
+const { eyebrow, heading } = Astro.props;
+---
+
+<div class="pt-8 pb-16 main-content">
+  <div class="flex justify-between mx-4 mb-4 max-w-3xl bg-gray-400 rounded-md shadow-lg lg:mx-auto">
+    <div class="rounded-l-lg lg:w-16 callout-bar"></div>
+    <div class="py-8 px-6 w-full bg-white rounded-md lg:px-12 lg:rounded-l-none">
+      <p class="text-xs font-bold tracking-wide text-orange-700 uppercase">
+        {eyebrow}
+      </p>
+      <h2 class="mt-2 text-2xl font-bold tracking-wide lg:text-3xl text-sky-700">
+        {heading}
+      </h2>
+      <div class="mt-4 text-gray-700">
+        <slot />
+      </div>
+      <a
+        class="inline-block py-2 px-4 mt-8 font-bold text-white rounded shadow transition-all bg-sky-600 hover:bg-sky-500"
+        href="/"
+      >
+        Back to the podcast list
+      </a>
+    </div>
+  </div>
+</div>

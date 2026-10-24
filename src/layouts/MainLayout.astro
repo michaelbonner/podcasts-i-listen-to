@@ -5,9 +5,15 @@ import WideMonitor from "../components/WideMonitor.astro";
 interface Props {
   title?: string;
   lcpImage?: { webp: string; jpg: string; origin: string };
+  /** Keep error pages out of search results. */
+  noindex?: boolean;
 }
 
-const { title = "Podcasts I Listen To", lcpImage } = Astro.props;
+const {
+  title = "Podcasts I Listen To",
+  lcpImage,
+  noindex = false,
+} = Astro.props;
 const description =
   "The podcasts that Michael Bonner listens to. Just an easy way to share with my friends.";
 ---
@@ -17,7 +23,13 @@ const description =
   <head>
     <meta charset="utf-8" />
     <title>{title}</title>
-    <link rel="canonical" href="https://podcasts.michaelbonner.dev" />
+    {
+      noindex ? (
+        <meta name="robots" content="noindex, follow" />
+      ) : (
+        <link rel="canonical" href="https://podcasts.michaelbonner.dev" />
+      )
+    }
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
