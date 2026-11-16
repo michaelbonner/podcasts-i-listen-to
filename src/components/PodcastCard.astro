@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import type { Podcast } from "../types/Podcast";
 import Star from "./Star.astro";
+import { ARTWORK_SIZES, artworkSrcset, artworkUrl } from "../lib/artwork";
 
 interface Props {
   podcast: Podcast;
@@ -9,72 +11,77 @@ interface Props {
 
 const { podcast, eager = false } = Astro.props;
 
-const artworkUrl = podcast.itunesData?.artworkUrl600 ?? "";
-const artwork200Webp = artworkUrl.replace("600x600bb.jpg", "200x200bb.webp");
-const artwork200Jpg = artworkUrl.replace("600x600bb.jpg", "200x200bb.jpg");
+const title = podcast.itunesData?.collectionName || podcast.sortTitle;
+const url =
+  podcast.itunesData?.collectionViewUrl ||
+  `https://podcasts.apple.com/podcast/id${podcast.itunesId}`;
+const artwork = podcast.itunesData?.artworkUrl600 ?? "";
 ---
 
-<div
+<article
+  class="podcast-card"
   data-podcast-card
   data-sort-title={podcast.sortTitle}
   data-rating={podcast.rating}
   data-tags={podcast.tags.join("|")}
-  class="flex gap-6 items-start w-full bg-white rounded-lg shadow-lg sm:gap-4 lg:grid-cols-3 lg:gap-6"
 >
   <a
-    class="w-full h-full aspect-square max-w-32"
-    href={podcast.itunesData?.collectionViewUrl}
+    class="artwork-link"
+    href={url}
     target="_blank"
     rel="noopener noreferrer"
-    title={`${podcast.itunesData?.collectionName} Poster`}
+    aria-label={`Listen to ${title} on Apple Podcasts`}
   >
-    <picture>
-      <source type="image/webp" srcset={artwork200Webp} />
-      <img
-        class="object-cover w-full h-full rounded-lg rounded-r-none border-r border-gray-200"
-        alt={`${podcast.itunesData?.collectionName} Poster`}
-        height={200}
-        loading={eager ? "eager" : "lazy"}
-        fetchpriority={eager ? "high" : "auto"}
-        decoding={eager ? "sync" : "async"}
-        src={artwork200Jpg}
-        width={200}
-      />
-    </picture>
+    {
+      artwork && (
+        <picture>
+          <source
+            type="image/webp"
+            srcset={artworkSrcset(artwork, "webp")}
+            sizes={ARTWORK_SIZES}
+          />
+          <Image
+            src={artworkUrl(artwork, 300, "jpg")}
+            srcset={artworkSrcset(artwork, "jpg")}
+            sizes={ARTWORK_SIZES}
+            alt=""
+            width="300"
+            height="300"
+            loading={eager ? "eager" : "lazy"}
+            fetchpriority={eager ? "high" : "auto"}
+            decoding="async"
+          />
+        </picture>
+      )
+    }
+    <span class="listen-overlay" aria-hidden="true">
+      Listen on Apple Podcasts ↗
+    </span>
   </a>
-  <div class="min-w-0 flex-1 py-4 pr-6 lg:pt-4">
-    <p class="text-xl font-bold truncate">
-      <a
-        href={podcast.itunesData?.collectionViewUrl}
-        rel="noopener noreferrer"
-        target="_blank"
-        set:html={podcast.itunesData?.collectionName}
-      />
-    </p>
-
-    <div class="flex-col flex-1 gap-2 justify-between lg:mt-1">
-      <div
-        class="flex flex-wrap gap-y-1 gap-x-2 justify-start mt-2 lg:mt-4 lg:my-2"
-      >
-        {
-          podcast.tags.map((tag) => (
-            <button
-              class="inline-block bg-gray-200 text-gray-700 rounded px-1.5 py-2 lg:py-1 text-xs font-semibold focus:outline-hidden"
-              data-card-tag={tag}
-              type="button"
-            >
-              {tag}
-            </button>
-          ))
-        }
-      </div>
-      <p class="flex my-3 lg:justify-start">
-        <Star filled={podcast.rating > 0} />
-        <Star filled={podcast.rating > 1} />
-        <Star filled={podcast.rating > 2} />
-        <Star filled={podcast.rating > 3} />
-        <Star filled={podcast.rating > 4} />
-      </p>
+  <div class="card-meta">
+    <div class="card-tags">
+      {
+        podcast.tags.map((tag) => (
+          <button
+            type="button"
+            data-card-tag={tag}
+            aria-label={`Show ${tag} podcasts`}
+          >
+            {tag}
+          </button>
+        ))
+      }
     </div>
+    <span
+      class="card-rating"
+      role="img"
+      aria-label={`${podcast.rating} out of 5 stars`}
+    >
+      {[1, 2, 3, 4, 5].map((n) => <Star filled={podcast.rating >= n} />)}
+    </span>
   </div>
-</div>
+  <h3>
+    <a href={url} target="_blank" rel="noopener noreferrer">{title}</a>
+  </h3>
+  <p class="publisher">{podcast.itunesData?.artistName}</p>
+</article>
