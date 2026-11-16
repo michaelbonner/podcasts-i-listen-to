@@ -10,37 +10,37 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 >
   <div
     data-error
-    class="hidden py-2 px-4 mt-4 text-orange-700 bg-orange-100 rounded-sm border border-orange-500"
+    class="hidden py-2 px-4 mb-4 text-accent bg-paper rounded-md border border-accent"
   >
     <p data-error-message></p>
   </div>
-  <div class="flex flex-wrap px-2 -mx-3 mt-2 mb-6 lg:pr-4 lg:pl-8">
-    <div class="grid gap-2 w-full lg:grid-cols-2">
-      <div class="px-3 mt-6 w-full">
+  <div class="grid gap-5">
+    <div class="grid gap-5 sm:grid-cols-2">
+      <div>
         <label
-          class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+          class="block mb-2 font-mono text-xs tracking-wider uppercase"
           for="your-name"
         >
           Your Name
         </label>
         <input
           autocomplete="name"
-          class="block py-3 px-4 w-full leading-tight text-gray-700 bg-gray-200 rounded-sm border border-gray-200 appearance-none focus:bg-white focus:border-gray-500 focus:outline-hidden"
+          class="block py-3 px-4 w-full leading-tight bg-paper rounded-md border border-line appearance-none focus:bg-white focus:border-ink focus:outline-hidden"
           id="your-name"
           name="your_name"
           required
           type="text"
         />
       </div>
-      <div class="px-3 mt-6 w-full">
+      <div>
         <label
-          class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+          class="block mb-2 font-mono text-xs tracking-wider uppercase"
           for="podcast-name"
         >
           Podcast Name
         </label>
         <input
-          class="block py-3 px-4 w-full leading-tight text-gray-700 bg-gray-200 rounded-sm border border-gray-200 appearance-none focus:bg-white focus:border-gray-500 focus:outline-hidden"
+          class="block py-3 px-4 w-full leading-tight bg-paper rounded-md border border-line appearance-none focus:bg-white focus:border-ink focus:outline-hidden"
           id="podcast-name"
           name="podcast_name"
           required
@@ -48,15 +48,15 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         />
       </div>
     </div>
-    <div class="px-3 mt-6 w-full">
+    <div>
       <label
-        class="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+        class="block mb-2 font-mono text-xs tracking-wider uppercase"
         for="podcast-url"
       >
         Podcast URL
       </label>
       <input
-        class="block py-3 px-4 w-full leading-tight text-gray-700 bg-gray-200 rounded-sm border border-gray-200 appearance-none focus:bg-white focus:border-gray-500 focus:outline-hidden"
+        class="block py-3 px-4 w-full leading-tight bg-paper rounded-md border border-line appearance-none focus:bg-white focus:border-ink focus:outline-hidden"
         id="podcast-url"
         name="podcast_url"
         placeholder="https://"
@@ -64,14 +64,12 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         type="url"
       />
     </div>
-    <div data-success class="hidden px-4 pt-6 my-4 w-full border-t">
-      <h3 class="text-xl font-bold text-sky-700">
+    <div data-success class="hidden pt-5 border-t border-line">
+      <h3 class="m-0 text-xl font-bold">
         Thank you for your recommendation!
       </h3>
     </div>
-    <div
-      class="flex flex-wrap gap-8 justify-between items-end px-3 mt-8 w-full"
-    >
+    <div class="flex flex-wrap gap-6 justify-between items-end">
       <div
         class="cf-turnstile"
         data-sitekey={siteKey}
@@ -80,16 +78,9 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         data-theme="light"
       >
       </div>
-      <div class="pb-1.5">
-        <button
-          data-submit-btn
-          disabled
-          class="opacity-100 shadow bg-sky-600 hover:bg-sky-500 focus:shadow-outline focus:outline-hidden text-white font-bold py-2 px-4 rounded transition-all"
-          type="submit"
-        >
-          Submit
-        </button>
-      </div>
+      <button data-submit-btn disabled class="button" type="submit">
+        Send suggestion
+      </button>
     </div>
   </div>
 </form>
@@ -124,7 +115,6 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     const updateSubmitState = () => {
       const disabled = submitting || !token;
       submitBtn.disabled = disabled;
-      submitBtn.classList.toggle("opacity-100", disabled);
       form.classList.toggle("opacity-50", submitting);
     };
 

@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import PodcastList from "../components/PodcastList.astro";
 import ContactForm from "../components/ContactForm.astro";
 import podcasts from "../data/podcasts";
+import { ARTWORK_SIZES, artworkSrcset, artworkUrl } from "../lib/artwork";
 
 export const prerender = true;
 
@@ -33,60 +34,68 @@ const sortedPodcasts = [...enrichedPodcasts].sort((a, b) => {
   return 0;
 });
 
+const heroTitles = ["Hidden Brain", "Revisionist History", "Serial"];
+const heroCovers = heroTitles
+  .map((title) => sortedPodcasts.find((p) => p.sortTitle === title))
+  .filter((podcast) => podcast?.itunesData?.artworkUrl600)
+  .map((podcast) => ({
+    title: podcast!.sortTitle,
+    src: artworkUrl(podcast!.itunesData.artworkUrl600, 400, "webp"),
+  }));
+
 const lcpArtworkUrl = sortedPodcasts[0]?.itunesData?.artworkUrl600 ?? "";
 const lcpImage = lcpArtworkUrl
   ? {
-      webp: lcpArtworkUrl.replace("600x600bb.jpg", "200x200bb.webp"),
-      jpg: lcpArtworkUrl.replace("600x600bb.jpg", "200x200bb.jpg"),
+      srcset: artworkSrcset(lcpArtworkUrl, "webp"),
+      sizes: ARTWORK_SIZES,
       origin: new URL(lcpArtworkUrl).origin,
     }
   : undefined;
 ---
 
 <MainLayout lcpImage={lcpImage}>
-  <div class="pt-8 pb-16 main-content">
-    <PodcastList podcasts={sortedPodcasts} />
-
-    <div
-      class="flex justify-between mx-4 mt-16 mb-4 max-w-3xl bg-gray-400 rounded-md shadow-lg lg:mx-auto"
-    >
-      <div class="rounded-l-lg lg:w-16 callout-bar"></div>
-      <div class="py-4 px-6 bg-white rounded-md lg:px-12 lg:rounded-l-none">
-        <div class="flex justify-between items-center">
-          <div>
-            <h2
-              class="items-center pr-8 my-3 text-2xl font-bold tracking-wide lg:text-3xl text-sky-700"
-            >
-              Got a podcast I should check out?
-            </h2>
-            <p class="pr-8 text-gray-700">
-              Let me know what you&apos;re listening to. I&apos;m always looking
-              for new podcasts.
-            </p>
-          </div>
-          <svg
-            class="mt-2 w-16 h-16 text-orange-200 stroke-current"
-            xmlns="http://www.w3.org/2000/svg"
-            width="512"
-            height="512"
-            viewBox="0 0 512 512"
-          >
-            <path
-              d="M335.72,330.76C381.73,299.5,416,251.34,416,192a160,160,0,0,0-320,0V398.57C96,442.83,131.74,480,176,480h0c44.26,0,66.83-25.94,77.29-40C268.06,420.19,295,358.44,335.72,330.76Z"
-              style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 32px;"
-            ></path>
-            <path
-              d="M160,304V184c0-48.4,43.2-88,96-88h0c52.8,0,96,39.6,96,88"
-              style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 32px;"
-            ></path>
-            <path
-              d="M160,239c25-18,79.82-15,79.82-15,26,0,41.17,29.42,26,50.6,0,0-36.86,42.4-41.86,61.4"
-              style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 32px;"
-            ></path>
-          </svg>
-        </div>
-        <ContactForm />
-      </div>
+  <section class="hero shell">
+    <div>
+      <p class="eyebrow">A personal collection by Michael Bonner</p>
+      <h1>Good things<br />for your <em>ears.</em></h1>
+      <p class="hero-description">
+        The podcasts I keep coming back to, shared so my friends can find
+        something good to listen to.
+      </p>
+      <a class="hero-link" href="#collection">
+        Browse the list <span aria-hidden="true">↓</span>
+      </a>
     </div>
-  </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="record"></div>
+      {
+        heroCovers.map((cover) => (
+          <img
+            class="hero-cover"
+            src={cover.src}
+            alt=""
+            width="400"
+            height="400"
+            loading="lazy"
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="collection shell" id="collection">
+    <PodcastList podcasts={sortedPodcasts} />
+  </section>
+
+  <section class="suggestion shell" id="suggest">
+    <div class="suggestion-copy">
+      <p class="eyebrow">Suggestions welcome</p>
+      <h2>What am I<br /><em>missing?</em></h2>
+      <p>
+        Let me know what you&apos;re listening to. I&apos;m always looking for
+        new podcasts.
+      </p>
+    </div>
+    <ContactForm />
+  </section>
 </MainLayout>
