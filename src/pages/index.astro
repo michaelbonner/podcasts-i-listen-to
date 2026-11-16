@@ -52,9 +52,53 @@ const lcpImage = lcpArtworkUrl
       origin: new URL(lcpArtworkUrl).origin,
     }
   : undefined;
+
+const site = Astro.site!;
+const collectionSchema = {
+  "@type": "CollectionPage",
+  "@id": new URL("/#webpage", site).href,
+  url: site.href,
+  name: "Podcasts I Listen To",
+  isPartOf: { "@id": new URL("/#website", site).href },
+  about: { "@id": "https://michaelbonner.dev/#person" },
+  mainEntity: {
+    "@type": "ItemList",
+    name: "Podcasts Michael Bonner listens to",
+    numberOfItems: sortedPodcasts.length,
+    itemListOrder: "https://schema.org/ItemListOrderAscending",
+    itemListElement: sortedPodcasts.map((podcast, index) => {
+      const itunes = podcast.itunesData ?? {};
+      return {
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "PodcastSeries",
+          name: itunes.collectionName ?? podcast.sortTitle,
+          ...(itunes.collectionViewUrl && { url: itunes.collectionViewUrl }),
+          ...(itunes.artworkUrl600 && { image: itunes.artworkUrl600 }),
+          ...(itunes.feedUrl && { webFeed: itunes.feedUrl }),
+          ...(itunes.artistName && {
+            author: { "@type": "Organization", name: itunes.artistName },
+          }),
+          genre: podcast.tags,
+          review: {
+            "@type": "Review",
+            author: { "@id": "https://michaelbonner.dev/#person" },
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: podcast.rating,
+              bestRating: 5,
+              worstRating: 1,
+            },
+          },
+        },
+      };
+    }),
+  },
+};
 ---
 
-<MainLayout lcpImage={lcpImage}>
+<MainLayout lcpImage={lcpImage} schema={[collectionSchema]}>
   <section class="hero shell">
     <div>
       <p class="eyebrow">A personal collection by Michael Bonner</p>
