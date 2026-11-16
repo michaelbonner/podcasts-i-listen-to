@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import type { Podcast } from "../types/Podcast";
 import Star from "./Star.astro";
 import { ARTWORK_SIZES, artworkSrcset, artworkUrl } from "../lib/artwork";
@@ -39,7 +40,7 @@ const artwork = podcast.itunesData?.artworkUrl600 ?? "";
             srcset={artworkSrcset(artwork, "webp")}
             sizes={ARTWORK_SIZES}
           />
-          <img
+          <Image
             src={artworkUrl(artwork, 300, "jpg")}
             srcset={artworkSrcset(artwork, "jpg")}
             sizes={ARTWORK_SIZES}

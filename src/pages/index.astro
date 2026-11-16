@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
 import PodcastList from "../components/PodcastList.astro";
 import ContactForm from "../components/ContactForm.astro";
@@ -70,7 +71,7 @@ const lcpImage = lcpArtworkUrl
       <div class="record"></div>
       {
         heroCovers.map((cover) => (
-          <img
+          <Image
             class="hero-cover"
             src={cover.src}
             alt=""

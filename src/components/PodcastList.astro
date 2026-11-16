@@ -33,7 +33,8 @@ const tags = [...new Set(podcasts.flatMap((podcast) => podcast.tags))].sort();
         ))
       }
     </div>
-    <label class="search-box">
+    <label class="search-box" for="podcast-search">
+      <span class="sr-only">Search podcasts</span>
       <svg
         viewBox="0 0 24 24"
         fill="none"
@@ -45,10 +46,10 @@ const tags = [...new Set(podcasts.flatMap((podcast) => podcast.tags))].sort();
         <path d="m16 16 5 5"></path>
       </svg>
       <input
+        id="podcast-search"
         data-search-input
         type="search"
         placeholder="Search podcasts"
-        aria-label="Search podcasts"
       />
     </label>
   </div>
