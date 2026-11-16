@@ -8,6 +8,9 @@ interface Props {
 
 const { podcasts } = Astro.props;
 
+// The grid shows up to five columns, so the whole first row is above the fold.
+const FIRST_ROW = 5;
+
 const tags = [...new Set(podcasts.flatMap((podcast) => podcast.tags))].sort();
 ---
 
@@ -76,7 +79,11 @@ const tags = [...new Set(podcasts.flatMap((podcast) => podcast.tags))].sort();
   <div class="podcast-grid" data-podcast-grid>
     {
       podcasts.map((podcast, index) => (
-        <PodcastCard podcast={podcast} eager={index === 0} />
+        <PodcastCard
+          podcast={podcast}
+          eager={index < FIRST_ROW}
+          priority={index === 0}
+        />
       ))
     }
   </div>

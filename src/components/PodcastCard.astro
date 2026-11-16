@@ -7,9 +7,10 @@ import { ARTWORK_SIZES, artworkSrcset, artworkUrl } from "../lib/artwork";
 interface Props {
   podcast: Podcast;
   eager?: boolean;
+  priority?: boolean;
 }
 
-const { podcast, eager = false } = Astro.props;
+const { podcast, eager = false, priority = false } = Astro.props;
 
 const title = podcast.itunesData?.collectionName || podcast.sortTitle;
 const url =
@@ -48,7 +49,7 @@ const artwork = podcast.itunesData?.artworkUrl600 ?? "";
             width="300"
             height="300"
             loading={eager ? "eager" : "lazy"}
-            fetchpriority={eager ? "high" : "auto"}
+            fetchpriority={priority ? "high" : "auto"}
             decoding="async"
           />
         </picture>
